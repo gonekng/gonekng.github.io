@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Pandas tutorial 2 - Jiwon&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jiwon&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jiwon&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="라이브러리 불러오기1234import numpy as npprint(&amp;quot;numpy: ver.&amp;quot;, np.__version__)import pandas as pdprint(&amp;quot;pandas: ver.&amp;quot;, pd.__version__)  numpy: ver. 1.21.5 pandas: ver. 1.3.5  데이터 불러오기12from"><meta property="og:type" content="blog"><meta property="og:title" content="Pandas tutorial 2"><meta property="og:url" content="http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/"><meta property="og:site_name" content="Jiwon&#039;s Blog"><meta property="og:description" content="라이브러리 불러오기1234import numpy as npprint(&amp;quot;numpy: ver.&amp;quot;, np.__version__)import pandas as pdprint(&amp;quot;pandas: ver.&amp;quot;, pd.__version__)  numpy: ver. 1.21.5 pandas: ver. 1.3.5  데이터 불러오기12from"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://gonekng.github.io/images/Python/Tutorial/pd_tutorial_02.png"><meta property="article:published_time" content="2022-03-24T02:53:00.000Z"><meta property="article:modified_time" content="2022-10-05T05:39:54.741Z"><meta property="article:author" content="Jiwon Kang"><meta property="article:tag" content="python"><meta property="article:tag" content="google colab"><meta property="article:tag" content="pandas"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://gonekng.github.io/images/Python/Tutorial/pd_tutorial_02.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/"},"headline":"Pandas tutorial 2","image":["http://gonekng.github.io/images/Python/Tutorial/pd_tutorial_02.png"],"datePublished":"2022-03-24T02:53:00.000Z","dateModified":"2022-10-05T05:39:54.741Z","author":{"@type":"Person","name":"Jiwon Kang"},"publisher":{"@type":"Organization","name":"Jiwon's Blog","logo":{"@type":"ImageObject","url":"http://gonekng.github.io/img/logo.svg"}},"description":"라이브러리 불러오기1234import numpy as npprint(&quot;numpy: ver.&quot;, np.__version__)import pandas as pdprint(&quot;pandas: ver.&quot;, pd.__version__)  numpy: ver. 1.21.5 pandas: ver. 1.3.5  데이터 불러오기12from"}</script><link rel="canonical" href="http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Jiwon&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-03-24T02:53:00.000Z" title="2022. 3. 24. 오전 11:53:00">2022-03-24</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-10-05T05:39:54.741Z" title="2022. 10. 5. 오후 2:39:54">2022-10-05</time></span><span class="level-item"> Jiwon Kang </span><span class="level-item"><a class="link-muted" href="/categories/python/">python</a><span> / </span><a class="link-muted" href="/categories/python/tutorial/">tutorial</a></span><span class="level-item">7 minutes read (About 986 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Pandas tutorial 2</h1><div class="content"><h1 id="라이브러리-불러오기"><a href="#라이브러리-불러오기" class="headerlink" title="라이브러리 불러오기"></a>라이브러리 불러오기</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;numpy: ver.&quot;</span>, np.__version__)</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;pandas: ver.&quot;</span>, pd.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>numpy: ver. 1.21.5
+pandas: ver. 1.3.5
+</code></pre>
+<h1 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Mounted at /content/drive
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/content/drive/MyDrive/Colab Notebooks/Data/supermarket_sales.csv&#x27;</span></span><br><span class="line">sales = pd.read_csv(DATA_PATH)</span><br><span class="line"><span class="built_in">print</span>(sales.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>    Invoice ID Branch       City Customer type  Gender  \
+0  750-67-8428      A     Yangon        Member  Female   
+1  226-31-3081      C  Naypyitaw        Normal  Female   
+2  631-41-3108      A     Yangon        Normal    Male   
+
+             Product line  Unit price  Quantity      Date   Time      Payment  
+0       Health and beauty       74.69         7  1/5/2019  13:08      Ewallet  
+1  Electronic accessories       15.28         5  3/8/2019  10:29         Cash  
+2      Home and lifestyle       46.33         7  3/3/2019  13:23  Credit card  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 11 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Invoice ID     1000 non-null   object 
+ 1   Branch         1000 non-null   object 
+ 2   City           1000 non-null   object 
+ 3   Customer type  1000 non-null   object 
+ 4   Gender         1000 non-null   object 
+ 5   Product line   1000 non-null   object 
+ 6   Unit price     1000 non-null   float64
+ 7   Quantity       1000 non-null   int64  
+ 8   Date           1000 non-null   object 
+ 9   Time           1000 non-null   object 
+ 10  Payment        1000 non-null   object 
+dtypes: float64(1), int64(1), object(9)
+memory usage: 86.1+ KB
+</code></pre>
+<h1 id="데이터-그룹화"><a href="#데이터-그룹화" class="headerlink" title="데이터 그룹화"></a>데이터 그룹화</h1><ul>
+<li>groupby() 및 다양한 집계함수 활용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby(by=<span class="string">&quot;Product line&quot;</span>)[<span class="string">&#x27;Quantity&#x27;</span>].count()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Product line
+Electronic accessories    170
+Fashion accessories       178
+Food and beverages        174
+Health and beauty         152
+Home and lifestyle        160
+Sports and travel         166
+Name: Quantity, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby(by=<span class="string">&quot;Product line&quot;</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Product line
+Electronic accessories    971
+Fashion accessories       902
+Food and beverages        952
+Health and beauty         854
+Home and lifestyle        911
+Sports and travel         920
+Name: Quantity, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Customer type&quot;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Customer type&quot;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())) <span class="comment"># Series 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Branch  Customer type
+A       Member           964
+        Normal           895
+B       Member           924
+        Normal           896
+C       Member           897
+        Normal           934
+Name: Quantity, dtype: int64
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Payment&quot;</span>], as_index=<span class="literal">False</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Payment&quot;</span>], as_index=<span class="literal">False</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())) <span class="comment"># DataFrmae 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>  Branch      Payment  Quantity
+0      A         Cash       572
+1      A  Credit card       580
+2      A      Ewallet       707
+3      B         Cash       628
+4      B  Credit card       599
+5      B      Ewallet       593
+6      C         Cash       696
+7      C  Credit card       543
+8      C      Ewallet       592
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]))) <span class="comment"># DataFrame 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>                      max    min       mean
+Branch Payment                             
+A      Cash         99.78  10.08  56.374636
+       Credit card  99.56  11.94  53.011635
+       Ewallet      99.83  10.13  54.849762
+B      Cash         99.69  11.85  56.758818
+       Credit card  99.96  10.59  56.838991
+       Ewallet      99.92  10.75  53.450973
+C      Cash         99.96  10.17  57.100081
+       Credit card  99.82  10.18  53.143061
+       Ewallet      99.79  10.16  59.238962
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]).reset_index())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]).reset_index()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>  Branch      Payment    max    min       mean
+0      A         Cash  99.78  10.08  56.374636
+1      A  Credit card  99.56  11.94  53.011635
+2      A      Ewallet  99.83  10.13  54.849762
+3      B         Cash  99.69  11.85  56.758818
+4      B  Credit card  99.96  10.59  56.838991
+5      B      Ewallet  99.92  10.75  53.450973
+6      C         Cash  99.96  10.17  57.100081
+7      C  Credit card  99.82  10.18  53.143061
+8      C      Ewallet  99.79  10.16  59.238962
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<h1 id="결측치-처리"><a href="#결측치-처리" class="headerlink" title="결측치 처리"></a>결측치 처리</h1><h2 id="결측치-데이터-생성"><a href="#결측치-데이터-생성" class="headerlink" title="결측치 데이터 생성"></a>결측치 데이터 생성</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_01 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(dict_01)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2      NaN      NaN     80.0
+3     80.0      NaN     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.isnull())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0    False    False     True
+1    False    False    False
+2     True     True    False
+3    False     True    False
+
+
+Score A    1
+Score B    2
+Score C    1
+dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_02 = &#123;</span><br><span class="line">    <span class="string">&quot;Gender&quot;</span> : [<span class="string">&quot;Male&quot;</span>, <span class="string">&quot;Female&quot;</span>, np.nan, <span class="string">&quot;Male&quot;</span>],</span><br><span class="line">    <span class="string">&quot;Salary&quot;</span> : [<span class="number">30</span>, <span class="number">45</span>, <span class="number">90</span>, <span class="number">70</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df2 = pd.DataFrame(dict_02)</span><br><span class="line"><span class="built_in">print</span>(df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Gender  Salary
+0    Male      30
+1  Female      45
+2     NaN      90
+3    Male      70
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.isnull())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0    False    False     True
+1    False    False    False
+2     True     True    False
+3    False     True    False
+
+
+Score A    1
+Score B    2
+Score C    1
+dtype: int64
+</code></pre>
+<h2 id="결측치-값-대체"><a href="#결측치-값-대체" class="headerlink" title="결측치 값 대체"></a>결측치 값 대체</h2><ul>
+<li>문자열 타입과 숫자 타입의 접근 방법 상이<ul>
+<li>문자열 : 최빈값 등</li>
+<li>숫자 : 평균, 최대값, 최소값, 중간값 등</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(<span class="number">0</span>)) <span class="comment"># 0으로 대체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      0.0
+1     90.0     45.0     50.0
+2      0.0      0.0     80.0
+3     80.0      0.0     90.0
+Score A    float64
+Score B    float64
+Score C    float64
+dtype: object
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(method=<span class="string">&quot;pad&quot;</span>)) <span class="comment"># 앞 데이터로 대체</span></span><br><span class="line"><span class="comment"># print(df.fillna(method=&quot;ffill&quot;)) : 동일한 결과</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2     90.0     45.0     80.0
+3     80.0     45.0     90.0
+   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2     90.0     45.0     80.0
+3     80.0     45.0     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(method=<span class="string">&quot;backfill&quot;</span>)) <span class="comment"># 뒤 데이터로 대체</span></span><br><span class="line"><span class="comment"># print(df.fillna(method=&quot;bfill&quot;)) : 동일한 결과</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0     50.0
+1     90.0     45.0     50.0
+2     80.0      NaN     80.0
+3     80.0      NaN     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df2[<span class="string">&#x27;Gender&#x27;</span>].fillna(<span class="string">&quot;Genderless&quot;</span>)) <span class="comment"># 특정 문자열로 대체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>0          Male
+1        Female
+2    Genderless
+3          Male
+Name: Gender, dtype: object
+</code></pre>
+<h2 id="결측치가-있는-행-열-제거"><a href="#결측치가-있는-행-열-제거" class="headerlink" title="결측치가 있는 행, 열 제거"></a>결측치가 있는 행, 열 제거</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dict_03 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>],</span><br><span class="line">    <span class="string">&#x27;Score D&#x27;</span> : [<span class="number">50</span>, <span class="number">30</span>, <span class="number">80</span>, <span class="number">60</span>]</span><br><span class="line">&#125;</span><br><span class="line">df3 = pd.DataFrame(dict_03)</span><br><span class="line"><span class="built_in">print</span>(df3)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C  Score D
+0     80.0     30.0      NaN       50
+1     90.0     45.0     50.0       30
+2      NaN      NaN     80.0       80
+3     80.0      NaN     90.0       60
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df3.dropna()) <span class="comment"># axis: default 0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df3.dropna(axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C  Score D
+1     90.0     45.0     50.0       30
+
+
+   Score D
+0       50
+1       30
+2       80
+3       60
+</code></pre>
+<h1 id="이상치-탐지"><a href="#이상치-탐지" class="headerlink" title="이상치 탐지"></a>이상치 탐지</h1><ul>
+<li>일반적으로 IQR(&#x3D; Q3 - Q1; 사분위수범위)를 활용하여 탐지<ul>
+<li>하한 경계값 : Q1 - IQR * 1.5</li>
+<li>상한 경계값 : Q3 + IQR * 1.5</li>
+</ul>
+</li>
+<li>Box Plot으로도 확인 가능</li>
+<li>실무에서는 각 도메인(비즈니스 영역)별로 기준 상이</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales[[<span class="string">&#x27;Unit price&#x27;</span>]].describe())</span><br></pre></td></tr></table></figure>
+
+<pre><code>        Unit price
+count  1000.000000
+mean     55.672130
+std      26.494628
+min      10.080000
+25%      32.875000
+50%      55.230000
+75%      77.935000
+max      99.960000
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">q1 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.25</span>)</span><br><span class="line">q3 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.75</span>)</span><br><span class="line">iqr = q3 - q1</span><br><span class="line">lim_q1 = q1 - <span class="number">1.5</span> * IQR</span><br><span class="line">lim_q3 = q3 + <span class="number">1.5</span> * IQR</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>([lim_q1, lim_q3]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">out_q1 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &lt; lim_q1)</span><br><span class="line">out_q3 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &gt; lim_q3)</span><br><span class="line">outliers = (sales[<span class="string">&#x27;Unit price&#x27;</span>][out_q1 | out_q3])</span><br><span class="line"><span class="built_in">print</span>(outliers)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(-34.715, 145.525)
+
+
+Series([], Name: Unit price, dtype: float64)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.boxplot(sales[<span class="string">&#x27;Unit price&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5f93d0&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5fe3d0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7fefce5fe910&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce605410&gt;],
+ &#39;means&#39;: [],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5fee90&gt;],
+ &#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5f9910&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7fefce5f9e50&gt;]&#125;
+</code></pre>
+<p><img src="/images/Python/Tutorial/pd_tutorial_02.png"></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Pandas tutorial 2</p><p><a href="http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/">http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Jiwon Kang</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-03-24</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-10-05</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/python/">python</a><a class="link-muted mr-2" rel="tag" href="/tags/google-colab/">google colab</a><a class="link-muted mr-2" rel="tag" href="/tags/pandas/">pandas</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/03/24/Python/Tutorial/10m_to_pd/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">10minutes to Pandas</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/03/24/Python/Tutorial/pd_tutorial_01/"><span class="level-item">Pandas tutorial 1</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/images/profile.png" alt="Jiwon Kang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Jiwon Kang</p><p class="is-size-6 is-block">Data Scientist</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul, South Korea</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">52</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">27</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/gonekng" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/gonekng"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Instagram" href="https://instagram.com/gone_kng"><i class="fab fa-instagram"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Naver Blog" href="https://blog.naver.com/donumm"><i class="fas fa-blog"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/hexo/"><span class="level-start"><span class="level-item">hexo</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/info/"><span class="level-start"><span class="level-item">info</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/python/"><span class="level-start"><span class="level-item">python</span></span><span class="level-end"><span class="level-item tag">36</span></span></a><ul><li><a class="level is-mobile" href="/categories/python/ML/"><span class="level-start"><span class="level-item">ML</span></span><span class="level-end"><span class="level-item tag">23</span></span></a></li><li><a class="level is-mobile" href="/categories/python/crawling/"><span class="level-start"><span class="level-item">crawling</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/python/tutorial/"><span class="level-start"><span class="level-item">tutorial</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/r/"><span class="level-start"><span class="level-item">r</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/"><span class="level-start"><span class="level-item">setting</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/setting/data-engineering/"><span class="level-start"><span class="level-item">data engineering</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/setting/development/"><span class="level-start"><span class="level-item">development</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/sql/"><span class="level-start"><span class="level-item">sql</span></span><span class="level-end"><span class="level-item tag">4</span></span></a><ul><li><a class="level is-mobile" href="/categories/sql/Oracle/"><span class="level-start"><span class="level-item">Oracle</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2999-12-31T15:00:00.000Z">3000-01-01</time></p><p class="title"><a href="/3000/01/01/Personal-Info/">Personal Info</a></p><p class="categories"><a href="/categories/info/">info</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-03T06:53:01.000Z">2022-05-03</time></p><p class="title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/">Setting VS Code for Web Development</a></p><p class="categories"><a href="/categories/setting/">setting</a> / <a href="/categories/setting/development/">development</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-02T03:08:45.000Z">2022-05-02</time></p><p class="title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/">SQL TEST 6-7</a></p><p class="categories"><a href="/categories/sql/">sql</a> / <a href="/categories/sql/Oracle/">Oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-02T00:32:11.000Z">2022-05-02</time></p><p class="title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/">SQL EXERCISE 6-7</a></p><p class="categories"><a href="/categories/sql/">sql</a> / <a href="/categories/sql/Oracle/">Oracle</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-26T07:02:41.000Z">2022-04-26</time></p><p class="title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/">Conneting SQL Developer with Github</a></p><p class="categories"><a href="/categories/sql/">sql</a> / <a href="/categories/sql/Oracle/">Oracle</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/3000/01/"><span class="level-start"><span class="level-item">January 3000</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">27</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/BeautifulSoup/"><span class="tag">BeautifulSoup</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Oracle/"><span class="tag">Oracle</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/airflow/"><span class="tag">airflow</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/apache/"><span class="tag">apache</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crawling/"><span class="tag">crawling</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/data-engineering/"><span class="tag">data engineering</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/development/"><span class="tag">development</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/elasticsearch/"><span class="tag">elasticsearch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github/"><span class="tag">github</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/google-colab/"><span class="tag">google colab</span><span class="tag">33</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kibana/"><span class="tag">kibana</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/machine-learning/"><span class="tag">machine learning</span><span class="tag">24</span></a></div><div class="control"><a class="tags has-addons" href="/tags/matplotlib/"><span class="tag">matplotlib</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/numpy/"><span class="tag">numpy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pandas/"><span class="tag">pandas</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pipeline/"><span class="tag">pipeline</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">36</span></a></div><div class="control"><a class="tags has-addons" href="/tags/r/"><span class="tag">r</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/seaborn/"><span class="tag">seaborn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/setting/"><span class="tag">setting</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/spark/"><span class="tag">spark</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sql/"><span class="tag">sql</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/statistic/"><span class="tag">statistic</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/visualization/"><span class="tag">visualization</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vscode/"><span class="tag">vscode</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wsl2/"><span class="tag">wsl2</span><span class="tag">6</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Jiwon&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 Jiwon Kang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
