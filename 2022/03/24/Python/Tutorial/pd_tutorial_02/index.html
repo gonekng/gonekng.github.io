@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Pandas tutorial 2 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,google colab,pandas" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/tutorial/">tutorial</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Tutorial/pd_tutorial_02" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Pandas tutorial 2
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/24/Python/Tutorial/pd_tutorial_02/" class="article-date">
+       <time datetime="2022-03-24T02:53:00.000Z" itemprop="datePublished">2022-03-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/24/Python/Tutorial/pd_tutorial_02/" class="article-date">
+     <time datetime="2022-10-05T05:39:54.741Z" itemprop="dateModified">2022-10-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/google-colab/" rel="tag">google colab</a>, <a class="tag-link-link" href="/tags/pandas/" rel="tag">pandas</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="라이브러리-불러오기"><a href="#라이브러리-불러오기" class="headerlink" title="라이브러리 불러오기"></a>라이브러리 불러오기</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;numpy: ver.&quot;</span>, np.__version__)</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;pandas: ver.&quot;</span>, pd.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>numpy: ver. 1.21.5
+pandas: ver. 1.3.5
+</code></pre>
+<h1 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Mounted at /content/drive
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA_PATH = <span class="string">&#x27;/content/drive/MyDrive/Colab Notebooks/Data/supermarket_sales.csv&#x27;</span></span><br><span class="line">sales = pd.read_csv(DATA_PATH)</span><br><span class="line"><span class="built_in">print</span>(sales.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>    Invoice ID Branch       City Customer type  Gender  \
+0  750-67-8428      A     Yangon        Member  Female   
+1  226-31-3081      C  Naypyitaw        Normal  Female   
+2  631-41-3108      A     Yangon        Normal    Male   
+
+             Product line  Unit price  Quantity      Date   Time      Payment  
+0       Health and beauty       74.69         7  1/5/2019  13:08      Ewallet  
+1  Electronic accessories       15.28         5  3/8/2019  10:29         Cash  
+2      Home and lifestyle       46.33         7  3/3/2019  13:23  Credit card  
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 1000 entries, 0 to 999
+Data columns (total 11 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   Invoice ID     1000 non-null   object 
+ 1   Branch         1000 non-null   object 
+ 2   City           1000 non-null   object 
+ 3   Customer type  1000 non-null   object 
+ 4   Gender         1000 non-null   object 
+ 5   Product line   1000 non-null   object 
+ 6   Unit price     1000 non-null   float64
+ 7   Quantity       1000 non-null   int64  
+ 8   Date           1000 non-null   object 
+ 9   Time           1000 non-null   object 
+ 10  Payment        1000 non-null   object 
+dtypes: float64(1), int64(1), object(9)
+memory usage: 86.1+ KB
+</code></pre>
+<h1 id="데이터-그룹화"><a href="#데이터-그룹화" class="headerlink" title="데이터 그룹화"></a>데이터 그룹화</h1><ul>
+<li>groupby() 및 다양한 집계함수 활용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby(by=<span class="string">&quot;Product line&quot;</span>)[<span class="string">&#x27;Quantity&#x27;</span>].count()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Product line
+Electronic accessories    170
+Fashion accessories       178
+Food and beverages        174
+Health and beauty         152
+Home and lifestyle        160
+Sports and travel         166
+Name: Quantity, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sales.groupby(by=<span class="string">&quot;Product line&quot;</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Product line
+Electronic accessories    971
+Fashion accessories       902
+Food and beverages        952
+Health and beauty         854
+Home and lifestyle        911
+Sports and travel         920
+Name: Quantity, dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Customer type&quot;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Customer type&quot;</span>])[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())) <span class="comment"># Series 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Branch  Customer type
+A       Member           964
+        Normal           895
+B       Member           924
+        Normal           896
+C       Member           897
+        Normal           934
+Name: Quantity, dtype: int64
+&lt;class &#39;pandas.core.series.Series&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Payment&quot;</span>], as_index=<span class="literal">False</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>,<span class="string">&quot;Payment&quot;</span>], as_index=<span class="literal">False</span>)[<span class="string">&#x27;Quantity&#x27;</span>].<span class="built_in">sum</span>())) <span class="comment"># DataFrmae 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>  Branch      Payment  Quantity
+0      A         Cash       572
+1      A  Credit card       580
+2      A      Ewallet       707
+3      B         Cash       628
+4      B  Credit card       599
+5      B      Ewallet       593
+6      C         Cash       696
+7      C  Credit card       543
+8      C      Ewallet       592
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]))) <span class="comment"># DataFrame 객체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>                      max    min       mean
+Branch Payment                             
+A      Cash         99.78  10.08  56.374636
+       Credit card  99.56  11.94  53.011635
+       Ewallet      99.83  10.13  54.849762
+B      Cash         99.69  11.85  56.758818
+       Credit card  99.96  10.59  56.838991
+       Ewallet      99.92  10.75  53.450973
+C      Cash         99.96  10.17  57.100081
+       Credit card  99.82  10.18  53.143061
+       Ewallet      99.79  10.16  59.238962
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]).reset_index())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(sales.groupby(by=[<span class="string">&quot;Branch&quot;</span>, <span class="string">&quot;Payment&quot;</span>])[<span class="string">&#x27;Unit price&#x27;</span>].agg([<span class="string">&quot;max&quot;</span>, <span class="string">&quot;min&quot;</span>, <span class="string">&quot;mean&quot;</span>]).reset_index()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>  Branch      Payment    max    min       mean
+0      A         Cash  99.78  10.08  56.374636
+1      A  Credit card  99.56  11.94  53.011635
+2      A      Ewallet  99.83  10.13  54.849762
+3      B         Cash  99.69  11.85  56.758818
+4      B  Credit card  99.96  10.59  56.838991
+5      B      Ewallet  99.92  10.75  53.450973
+6      C         Cash  99.96  10.17  57.100081
+7      C  Credit card  99.82  10.18  53.143061
+8      C      Ewallet  99.79  10.16  59.238962
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</code></pre>
+<h1 id="결측치-처리"><a href="#결측치-처리" class="headerlink" title="결측치 처리"></a>결측치 처리</h1><h2 id="결측치-데이터-생성"><a href="#결측치-데이터-생성" class="headerlink" title="결측치 데이터 생성"></a>결측치 데이터 생성</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_01 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(dict_01)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2      NaN      NaN     80.0
+3     80.0      NaN     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.isnull())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0    False    False     True
+1    False    False    False
+2     True     True    False
+3    False     True    False
+
+
+Score A    1
+Score B    2
+Score C    1
+dtype: int64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_02 = &#123;</span><br><span class="line">    <span class="string">&quot;Gender&quot;</span> : [<span class="string">&quot;Male&quot;</span>, <span class="string">&quot;Female&quot;</span>, np.nan, <span class="string">&quot;Male&quot;</span>],</span><br><span class="line">    <span class="string">&quot;Salary&quot;</span> : [<span class="number">30</span>, <span class="number">45</span>, <span class="number">90</span>, <span class="number">70</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df2 = pd.DataFrame(dict_02)</span><br><span class="line"><span class="built_in">print</span>(df2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Gender  Salary
+0    Male      30
+1  Female      45
+2     NaN      90
+3    Male      70
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.isnull())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.isnull().<span class="built_in">sum</span>())</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0    False    False     True
+1    False    False    False
+2     True     True    False
+3    False     True    False
+
+
+Score A    1
+Score B    2
+Score C    1
+dtype: int64
+</code></pre>
+<h2 id="결측치-값-대체"><a href="#결측치-값-대체" class="headerlink" title="결측치 값 대체"></a>결측치 값 대체</h2><ul>
+<li>문자열 타입과 숫자 타입의 접근 방법 상이<ul>
+<li>문자열 : 최빈값 등</li>
+<li>숫자 : 평균, 최대값, 최소값, 중간값 등</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(<span class="number">0</span>)) <span class="comment"># 0으로 대체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      0.0
+1     90.0     45.0     50.0
+2      0.0      0.0     80.0
+3     80.0      0.0     90.0
+Score A    float64
+Score B    float64
+Score C    float64
+dtype: object
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(method=<span class="string">&quot;pad&quot;</span>)) <span class="comment"># 앞 데이터로 대체</span></span><br><span class="line"><span class="comment"># print(df.fillna(method=&quot;ffill&quot;)) : 동일한 결과</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2     90.0     45.0     80.0
+3     80.0     45.0     90.0
+   Score A  Score B  Score C
+0     80.0     30.0      NaN
+1     90.0     45.0     50.0
+2     90.0     45.0     80.0
+3     80.0     45.0     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df.fillna(method=<span class="string">&quot;backfill&quot;</span>)) <span class="comment"># 뒤 데이터로 대체</span></span><br><span class="line"><span class="comment"># print(df.fillna(method=&quot;bfill&quot;)) : 동일한 결과</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C
+0     80.0     30.0     50.0
+1     90.0     45.0     50.0
+2     80.0      NaN     80.0
+3     80.0      NaN     90.0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df2[<span class="string">&#x27;Gender&#x27;</span>].fillna(<span class="string">&quot;Genderless&quot;</span>)) <span class="comment"># 특정 문자열로 대체</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>0          Male
+1        Female
+2    Genderless
+3          Male
+Name: Gender, dtype: object
+</code></pre>
+<h2 id="결측치가-있는-행-열-제거"><a href="#결측치가-있는-행-열-제거" class="headerlink" title="결측치가 있는 행, 열 제거"></a>결측치가 있는 행, 열 제거</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dict_03 = &#123;</span><br><span class="line">    <span class="string">&#x27;Score A&#x27;</span> : [<span class="number">80</span>, <span class="number">90</span>, np.nan, <span class="number">80</span>],</span><br><span class="line">    <span class="string">&#x27;Score B&#x27;</span> : [<span class="number">30</span>, <span class="number">45</span>, np.nan, np.nan],</span><br><span class="line">    <span class="string">&#x27;Score C&#x27;</span> : [np.nan, <span class="number">50</span>, <span class="number">80</span>, <span class="number">90</span>],</span><br><span class="line">    <span class="string">&#x27;Score D&#x27;</span> : [<span class="number">50</span>, <span class="number">30</span>, <span class="number">80</span>, <span class="number">60</span>]</span><br><span class="line">&#125;</span><br><span class="line">df3 = pd.DataFrame(dict_03)</span><br><span class="line"><span class="built_in">print</span>(df3)</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C  Score D
+0     80.0     30.0      NaN       50
+1     90.0     45.0     50.0       30
+2      NaN      NaN     80.0       80
+3     80.0      NaN     90.0       60
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df3.dropna()) <span class="comment"># axis: default 0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df3.dropna(axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>   Score A  Score B  Score C  Score D
+1     90.0     45.0     50.0       30
+
+
+   Score D
+0       50
+1       30
+2       80
+3       60
+</code></pre>
+<h1 id="이상치-탐지"><a href="#이상치-탐지" class="headerlink" title="이상치 탐지"></a>이상치 탐지</h1><ul>
+<li>일반적으로 IQR(&#x3D; Q3 - Q1; 사분위수범위)를 활용하여 탐지<ul>
+<li>하한 경계값 : Q1 - IQR * 1.5</li>
+<li>상한 경계값 : Q3 + IQR * 1.5</li>
+</ul>
+</li>
+<li>Box Plot으로도 확인 가능</li>
+<li>실무에서는 각 도메인(비즈니스 영역)별로 기준 상이</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(sales[[<span class="string">&#x27;Unit price&#x27;</span>]].describe())</span><br></pre></td></tr></table></figure>
+
+<pre><code>        Unit price
+count  1000.000000
+mean     55.672130
+std      26.494628
+min      10.080000
+25%      32.875000
+50%      55.230000
+75%      77.935000
+max      99.960000
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">q1 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.25</span>)</span><br><span class="line">q3 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.75</span>)</span><br><span class="line">iqr = q3 - q1</span><br><span class="line">lim_q1 = q1 - <span class="number">1.5</span> * IQR</span><br><span class="line">lim_q3 = q3 + <span class="number">1.5</span> * IQR</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>([lim_q1, lim_q3]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">out_q1 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &lt; lim_q1)</span><br><span class="line">out_q3 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &gt; lim_q3)</span><br><span class="line">outliers = (sales[<span class="string">&#x27;Unit price&#x27;</span>][out_q1 | out_q3])</span><br><span class="line"><span class="built_in">print</span>(outliers)</span><br></pre></td></tr></table></figure>
+
+<pre><code>(-34.715, 145.525)
+
+
+Series([], Name: Unit price, dtype: float64)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.boxplot(sales[<span class="string">&#x27;Unit price&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;boxes&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5f93d0&gt;],
+ &#39;caps&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5fe3d0&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7fefce5fe910&gt;],
+ &#39;fliers&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce605410&gt;],
+ &#39;means&#39;: [],
+ &#39;medians&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5fee90&gt;],
+ &#39;whiskers&#39;: [&lt;matplotlib.lines.Line2D at 0x7fefce5f9910&gt;,
+  &lt;matplotlib.lines.Line2D at 0x7fefce5f9e50&gt;]&#125;
+</code></pre>
+<p><img src="/images/Python/Tutorial/pd_tutorial_02.png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/" data-id="cl8x10dnr003m9wlfa5g4cfxd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Pandas tutorial 2",
+        "image": "http://gonekng.github.io/images/Python/Tutorial/pd_tutorial_02.png",
+        "keywords": "python google colab pandas",
+        "genre": "python tutorial",
+        "datePublished": "2022-03-24",
+        "dateCreated": "2022-03-24",
+        "dateModified": "2022-10-05",
+        "url": "http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/",
+        "description": "라이브러리 불러오기1234import numpy as npprint(&quot;numpy: ver.&quot;, np.__version__)import pandas as pdprint(&quot;pandas: ver.&quot;, pd.__version__)
+
+numpy: ver. 1.21.5
+pandas: ver. 1.3.5
+
+데이터 불러오기12from ",
+        "wordCount": 2890
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/24/Python/Tutorial/10m_to_pd/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            10minutes to Pandas
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/03/24/Python/Tutorial/pd_tutorial_01/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Pandas tutorial 1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/03/24/Python/Tutorial/pd_tutorial_02/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

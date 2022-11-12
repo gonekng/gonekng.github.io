@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>SQL EXERCISE 6-7 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="sql,Oracle" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/sql/">sql</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-SQL/SQL EXERCISE 6-7" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        SQL EXERCISE 6-7
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="article-date">
+       <time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="article-date">
+     <time datetime="2022-10-17T07:30:25.321Z" itemprop="dateModified">2022-10-17</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Oracle/" rel="tag">Oracle</a>, <a class="tag-link-link" href="/tags/sql/" rel="tag">sql</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="CHAPTER-06"><a href="#CHAPTER-06" class="headerlink" title="CHAPTER 06"></a>CHAPTER 06</h1><blockquote>
+<p>‘오라클 SQL과 PL&#x2F;SQL을 다루는 기술 (길벗)’</p>
+</blockquote>
+<h3 id="Q1"><a href="#Q1" class="headerlink" title="Q1."></a>Q1.</h3><p>101번 사원에 대해 아래의 결과를 산출하는 쿼리를 작성해 보자.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---------------------------------------------------------------------------------------</span></span><br><span class="line">사번   사원명   job명칭 job시작일자  job종료일자   job수행부서명</span><br><span class="line"><span class="comment">---------------------------------------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="A1"><a href="#A1" class="headerlink" title="A1."></a>A1.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.employee_id 사번</span><br><span class="line">        , a.emp_name 사원명</span><br><span class="line">        , b.job_title job 명칭</span><br><span class="line">        , c.start_date job 시작일자</span><br><span class="line">        , c.end_date job 종료일자</span><br><span class="line">        , d.department_name</span><br><span class="line">    <span class="keyword">FROM</span> employees a</span><br><span class="line">        , jobs b</span><br><span class="line">        , job_history c</span><br><span class="line">        , departments d</span><br><span class="line">    <span class="keyword">WHERE</span> a.employee_id <span class="operator">=</span> c.employee_id</span><br><span class="line">        <span class="keyword">AND</span> b.job_id <span class="operator">=</span> c.job_id</span><br><span class="line">        <span class="keyword">AND</span> c.department_id <span class="operator">=</span> d.department_id</span><br><span class="line">        <span class="keyword">AND</span> a.employee_id <span class="operator">=</span> <span class="number">101</span>;</span><br></pre></td></tr></table></figure>
+
+<p>필요한 컬럼 및 테이블</p>
+<ul>
+<li>사번(<code>employee_id</code>), 사원명(<code>emp_name</code>) → <code>employees</code></li>
+<li>job명칭(<code>job_title</code>) → <code>jobs</code></li>
+<li>job시작일자(<code>start_date</code>), job종료일자(<code>end_date</code>) →  <code>job_history</code></li>
+<li>job수행부서명(<code>department_name</code>) → <code>departments</code></li>
+</ul>
+<p>테이블 조인 조건</p>
+<ul>
+<li><code>employees</code> &amp; <code>job_history</code> → <code>employee_id</code></li>
+<li><code>jobs</code> &amp; <code>job_history</code> → <code>job_id</code></li>
+<li><code>job_history</code> &amp; <code>departments</code> → <code>department_id</code></li>
+</ul>
+<p>기타 조건</p>
+<ul>
+<li>101번 사원에 대한 정보 : <code>a.employee_id = 101</code></li>
+</ul>
+<p><img src="/images/sql/sql_ex/0.png"></p>
+<hr>
+<h3 id="Q2"><a href="#Q2" class="headerlink" title="Q2."></a>Q2.</h3><p>아래의 쿼리를 수행하면 오류가 발생한다. 오류의 원인은 무엇인가?</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.employee_id, a.emp_name, b.job_id, b.department_id</span><br><span class="line"><span class="keyword">from</span> employees a,</span><br><span class="line">job_history b</span><br><span class="line"><span class="keyword">where</span> a.employee_id <span class="operator">=</span> b.employee_id(<span class="operator">+</span>)</span><br><span class="line"><span class="keyword">and</span> a.department_id(<span class="operator">+</span>) <span class="operator">=</span> b.department_id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="A2"><a href="#A2" class="headerlink" title="A2."></a>A2.</h3><p>(+) 연산자를 활용한 외부 조인의 경우 한쪽 방향으로만 가능하고, 이때 (+) 연산자는 데이터가 없는 테이블의 컬럼에만 붙여야 한다.</p>
+<p>따라서, 위의 쿼리에서는 마지막 줄을 and <code>a.department_id = b.department_id(+)</code>로 수정해야 한다.</p>
+<hr>
+<h3 id="Q3"><a href="#Q3" class="headerlink" title="Q3."></a>Q3.</h3><p>외부조인시 (+)연산자를 같이 사용할 수 없는데, IN절에 사용하는 값이 1개인 경우는 사용 가능하다. 그 이유는 무엇일까?</p>
+<h3 id="A3"><a href="#A3" class="headerlink" title="A3."></a>A3.</h3><p>IN절에 사용하는 값이 1개인 경우는 등호를 사용하는 것과 같은 의미이므로 사용 가능하다.</p>
+<hr>
+<h3 id="Q4"><a href="#Q4" class="headerlink" title="Q4."></a>Q4.</h3><p>다음의 쿼리를 ANSI 문법으로 변경해 보자.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.department_id</span><br><span class="line">			, a.department_name</span><br><span class="line">		<span class="keyword">FROM</span> departments a</span><br><span class="line">				, employees b</span><br><span class="line">		<span class="keyword">WHERE</span> a.department_id <span class="operator">=</span> b.department_id</span><br><span class="line">				<span class="keyword">AND</span> b.salary <span class="operator">&gt;</span> <span class="number">3000</span></span><br><span class="line">		<span class="keyword">ORDER</span> <span class="keyword">BY</span> a.department_name;</span><br></pre></td></tr></table></figure>
+
+<h3 id="A4"><a href="#A4" class="headerlink" title="A4."></a>A4.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.department_id, a.department_name</span><br><span class="line">		<span class="keyword">FROM</span> departments a</span><br><span class="line">		<span class="keyword">INNER</span> <span class="keyword">JOIN</span> employees b</span><br><span class="line">				<span class="keyword">On</span> (a.department_id <span class="operator">=</span> b.department_id</span><br><span class="line">						<span class="keyword">AND</span> b.salary <span class="operator">&gt;</span> <span class="number">3000</span>)</span><br><span class="line">		<span class="keyword">ORDER</span> <span class="keyword">BY</span> a.department_name;</span><br></pre></td></tr></table></figure>
+
+<p>위의 쿼리는 <code>departments</code> 테이블과 <code>employees</code> 테이블의 내부 조인이다.</p>
+<p>ANSI 문법에서 내부 조인은 <code>FROM</code>절에서 <code>INNER JOIN</code> 으로 수행하며,<br>조인 조건은 <code>ON</code> 절에 명시한다.</p>
+<p><img src="/images/sql/sql_ex/1.png"></p>
+<hr>
+<h3 id="Q5"><a href="#Q5" class="headerlink" title="Q5."></a>Q5.</h3><p>다음은 연관성 있는 서브쿼리이다. 이를 연관성 없는 서브쿼리로 변환해 보자.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.department_id</span><br><span class="line">				, a.department_name</span><br><span class="line">		<span class="keyword">FROM</span> departments a</span><br><span class="line">		<span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> ( <span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line">											<span class="keyword">FROM</span> job_history b</span><br><span class="line">											<span class="keyword">WHERE</span> a.department_id <span class="operator">=</span> b.department_id );</span><br></pre></td></tr></table></figure>
+
+<h3 id="A5"><a href="#A5" class="headerlink" title="A5."></a>A5.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.department_id</span><br><span class="line">				, a.department_name</span><br><span class="line">		<span class="keyword">FROM</span> departments a</span><br><span class="line">		<span class="keyword">WHERE</span> a.department_id</span><br><span class="line">				<span class="keyword">IN</span> (<span class="keyword">SELECT</span> b.department_id</span><br><span class="line">								<span class="keyword">FROM</span> job_history b);</span><br></pre></td></tr></table></figure>
+
+<p>위의 쿼리는 <code>job_history</code> 테이블에 존재하는 <code>department_id</code>에 대해<br><code>departments</code> 테이블의 <code>department_id</code>와 <code>department_name</code>을 출력한다.</p>
+<p>이를 연관성 없는 서브쿼리로 변환하기 위해<br>조인 조건 대신 <code>IN</code> 연산자를 통해 메인 쿼리의 조건으로 활용했다. </p>
+<p><img src="/images/sql/sql_ex/2.png"></p>
+<hr>
+<h3 id="Q6"><a href="#Q6" class="headerlink" title="Q6."></a>Q6.</h3><p>연도별 이태리 최대매출액과 사원을 작성하는 쿼리를 학습했다. 이를 기준으로 최대 매출액, 최소매출액, 해당 사원을 조회하는 쿼리를 작성해 보자.</p>
+<h3 id="A6"><a href="#A6" class="headerlink" title="A6."></a>A6.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp.sales_year</span><br><span class="line">        , emp.employee_id</span><br><span class="line">        , emp2.emp_name</span><br><span class="line">        , emp.amount_sold</span><br><span class="line">    <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">											<span class="keyword">AS</span> sales_year</span><br><span class="line">                , a.employee_id</span><br><span class="line">                , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amount_sold</span><br><span class="line">            <span class="keyword">FROM</span> sales a</span><br><span class="line">                , customers b</span><br><span class="line">                , countries c</span><br><span class="line">            <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">                <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">                <span class="keyword">AND</span> c.country_name <span class="operator">=</span> <span class="string">&#x27;Italy&#x27;</span></span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">                    , a.employee_id) emp</span><br><span class="line">        , (<span class="keyword">SELECT</span> sales_year</span><br><span class="line">                , <span class="built_in">MAX</span>(amount_sold) <span class="keyword">AS</span> max_sold</span><br><span class="line">                , <span class="built_in">MIN</span>(amount_sold) <span class="keyword">AS</span> min_sold</span><br><span class="line">            <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">															<span class="keyword">AS</span> sales_year</span><br><span class="line">                        , a.employee_id</span><br><span class="line">                        , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amount_sold</span><br><span class="line">                    <span class="keyword">FROM</span> sales a</span><br><span class="line">                        , customers b</span><br><span class="line">                        , countries c</span><br><span class="line">                    <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">                        <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">                        <span class="keyword">AND</span> c.country_name <span class="operator">=</span> <span class="string">&#x27;Italy&#x27;</span></span><br><span class="line">                    <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">                            , a.employee_id) k</span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> sales_year) sale</span><br><span class="line">        , employees emp2</span><br><span class="line">    <span class="keyword">WHERE</span> emp.sales_year <span class="operator">=</span> sale.sales_year</span><br><span class="line">        <span class="keyword">AND</span> (emp.amount_sold <span class="operator">=</span> sale.max_sold</span><br><span class="line">			        <span class="keyword">OR</span> emp.amount_sold <span class="operator">=</span> sale.min_sold)</span><br><span class="line">        <span class="keyword">AND</span> emp.employee_id <span class="operator">=</span> emp2.employee_id</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> sales_year;</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 1 : 연도, 사원별 이탈리아 매출액 (<code>emp</code>)</p>
+<ul>
+<li><code>sales</code>, <code>customers</code>, <code>countries</code>를 조인하여 매출액 합계 계산</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">											<span class="keyword">AS</span> sales_year</span><br><span class="line">                , a.employee_id</span><br><span class="line">                , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amount_sold</span><br><span class="line">            <span class="keyword">FROM</span> sales a</span><br><span class="line">                , customers b</span><br><span class="line">                , countries c</span><br><span class="line">            <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">                <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">                <span class="keyword">AND</span> c.country_name <span class="operator">=</span> <span class="string">&#x27;Italy&#x27;</span></span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">                    , a.employee_id</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 2: 연도별 최대, 최소 매출액 (<code>sale</code>)</p>
+<ul>
+<li><code>emp</code> 서브쿼리에서 연도별 최대, 최소값 계산</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> sales_year</span><br><span class="line">                , <span class="built_in">MAX</span>(amount_sold) <span class="keyword">AS</span> max_sold</span><br><span class="line">                , <span class="built_in">MIN</span>(amount_sold) <span class="keyword">AS</span> min_sold</span><br><span class="line">            <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">															<span class="keyword">AS</span> sales_year</span><br><span class="line">                        , a.employee_id</span><br><span class="line">                        , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amount_sold</span><br><span class="line">                    <span class="keyword">FROM</span> sales a</span><br><span class="line">                        , customers b</span><br><span class="line">                        , countries c</span><br><span class="line">                    <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">                        <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">                        <span class="keyword">AND</span> c.country_name <span class="operator">=</span> <span class="string">&#x27;Italy&#x27;</span></span><br><span class="line">                    <span class="keyword">GROUP</span> <span class="keyword">BY</span> SUBSTR(a.sales_month, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">                            , a.employee_id) k</span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> sales_year</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/sql/sql_ex/3.png"></p>
+<hr>
+<h1 id="CHAPTER-07"><a href="#CHAPTER-07" class="headerlink" title="CHAPTER 07"></a>CHAPTER 07</h1><h3 id="Q1-1"><a href="#Q1-1" class="headerlink" title="Q1."></a>Q1.</h3><p>계층형 쿼리 응용편에서 <code>LISTAGG</code> 함수를 사용해 다음과 같이 로우를 컬럼으로 분리했었다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> department_id,</span><br><span class="line"><span class="built_in">LISTAGG</span>(emp_name, <span class="string">&#x27;,&#x27;</span>) <span class="keyword">WITHIN</span> <span class="keyword">GROUP</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> emp_name) <span class="keyword">as</span> empnames</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">WHERE</span> department_id <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> department_id;</span><br></pre></td></tr></table></figure>
+
+<p><code>LISTAGG</code> 함수 대신 계층형 쿼리, 분석함수를 사용해서 위 쿼리와 동일한 결과를 산출하는 쿼리를 작성해 보자.</p>
+<h3 id="A1-1"><a href="#A1-1" class="headerlink" title="A1."></a>A1.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> department_id</span><br><span class="line">      , SUBSTR(SYS_CONNECT_BY_PATH(emp_name, <span class="string">&#x27;,&#x27;</span>),<span class="number">2</span>) empnames</span><br><span class="line">    <span class="keyword">FROM</span> (</span><br><span class="line">          <span class="keyword">SELECT</span> emp_name</span><br><span class="line">              , department_id</span><br><span class="line">              , <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id) cnt</span><br><span class="line">              , <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                                   <span class="keyword">ORDER</span> <span class="keyword">BY</span> emp_name) rowseq</span><br><span class="line">            <span class="keyword">FROM</span> employees</span><br><span class="line">            <span class="keyword">WHERE</span> department_id <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">         )</span><br><span class="line">    <span class="keyword">WHERE</span> rowseq <span class="operator">=</span> cnt</span><br><span class="line">    <span class="keyword">START</span> <span class="keyword">WITH</span> rowseq <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">CONNECT</span> <span class="keyword">BY</span> PRIOR rowseq <span class="operator">+</span> <span class="number">1</span> <span class="operator">=</span> rowseq</span><br><span class="line">        <span class="keyword">AND</span> PRIOR department_id <span class="operator">=</span> department_id;</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 : 부서별 사원명, 사원 수, 행 번호 구하기</p>
+<ul>
+<li>부서별 파티션 : <code>PARTITION BY department_id</code> <code>ORDER BY emp_name</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp_name</span><br><span class="line">              , department_id</span><br><span class="line">              , <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id) cnt</span><br><span class="line">              , <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> department_id</span><br><span class="line">                                   <span class="keyword">ORDER</span> <span class="keyword">BY</span> emp_name) rowseq</span><br><span class="line">            <span class="keyword">FROM</span> employees</span><br><span class="line">            <span class="keyword">WHERE</span> department_id <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br></pre></td></tr></table></figure>
+
+<p>각 파티션의 마지막 행에 대하여(<code>WHERE rowseq = cnt</code>)<br>파티션의 첫 행부터(<code>START WITH rowseq = 1</code>)<br>부서번호가 같은 직전 행까지(<code>CONNECT BY PRIOR rowseq + 1 = rowseq  AND PRIOR department_id = department_id</code>)의 <code>emp_name</code>을<br>연결하여 나타낸다.(<code>SUBSTR(SYS_CONNECT_BY_PATH(emp_name, &#39;,&#39;),2)</code>)</p>
+<p><img src="/images/sql/sql_ex/4.png"></p>
+<hr>
+<h3 id="Q2-1"><a href="#Q2-1" class="headerlink" title="Q2."></a>Q2.</h3><p>아래의 쿼리는 사원테이블에서 <code>JOB_ID</code>가 ‘<code>SH_CLERK</code>‘인 사원을 조회하는 쿼리이다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id, emp_name, hire_date</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">WHERE</span> job_id <span class="operator">=</span> <span class="string">&#x27;SH_CLERK&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">By</span> hire_date;</span><br><span class="line"></span><br><span class="line">EMPLOYEE_ID EMP_NAME             HIRE_DATE         </span><br><span class="line"><span class="comment">----------- -------------------- -------------------</span></span><br><span class="line">        <span class="number">184</span> Nandita Sarchand     <span class="number">2004</span><span class="operator">/</span><span class="number">01</span><span class="operator">/</span><span class="number">27</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> </span><br><span class="line">        <span class="number">192</span> Sarah Bell           <span class="number">2004</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">04</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> </span><br><span class="line">        <span class="number">185</span> Alexis Bull          <span class="number">2005</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">20</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> </span><br><span class="line">        <span class="number">193</span> Britney Everett      <span class="number">2005</span><span class="operator">/</span><span class="number">03</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> </span><br><span class="line">        <span class="number">188</span> Kelly Chung          <span class="number">2005</span><span class="operator">/</span><span class="number">06</span><span class="operator">/</span><span class="number">14</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">....        </span><br><span class="line">....</span><br><span class="line">        <span class="number">199</span> Douglas <span class="keyword">Grant</span>        <span class="number">2008</span><span class="operator">/</span><span class="number">01</span><span class="operator">/</span><span class="number">13</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">183</span> Girard Geoni         <span class="number">2008</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure>
+
+<p>사원테이블에서 퇴사일자(<code>retire_date</code>)는 모두 비어있는데,<br>위 결과에서 사원번호가 184인 사원의 퇴사일자는 다음으로 입사일자가 빠른 192번 사원의 입사일자라고 가정해서<br>다음과 같은 형태로 결과를 추출해낼 수 있도록 쿼리를 작성해 보자. (입사일자가 가장 최근인 183번 사원의 퇴사일자는 <code>NULL</code>이다)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">EMPLOYEE_ID EMP_NAME             HIRE_DATE             RETIRE_DATE</span><br><span class="line"><span class="comment">----------- -------------------- -------------------  ---------------------------</span></span><br><span class="line">        <span class="number">184</span> Nandita Sarchand     <span class="number">2004</span><span class="operator">/</span><span class="number">01</span><span class="operator">/</span><span class="number">27</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2004</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">04</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">192</span> Sarah Bell           <span class="number">2004</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">04</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2005</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">20</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">185</span> Alexis Bull          <span class="number">2005</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">20</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2005</span><span class="operator">/</span><span class="number">03</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">193</span> Britney Everett      <span class="number">2005</span><span class="operator">/</span><span class="number">03</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2005</span><span class="operator">/</span><span class="number">06</span><span class="operator">/</span><span class="number">14</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">188</span> Kelly Chung          <span class="number">2005</span><span class="operator">/</span><span class="number">06</span><span class="operator">/</span><span class="number">14</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2005</span><span class="operator">/</span><span class="number">08</span><span class="operator">/</span><span class="number">13</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">....        </span><br><span class="line">....</span><br><span class="line">        <span class="number">199</span> Douglas <span class="keyword">Grant</span>        <span class="number">2008</span><span class="operator">/</span><span class="number">01</span><span class="operator">/</span><span class="number">13</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>  <span class="number">2008</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">        <span class="number">183</span> Girard Geoni         <span class="number">2008</span><span class="operator">/</span><span class="number">02</span><span class="operator">/</span><span class="number">03</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="A2-1"><a href="#A2-1" class="headerlink" title="A2."></a>A2.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id</span><br><span class="line">        , emp_name</span><br><span class="line">        , hire_date</span><br><span class="line">        , <span class="built_in">LEAD</span>(hire_date)</span><br><span class="line">						<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> job_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date)</span><br><span class="line">						<span class="keyword">AS</span> retire_date</span><br><span class="line">    <span class="keyword">FROM</span> employees</span><br><span class="line">    <span class="keyword">WHERE</span> job_id <span class="operator">=</span> <span class="string">&#x27;SH_CLERK&#x27;</span></span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> hire_date;</span><br></pre></td></tr></table></figure>
+
+<p>문제에서 요구하는 퇴사일자(<code>retire_date</code>)는<br>입사일자로 정렬했을 때 다음 사원의 입사일자(<code>hire_date</code>)와 같다.</p>
+<p>따라서, 다음 행의 데이터를 가져오는 <code>LEAD(hire_date)</code> 함수를 통해<br>각 사원의 퇴사일자(<code>retire_date</code>)를 산출할 수 있다.</p>
+<p><img src="/images/sql/sql_ex/5.png"></p>
+<hr>
+<h3 id="Q3-1"><a href="#Q3-1" class="headerlink" title="Q3."></a>Q3.</h3><p><code>sales</code> 테이블에는 판매데이터, <code>customers</code> 테이블에는 고객정보가 있다.<br>2001년 12월 판매데이터 중 현재일자를 기준으로 고객의 나이를 계산해서 다음과 같이 연령대별 매출금액을 보여주는 쿼리를 작성해 보자.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-------------------------   </span></span><br><span class="line">연령대    매출금액</span><br><span class="line"><span class="comment">-------------------------</span></span><br><span class="line"><span class="number">10</span>대      xxxxxx</span><br><span class="line"><span class="number">20</span>대      ....</span><br><span class="line"><span class="number">30</span>대      .... </span><br><span class="line"><span class="number">40</span>대      ....</span><br><span class="line"><span class="comment">-------------------------</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="A3-1"><a href="#A3-1" class="headerlink" title="A3."></a>A3.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> age_amt</span><br><span class="line">		<span class="keyword">AS</span> (</span><br><span class="line">		    <span class="keyword">SELECT</span> TRUNC((TO_CHAR(SYSDATE, <span class="string">&#x27;yyyy&#x27;</span>)</span><br><span class="line">														 <span class="operator">-</span> b.cust_year_of_birth), <span class="number">-1</span>)</span><br><span class="line">										<span class="keyword">AS</span> age_seg</span><br><span class="line">			        , <span class="built_in">SUM</span>(a.amount_sold)</span><br><span class="line">										<span class="keyword">AS</span> amount</span><br><span class="line">		        <span class="keyword">FROM</span> sales a</span><br><span class="line">                 , customers b</span><br><span class="line">            <span class="keyword">WHERE</span> a.sales_month <span class="operator">=</span> <span class="string">&#x27;200112&#x27;</span></span><br><span class="line">		            <span class="keyword">AND</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> TRUNC((TO_CHAR(SYSDATE, <span class="string">&#x27;yyyy&#x27;</span>)</span><br><span class="line">														 <span class="operator">-</span> b.cust_year_of_birth), <span class="number">-1</span>)</span><br><span class="line">       )</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> age_amt</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> age_seg;</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 : 현재일자 기준 고객 연령대별 매출액 구하기 (<code>age_amt</code>)</p>
+<ul>
+<li>현재일자를 기준으로 고객의 나이를 계산한 다음<br>(<code>TO_CHAR(SYSDATE, &#39;yyyy&#39;) - b.cust_year_of_birth</code>)<br>각 연령대별 <code>amount_sold</code>의 합계를 계산하였음</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TRUNC((TO_CHAR(SYSDATE, <span class="string">&#x27;yyyy&#x27;</span>)</span><br><span class="line">														 <span class="operator">-</span> b.cust_year_of_birth), <span class="number">-1</span>)</span><br><span class="line">										<span class="keyword">AS</span> age_seg</span><br><span class="line">			        , <span class="built_in">SUM</span>(a.amount_sold)</span><br><span class="line">										<span class="keyword">AS</span> amount</span><br><span class="line">		        <span class="keyword">FROM</span> sales a</span><br><span class="line">                 , customers b</span><br><span class="line">            <span class="keyword">WHERE</span> a.sales_month <span class="operator">=</span> <span class="string">&#x27;200112&#x27;</span></span><br><span class="line">		            <span class="keyword">AND</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> TRUNC((TO_CHAR(SYSDATE, <span class="string">&#x27;yyyy&#x27;</span>)</span><br><span class="line">														 <span class="operator">-</span> b.cust_year_of_birth), <span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/sql/sql_ex/6.png"></p>
+<hr>
+<h3 id="Q4-1"><a href="#Q4-1" class="headerlink" title="Q4."></a>Q4.</h3><p>월별로 판매금액이 가장 하위에 속하는 대륙 목록을 뽑아보자.<br>(대륙목록은 <code>countries</code> 테이블의 <code>country_region</code>에 있으며, <code>country_id</code> 컬럼으로 <code>customers</code> 테이블과 조인을 해서 구한다.)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---------------------------------   </span></span><br><span class="line">매출월    지역(대륙)  매출금액 </span><br><span class="line"><span class="comment">---------------------------------</span></span><br><span class="line"><span class="number">199801</span>    Oceania      xxxxxx</span><br><span class="line"><span class="number">199803</span>    Oceania      xxxxxx</span><br><span class="line">...</span><br><span class="line"><span class="comment">---------------------------------</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="A4-1"><a href="#A4-1" class="headerlink" title="A4."></a>A4.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> basis</span><br><span class="line">			<span class="keyword">AS</span> (</span><br><span class="line">		      <span class="keyword">SELECT</span> a.sales_month</span><br><span class="line">			          , c.country_region</span><br><span class="line">                , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amt</span><br><span class="line">	          <span class="keyword">FROM</span> sales a</span><br><span class="line">		            , customers b</span><br><span class="line">                , countries c</span><br><span class="line">            <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">	            <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">            <span class="keyword">GROUP</span> <span class="keyword">BY</span> a.sales_month, c.country_region</span><br><span class="line">         )</span><br><span class="line">	 , month_amt</span><br><span class="line">			<span class="keyword">AS</span> (</span><br><span class="line">          <span class="keyword">SELECT</span> sales_month <span class="keyword">AS</span> &quot;매출월&quot;</span><br><span class="line">                , country_region <span class="keyword">AS</span> &quot;지역(대륙)&quot;</span><br><span class="line">                , amt <span class="keyword">AS</span> &quot;매출금액&quot;</span><br><span class="line">                , <span class="built_in">RANK</span>()</span><br><span class="line">										<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> sales_month</span><br><span class="line">													<span class="keyword">ORDER</span> <span class="keyword">BY</span> amt) <span class="keyword">AS</span> ranks</span><br><span class="line">	          <span class="keyword">FROM</span> basis</span><br><span class="line">         )</span><br><span class="line"><span class="keyword">SELECT</span> &quot;매출월&quot;, &quot;지역(대륙)&quot;, &quot;매출금액&quot;</span><br><span class="line">    <span class="keyword">FROM</span> month_amt</span><br><span class="line">    <span class="keyword">WHERE</span> ranks <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 1 : 월별, 지역별 판매금액 합계 구하기 (<code>basis</code>)</p>
+<ul>
+<li><code>sales</code>, <code>customers</code>, <code>countries</code> 조인</li>
+<li>월별, 지역별 합계 : <code>SUM(a.amount_sold) as amt</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.sales_month</span><br><span class="line">			 , c.country_region</span><br><span class="line">       , <span class="built_in">SUM</span>(a.amount_sold) <span class="keyword">as</span> amt</span><br><span class="line">	  <span class="keyword">FROM</span> sales a</span><br><span class="line">		   , customers b</span><br><span class="line">       , countries c</span><br><span class="line">    <span class="keyword">WHERE</span> a.cust_id <span class="operator">=</span> b.cust_id</span><br><span class="line">	     <span class="keyword">AND</span> b.country_id <span class="operator">=</span> c.country_id</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> a.sales_month, c.country_region</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 2 : 월별로 각 대륙의 판매금액 합계 순위 구하기 (<code>month_amt</code>)</p>
+<ul>
+<li>basis 서브쿼리에서 <code>sales_month</code> 파티션별 <code>amt</code> 순위값 계산</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> sales_month <span class="keyword">AS</span> &quot;매출월&quot;</span><br><span class="line">       , country_region <span class="keyword">AS</span> &quot;지역(대륙)&quot;</span><br><span class="line">       , amt <span class="keyword">AS</span> &quot;매출금액&quot;</span><br><span class="line">       , <span class="built_in">RANK</span>()</span><br><span class="line">						<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> sales_month</span><br><span class="line">									<span class="keyword">ORDER</span> <span class="keyword">BY</span> amt) <span class="keyword">AS</span> ranks</span><br><span class="line">	          <span class="keyword">FROM</span> basis</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/sql/sql_ex/7.png"></p>
+<hr>
+<h3 id="Q5-1"><a href="#Q5-1" class="headerlink" title="Q5."></a>Q5.</h3><p>5장 연습문제 5번의 정답 결과를 이용해 다음과 같이 지역별, 대출종류별, 월별 대출잔액과 지역별 파티션을 만들어<br>대출종류별 대출잔액의 %를 구하는 쿼리를 작성해보자.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">------------------------------------------------------------------------------------------------</span></span><br><span class="line">지역    대출종류        <span class="number">201111</span>         <span class="number">201112</span>    <span class="number">201210</span>    <span class="number">201211</span>   <span class="number">201212</span>   <span class="number">203110</span>    <span class="number">201311</span></span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------------------</span></span><br><span class="line">서울    기타대출       <span class="number">73996.9</span>( <span class="number">36</span><span class="operator">%</span> )</span><br><span class="line">서울    주택담보대출   <span class="number">130105.9</span>( <span class="number">64</span><span class="operator">%</span> ) </span><br><span class="line">부산</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="comment">-------------------------------------------------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="A5-1"><a href="#A5-1" class="headerlink" title="A5."></a>A5.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> basis <span class="keyword">AS</span> (</span><br><span class="line">						<span class="keyword">SELECT</span> region, gubun</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201111&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt1</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201112&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt2</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201210&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt3</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201211&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt4</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201212&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt5</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201310&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt6</span><br><span class="line">									, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201311&#x27;</span></span><br><span class="line">											<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt7</span><br><span class="line">								<span class="keyword">FROM</span> kor_loan_status</span><br><span class="line">							)</span><br><span class="line">	, sum_amt <span class="keyword">AS</span> (</span><br><span class="line">						 <span class="keyword">SELECT</span> region, gubun</span><br><span class="line">										, <span class="built_in">SUM</span>(amt1) <span class="keyword">AS</span> amt1</span><br><span class="line">										, <span class="built_in">SUM</span>(amt2) <span class="keyword">AS</span> amt2</span><br><span class="line">										, <span class="built_in">SUM</span>(amt3) <span class="keyword">AS</span> amt3</span><br><span class="line">										, <span class="built_in">SUM</span>(amt4) <span class="keyword">AS</span> amt4</span><br><span class="line">										, <span class="built_in">SUM</span>(amt5) <span class="keyword">AS</span> amt5</span><br><span class="line">										, <span class="built_in">SUM</span>(amt6) <span class="keyword">AS</span> amt6</span><br><span class="line">										, <span class="built_in">SUM</span>(amt7) <span class="keyword">AS</span> amt7</span><br><span class="line">								<span class="keyword">FROM</span> basis</span><br><span class="line">								<span class="keyword">GROUP</span> <span class="keyword">BY</span> region, gubun</span><br><span class="line">					     )</span><br><span class="line"><span class="keyword">SELECT</span> region <span class="keyword">AS</span> &quot;지역&quot;, gubun <span class="keyword">AS</span> &quot;대출종류&quot;</span><br><span class="line">			, amt1 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt1)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201111&quot;</span><br><span class="line">			, amt2 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt2)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201112&quot;</span><br><span class="line">			, amt3 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt3)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201210&quot;</span><br><span class="line">			, amt4 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt4)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201211&quot;</span><br><span class="line">			, amt5 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt5)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201212&quot;</span><br><span class="line">			, amt6 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt6)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201311&quot;</span><br><span class="line">			, amt7 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt7)</span><br><span class="line">					<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span></span><br><span class="line">					<span class="keyword">AS</span> &quot;201311&quot;</span><br><span class="line">		<span class="keyword">FROM</span> sum_amt</span><br><span class="line">		<span class="keyword">ORDER</span> <span class="keyword">BY</span> region;</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 1 :  월별 대출잔액 변수 만들기 (<code>basis</code>)</p>
+<ul>
+<li><code>CASE WHEN ~ THEN ~ ELSE</code> 구문으로 월별 대출잔액 변수 생성</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> region, gubun</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201111&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt1</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201112&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt2</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201210&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt3</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201211&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt4</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201212&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt5</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201310&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt6</span><br><span class="line">		, <span class="keyword">CASE</span> <span class="keyword">WHEN</span> <span class="keyword">period</span> <span class="operator">=</span> <span class="string">&#x27;201311&#x27;</span></span><br><span class="line">					<span class="keyword">THEN</span> loan_jan_amt <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span> amt7</span><br><span class="line">	<span class="keyword">FROM</span> kor_loan_status</span><br></pre></td></tr></table></figure>
+
+<p>서브쿼리 2 : 지역, 구분으로 그룹화하여 월별 합계 산출 (<code>sum_amt</code>)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> region, gubun</span><br><span class="line">			, <span class="built_in">SUM</span>(amt1) <span class="keyword">AS</span> amt1, <span class="built_in">SUM</span>(amt2) <span class="keyword">AS</span> amt2</span><br><span class="line">			, <span class="built_in">SUM</span>(amt3) <span class="keyword">AS</span> amt3, <span class="built_in">SUM</span>(amt4) <span class="keyword">AS</span> amt4</span><br><span class="line">			, <span class="built_in">SUM</span>(amt5) <span class="keyword">AS</span> amt5, <span class="built_in">SUM</span>(amt6) <span class="keyword">AS</span> amt6</span><br><span class="line">			, <span class="built_in">SUM</span>(amt7) <span class="keyword">AS</span> amt7</span><br><span class="line">	<span class="keyword">FROM</span> basis</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> region, gubun</span><br></pre></td></tr></table></figure>
+
+<p>메인 쿼리 : 지역 내 대출종류별 대출잔액의 비율 산출</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> region <span class="keyword">AS</span> &quot;지역&quot;, gubun <span class="keyword">AS</span> &quot;대출종류&quot;</span><br><span class="line">		, amt1 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt1)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201111&quot;</span><br><span class="line">		, amt2 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt2)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201112&quot;</span><br><span class="line">		, amt3 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt3)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201210&quot;</span><br><span class="line">		, amt4 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt4)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201211&quot;</span><br><span class="line">		, amt5 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt5)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201212&quot;</span><br><span class="line">		, amt6 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt6)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span> <span class="keyword">AS</span> &quot;201311&quot;</span><br><span class="line">		, amt7 <span class="operator">||</span> <span class="string">&#x27;(&#x27;</span> <span class="operator">||</span> ROUND(RATIO_TO_REPORT(amt7)</span><br><span class="line">			<span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> region), <span class="number">3</span>) <span class="operator">*</span><span class="number">100</span> <span class="operator">||</span> <span class="string">&#x27;%)&#x27;</span>	<span class="keyword">AS</span> &quot;201311&quot;</span><br><span class="line">	<span class="keyword">FROM</span> sum_amt</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> region</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/sql/sql_ex/8.png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/05/02/SQL/SQL%20EXERCISE%206-7/" data-id="cl8x10dlq000s9wlf32pj4lzt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "SQL EXERCISE 6-7",
+        "image": "http://gonekng.github.io/images/sql/sql_ex/0.png",
+        "keywords": "sql Oracle",
+        "genre": "sql",
+        "datePublished": "2022-05-02",
+        "dateCreated": "2022-05-02",
+        "dateModified": "2022-10-17",
+        "url": "http://gonekng.github.io/2022/05/02/SQL/SQL EXERCISE 6-7/",
+        "description": "CHAPTER 06
+‘오라클 SQL과 PL&#x2F;SQL을 다루는 기술 (길벗)’
+
+Q1.101번 사원에 대해 아래의 결과를 산출하는 쿼리를 작성해 보자.
+123---------------------------------------------------------------------------------------사번   사원명   job명칭 job시작",
+        "wordCount": 5507
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            SQL TEST 6-7
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Conneting SQL Developer with Github</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/05/02/SQL/SQL%20EXERCISE%206-7/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Python Basic 1 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,google colab" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/tutorial/">tutorial</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Basic/python_basic_1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python Basic 1
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/22/Python/Basic/python_basic_1/" class="article-date">
+       <time datetime="2022-03-22T08:30:00.000Z" itemprop="datePublished">2022-03-22</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/22/Python/Basic/python_basic_1/" class="article-date">
+     <time datetime="2022-10-05T05:39:51.077Z" itemprop="dateModified">2022-10-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/google-colab/" rel="tag">google colab</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello, World!
+</code></pre>
+<h1 id="주석-처리"><a href="#주석-처리" class="headerlink" title="주석 처리"></a>주석 처리</h1><ul>
+<li>코드 작업 시, 특정 코드에 대해 설명</li>
+<li>사용자 정의 함수 작성 시, 클래스 작성 시 중요 (도움말 작성)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 한 줄 주석 처리</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">여러 줄 주석 처리</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello, World!
+</code></pre>
+<h1 id="변수-Scalar"><a href="#변수-Scalar" class="headerlink" title="변수 (Scalar)"></a>변수 (Scalar)</h1><ul>
+<li>객체(OBject)로 구현이 됨<ul>
+<li>하나의 자료형(Type)을 가진다.</li>
+<li>클래스(Class)로 정의된다.<ul>
+<li>다양한 함수들 존재</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="int"><a href="#int" class="headerlink" title="int"></a>int</h2><ul>
+<li>int 정수를 표현하는 데 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num_int = <span class="number">1</span></span><br><span class="line">num_int2 = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(num_int)</span><br><span class="line"><span class="built_in">print</span>(num_int2)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_int))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1
+3
+&lt;class &#39;int&#39;&gt;
+</code></pre>
+<h2 id="float"><a href="#float" class="headerlink" title="float"></a>float</h2><ul>
+<li>실수를 표현하는 데 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_float = <span class="number">0.2</span></span><br><span class="line"><span class="built_in">print</span>(num_float)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(num_float))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.2
+&lt;class &#39;float&#39;&gt;
+</code></pre>
+<h2 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h2><ul>
+<li>True와 False로 나타나는 Boolean 값을 표현하는 데 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bool_true = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(bool_true)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(bool_true))</span><br></pre></td></tr></table></figure>
+
+<pre><code>True
+&lt;class &#39;bool&#39;&gt;
+</code></pre>
+<h2 id="None"><a href="#None" class="headerlink" title="None"></a>None</h2><ul>
+<li>Null을 나타내는 자료형으로 None이라는 한 가지 값만 가진다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">none_x = <span class="literal">None</span></span><br><span class="line"><span class="built_in">print</span>(none_x)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(none_x))</span><br></pre></td></tr></table></figure>
+
+<pre><code>None
+&lt;class &#39;NoneType&#39;&gt;
+</code></pre>
+<h1 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h1><h2 id="정수형-사칙연산"><a href="#정수형-사칙연산" class="headerlink" title="정수형 사칙연산"></a>정수형 사칙연산</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">15</span> <span class="comment"># int</span></span><br><span class="line">b = <span class="number">2</span> <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a + b = &#x27;</span>, a+b) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a - b = &#x27;</span>, a-b) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a * b = &#x27;</span>, a*b) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a / b = &#x27;</span>, a/b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a // b = &#x27;</span>, a//b) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a % b = &#x27;</span>, a%b) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a ** b = &#x27;</span>, a**b) <span class="comment"># int</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>a + b =  17
+a - b =  13
+a * b =  30
+a / b =  7.5
+a // b =  7
+a % b =  1
+a ** b =  225
+</code></pre>
+<h2 id="실수형-사칙연산"><a href="#실수형-사칙연산" class="headerlink" title="실수형 사칙연산"></a>실수형 사칙연산</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">15.0</span> <span class="comment"># float</span></span><br><span class="line">b = <span class="number">2.0</span> <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a + b =&#x27;</span>, a+b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a - b =&#x27;</span>, a-b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a * b =&#x27;</span>, a*b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a / b =&#x27;</span>, a/b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a // b =&#x27;</span>, a//b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a % b =&#x27;</span>, a%b) <span class="comment"># float</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a ** b =&#x27;</span>, a**b) <span class="comment"># float</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>a + b = 17.0
+a - b = 13.0
+a * b = 30.0
+a / b = 7.5
+a // b = 7.0
+a % b = 1.0
+a ** b = 225.0
+</code></pre>
+<h1 id="논리형-연산자"><a href="#논리형-연산자" class="headerlink" title="논리형 연산자"></a>논리형 연산자</h1><ul>
+<li>Bool형은 True와 False 값으로 정의</li>
+<li>AND, OR, NOT</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span> &gt; <span class="number">4</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;x =&#x27;</span>, x)</span><br><span class="line">y = <span class="number">3</span> &gt; <span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y =&#x27;</span>, y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;x and x =&#x27;</span>, x <span class="keyword">and</span> x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;x and y =&#x27;</span>, x <span class="keyword">and</span> y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y and x =&#x27;</span>, y <span class="keyword">and</span> x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y and y =&#x27;</span>, y <span class="keyword">and</span> y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;x or x =&#x27;</span>, x <span class="keyword">or</span> x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;x or y =&#x27;</span>, x <span class="keyword">or</span> y)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y or x =&#x27;</span>, y <span class="keyword">or</span> x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y or y =&#x27;</span>, y <span class="keyword">or</span> y)</span><br></pre></td></tr></table></figure>
+
+<pre><code>x = True
+y = False
+x and x = True
+x and y = False
+y and x = False
+y and y = False
+x or x = True
+x or y = True
+y or x = True
+y or y = False
+</code></pre>
+<h2 id="비교-연산자"><a href="#비교-연산자" class="headerlink" title="비교 연산자"></a>비교 연산자</h2><ul>
+<li>부등호를 의미</li>
+<li>비교 연산자를 True와 False 값을 도출</li>
+</ul>
+<h2 id="논리-amp-비교-연산자-응용"><a href="#논리-amp-비교-연산자-응용" class="headerlink" title="논리 &amp; 비교 연산자 응용"></a>논리 &amp; 비교 연산자 응용</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var = <span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(var)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(var))</span><br></pre></td></tr></table></figure>
+
+<pre><code>숫자를 입력하시오. :24
+24
+&lt;class &#39;str&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(var)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(var))</span><br></pre></td></tr></table></figure>
+
+<pre><code>숫자를 입력하시오. :92
+92
+&lt;class &#39;int&#39;&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">num1 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>))</span><br><span class="line">num2 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>))</span><br><span class="line">num3 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>))</span><br><span class="line">num4 = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;숫자를 입력하시오. :&quot;</span>))</span><br><span class="line"></span><br><span class="line">var1 = num1 &gt;= num2 </span><br><span class="line">var2 = num3 &lt; num4</span><br><span class="line"><span class="built_in">print</span>(var1 <span class="keyword">and</span> var2)</span><br><span class="line"><span class="built_in">print</span>(var1 <span class="keyword">or</span> var2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>숫자를 입력하시오. :29
+숫자를 입력하시오. :15
+숫자를 입력하시오. :8
+숫자를 입력하시오. :10
+True
+True
+</code></pre>
+<h1 id="문자열"><a href="#문자열" class="headerlink" title="문자열"></a>문자열</h1><h2 id="문자열-입력-방법"><a href="#문자열-입력-방법" class="headerlink" title="문자열 입력 방법"></a>문자열 입력 방법</h2><ul>
+<li>문자열을 입력하는 4가지 방법</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello, World&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;Hello, World&#x27;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&quot;Hello, World&quot;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello, World
+Hello, World
+&#39;Hello, World
+&quot;Hello, World&quot;
+</code></pre>
+<ul>
+<li>문자열에 작은따옴표, 큰따옴표 포함하는 방법</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">food = <span class="string">&quot;Python&#x27;s favorite food is perl&quot;</span></span><br><span class="line"><span class="built_in">print</span>(food)</span><br><span class="line">say = <span class="string">&#x27;&quot;Python is very easy.&quot; he says.&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(say)</span><br><span class="line"></span><br><span class="line">food2 = <span class="string">&#x27;Python\&#x27;s favorite food is perl&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(food2)</span><br><span class="line">say2 = <span class="string">&quot;\&quot;Python is very easy.\&quot; he says.&quot;</span></span><br><span class="line"><span class="built_in">print</span>(say2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Python&#39;s favorite food is perl
+&quot;Python is very easy.&quot; he says.
+Python&#39;s favorite food is perl
+&quot;Python is very easy.&quot; he says.
+</code></pre>
+<ul>
+<li>변수에 여러 줄의 문자열 대입</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">multiline = <span class="string">&quot;Life is too short.\nYou need python.&quot;</span></span><br><span class="line"><span class="built_in">print</span>(multiline)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Life is too short.
+You need python.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">multiline =<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Life is too short.</span></span><br><span class="line"><span class="string">You need python</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(multiline)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Life is too short.
+You need python
+</code></pre>
+<h2 id="String-연산자"><a href="#String-연산자" class="headerlink" title="String 연산자"></a>String 연산자</h2><ul>
+<li>덧셈 연산자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&quot;Hello &quot;</span></span><br><span class="line">str2 = <span class="string">&quot;World! &quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(str1 + str2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello World! 
+</code></pre>
+<ul>
+<li>곱셈 연산자</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">greeting = str1 + str2</span><br><span class="line"><span class="built_in">print</span>(greeting * <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello World! Hello World! Hello World! 
+</code></pre>
+<h2 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h2><ul>
+<li>문자열 인덱싱은 문자열 안에서 범위를 지정하여 특정 단일<br>문자 추출</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">greeting = <span class="string">&quot;Hello Kaggle!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">6</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="built_in">len</span>(greeting)-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>H
+K
+!
+!
+</code></pre>
+<h2 id="Slicing"><a href="#Slicing" class="headerlink" title="Slicing"></a>Slicing</h2><ul>
+<li>문자열 슬라이싱은 문자열 안에서 범위를 지정하고 특정 문자열 추출</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(greeting[:])</span><br><span class="line"><span class="built_in">print</span>(greeting[:<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">6</span>:])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">3</span>:<span class="number">9</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">0</span>:<span class="number">9</span>:<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[<span class="number">6</span>:-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(greeting[::-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>Hello Kaggle!
+Hello
+Kaggle!
+lo Kag
+HloKg
+Kaggle
+!elggaK olleH
+</code></pre>
+<h2 id="Formatting"><a href="#Formatting" class="headerlink" title="Formatting"></a>Formatting</h2><h3 id="format-코드"><a href="#format-코드" class="headerlink" title="format 코드"></a>format 코드</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I eat %d apples.&quot;</span> % <span class="number">3</span>) <span class="comment"># 숫자 대입</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I eat %s apples.&quot;</span> % <span class="string">&quot;five&quot;</span>) <span class="comment"># 문자열 대입</span></span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span></span><br><span class="line">day = <span class="string">&quot;three&quot;</span></span><br><span class="line">say = <span class="string">&quot;I ate %d apples, so I was sick for %s days.&quot;</span> % (num, day)</span><br><span class="line"><span class="built_in">print</span>(say)</span><br></pre></td></tr></table></figure>
+
+<pre><code>I eat 3 apples.
+I eat five apples.
+I ate 10 apples, so I was sick for three days.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I have %s apples&quot;</span> % <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;rate is %s&quot;</span> % <span class="number">3.234</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Error is %d%%.&quot;</span> % <span class="number">98</span>) <span class="comment"># fomatting 연산자와 %를 함께 쓸 때는 %%</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>I have 3 apples
+rate is 3.234
+Error is 98%.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%10s,Jane!&quot;</span> % <span class="string">&quot;hi&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%-10s,Jane!&quot;</span> % <span class="string">&quot;hi&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;%0.4f&#x27;&quot;</span> % <span class="number">3.42134234</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;%10.4f&#x27;&quot;</span> % <span class="number">3.42134234</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;%-10.4f&#x27;&quot;</span> % <span class="number">3.42134234</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>        hi,Jane!
+hi        ,Jane!
+&#39;3.4213&#39;
+&#39;    3.4213&#39;
+&#39;3.4213    &#39;
+</code></pre>
+<h3 id="format-함수"><a href="#format-함수" class="headerlink" title="format 함수"></a>format 함수</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I eat &#123;0&#125; apples.&quot;</span>.<span class="built_in">format</span>(<span class="number">7</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I eat &#123;0&#125; apples.&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;five&quot;</span>))</span><br><span class="line"></span><br><span class="line">num = <span class="number">8</span></span><br><span class="line">day = <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I ate &#123;0&#125; apples.&quot;</span>.<span class="built_in">format</span>(num))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I ate &#123;0&#125; apples, so I was sick for &#123;1&#125; days.&quot;</span>.<span class="built_in">format</span>(num, day))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I ate &#123;num&#125; apples, so I was sick for &#123;day&#125; days.&quot;</span>.<span class="built_in">format</span>(num=<span class="number">6</span>,day=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I ate &#123;0&#125; apples, so I was sick for &#123;day&#125; days.&quot;</span>.<span class="built_in">format</span>(<span class="number">4</span>,day=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>I eat 7 apples.
+I eat five apples.
+I ate 8 apples.
+I ate 8 apples, so I was sick for 3 days.
+I ate 6 apples, so I was sick for 2 days.
+I ate 4 apples, so I was sick for 1 days.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:&lt;10&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hi&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:^10&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hi&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:&gt;10&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hi&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:=^10&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hi&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:!&lt;10&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;hi&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#39;hi        &#39;
+&#39;    hi    &#39;
+&#39;        hi&#39;
+&#39;====hi====&#39;
+&#39;hi!!!!!!!!&#39;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="number">3.42134234</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:0.4f&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:10.4f&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:^10.4f&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#x27;&#123;0:&lt;10.4f&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(y))</span><br></pre></td></tr></table></figure>
+
+<pre><code>&#39;3.4213&#39;
+&#39;    3.4213&#39;
+&#39;  3.4213  &#39;
+&#39;3.4213    &#39;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name1 = <span class="string">&quot;John&quot;</span></span><br><span class="line">name2 = <span class="string">&quot;Marry&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;0&#125; &#123;&#123;and&#125;&#125; &#123;1&#125;&quot;</span>.<span class="built_in">format</span>(name1, name2))</span><br></pre></td></tr></table></figure>
+
+<pre><code>John &#123;and&#125; Marry
+</code></pre>
+<h3 id="f-문자열"><a href="#f-문자열" class="headerlink" title="f 문자열"></a>f 문자열</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Sally&#x27;</span></span><br><span class="line">age = <span class="number">29</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;My name is <span class="subst">&#123;name&#125;</span>, and I&#x27;m <span class="subst">&#123;age&#125;</span> years old.&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Next year, I&#x27;m going to be <span class="subst">&#123;age+<span class="number">1</span>&#125;</span> years old.&quot;</span>)</span><br><span class="line"></span><br><span class="line">d = &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Sally&#x27;</span>, <span class="string">&#x27;age&#x27;</span>:<span class="number">29</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;My name is <span class="subst">&#123;d[<span class="string">&#x27;name&#x27;</span>]&#125;</span>, and I&#x27;m <span class="subst">&#123;d[<span class="string">&#x27;age&#x27;</span>]&#125;</span> years old.&quot;</span>) <span class="comment"># 딕셔너리 자료형 활용</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>My name is Sally, and I&#39;m 29 years old.
+Next year, I&#39;m going to be 30 years old.
+My name is Sally, and I&#39;m 29 years old.
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;<span class="string">&quot;hi&quot;</span>:&lt;<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;<span class="string">&quot;hi&quot;</span>:^<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;<span class="string">&quot;hi&quot;</span>:&gt;<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;<span class="string">&quot;hi&quot;</span>:=^<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;<span class="string">&quot;hi&quot;</span>:!&lt;<span class="number">10</span>&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>hi        
+    hi    
+        hi
+====hi====
+hi!!!!!!!!
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="number">3.42134234</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;y:<span class="number">0.4</span>f&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;y:<span class="number">10.4</span>f&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;y:^<span class="number">10.4</span>f&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;<span class="subst">&#123;y:&lt;<span class="number">10.4</span>f&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>3.4213
+    3.4213
+  3.4213  
+3.4213    
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name1 = <span class="string">&quot;John&quot;</span></span><br><span class="line">name2 = <span class="string">&quot;Marry&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;name1&#125;</span> &#123;&#123;and&#125;&#125; <span class="subst">&#123;name2&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>John &#123;and&#125; Marry
+</code></pre>
+<h2 id="문자열-함수"><a href="#문자열-함수" class="headerlink" title="문자열 함수"></a>문자열 함수</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># count</span></span><br><span class="line">a = <span class="string">&#x27;hobby&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(a.count(<span class="string">&#x27;b&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># find, index</span></span><br><span class="line">a = <span class="string">&quot;Python is the best choice&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a.find(<span class="string">&quot;b&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(a.find(<span class="string">&quot;k&quot;</span>)) <span class="comment"># 없으면 -1 반환</span></span><br><span class="line"><span class="built_in">print</span>(a.index(<span class="string">&quot;t&quot;</span>))</span><br><span class="line"><span class="comment"># print(a.index(&quot;k&quot;)) # 없으면 에러</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>2
+14
+-1
+2
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># join</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;,&quot;</span>.join(<span class="string">&#x27;abcdefg&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># upper, lower</span></span><br><span class="line">a = <span class="string">&quot;Hello&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a.upper())</span><br><span class="line"><span class="built_in">print</span>(a.lower())</span><br><span class="line"></span><br><span class="line"><span class="comment"># lstrip, rstrip, strip</span></span><br><span class="line">a = <span class="string">&quot;    OK    &quot;</span></span><br><span class="line"><span class="built_in">print</span>(a.lstrip())</span><br><span class="line"><span class="built_in">print</span>(a.rstrip())</span><br><span class="line"><span class="built_in">print</span>(a.strip())</span><br></pre></td></tr></table></figure>
+
+<pre><code>a,b,c,d,e,f,g
+HELLO
+hello
+OK    
+    OK
+OK
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># replace</span></span><br><span class="line">a = <span class="string">&quot;That&#x27;s right!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a.replace(<span class="string">&#x27;right&#x27;</span>, <span class="string">&#x27;wrong&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># split</span></span><br><span class="line">a = <span class="string">&quot;I Love You&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a.split()) <span class="comment"># 공백 기준</span></span><br><span class="line">b = <span class="string">&quot;a:b:c:d&quot;</span></span><br><span class="line"><span class="built_in">print</span>(b.split(<span class="string">&#x27;:&#x27;</span>)) <span class="comment"># 특정 구분자 기준</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>That&#39;s wrong!
+[&#39;I&#39;, &#39;Love&#39;, &#39;You&#39;]
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+</code></pre>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/03/22/Python/Basic/python_basic_1/" data-id="cl8x10dls000w9wlfhf7e6y9c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Python Basic 1",
+        "image": "http://gonekng.github.io",
+        "keywords": "python google colab",
+        "genre": "python tutorial",
+        "datePublished": "2022-03-22",
+        "dateCreated": "2022-03-22",
+        "dateModified": "2022-10-05",
+        "url": "http://gonekng.github.io/2022/03/22/Python/Basic/python_basic_1/",
+        "description": "Hello World1print(&quot;Hello, World!&quot;)
+
+Hello, World!
+
+주석 처리
+코드 작업 시, 특정 코드에 대해 설명
+사용자 정의 함수 작성 시, 클래스 작성 시 중요 (도움말 작성)
+
+123456# 한 줄 주석 처리&quot;&quot;&quot;여러 줄 주석 처리&quot;&quot;&quot;print(&quo",
+        "wordCount": 2007
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/22/Python/Basic/python_basic_2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Python Basic 2
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/03/18/R/R_sample/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">R_markdown Sample</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/03/22/Python/Basic/python_basic_1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

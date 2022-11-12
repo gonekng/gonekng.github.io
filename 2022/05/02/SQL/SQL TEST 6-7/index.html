@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>SQL TEST 6-7 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="sql,Oracle" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/sql/Oracle/">Oracle</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-SQL/SQL TEST 6-7" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        SQL TEST 6-7
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="article-date">
+       <time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="article-date">
+     <time datetime="2022-10-17T07:30:36.875Z" itemprop="dateModified">2022-10-17</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Oracle/" rel="tag">Oracle</a>, <a class="tag-link-link" href="/tags/sql/" rel="tag">sql</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="SQL-Subquery"><a href="#SQL-Subquery" class="headerlink" title="SQL Subquery"></a>SQL Subquery</h2><blockquote>
+<p>‘오라클 SQL과 PL&#x2F;SQL을 다루는 기술 (길벗)’</p>
+</blockquote>
+<h3 id="Q1"><a href="#Q1" class="headerlink" title="Q1."></a>Q1.</h3><p><code>populations</code> 테이블에서 2015년 평균 기대수명보다 높은 모든 정보를 조회한다.</p>
+<h3 id="A1"><a href="#A1" class="headerlink" title="A1."></a>A1.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line">	<span class="keyword">FROM</span> populations</span><br><span class="line">	<span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="operator">=</span> <span class="number">2015</span></span><br><span class="line">		<span class="keyword">AND</span> life_expectancy</span><br><span class="line">		    <span class="operator">&gt;</span> (<span class="keyword">SELECT</span> <span class="built_in">AVG</span>(life_expectancy) <span class="keyword">as</span> AVG</span><br><span class="line">				<span class="keyword">FROM</span> populations</span><br><span class="line">				<span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="operator">=</span> <span class="number">2015</span></span><br><span class="line">				<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">year</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q2"><a href="#Q2" class="headerlink" title="Q2."></a>Q2.</h3><p><code>subquery_countries</code> 테이블에 있는 <code>capital</code>과 매칭되는 <code>cities</code> 테이블의 정보를 조회한다.</p>
+<h3 id="A2"><a href="#A2" class="headerlink" title="A2."></a>A2.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.name, a.country_code, a.urbanarea_pop</span><br><span class="line">	<span class="keyword">FROM</span> cities a</span><br><span class="line">	<span class="keyword">WHERE</span> a.name </span><br><span class="line">	    <span class="keyword">IN</span> (<span class="keyword">SELECT</span> b.capital</span><br><span class="line">		        <span class="keyword">FROM</span> subquery_countries b)</span><br><span class="line">				<span class="keyword">ORDER</span> <span class="keyword">BY</span> a.urbanarea_pop <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q3"><a href="#Q3" class="headerlink" title="Q3."></a>Q3.</h3><p><code>economies</code> 테이블에서 <code>code</code>, <code>inflation_rate</code>, <code>unemployment_rate</code>를 조회한다.</p>
+<ul>
+<li><code>inflation_rate</code> 오름차순으로 정렬한다.</li>
+<li><code>subquery_countries</code> 테이블내 <code>gov_form</code> 컬럼에서 <em>Constitutional Monarchy</em> 또는 <em>Republic</em>이 들어간 국가는 제외한다.</li>
+</ul>
+<h3 id="A3"><a href="#A3" class="headerlink" title="A3."></a>A3.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.code, a.inflation_rate, a.unemployment_rate</span><br><span class="line">	<span class="keyword">FROM</span> economies a</span><br><span class="line">	<span class="keyword">WHERE</span> a.year <span class="operator">=</span> <span class="number">2015</span></span><br><span class="line">	    <span class="keyword">AND</span> a.code</span><br><span class="line">	        <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> b.code</span><br><span class="line">		    		<span class="keyword">FROM</span> subquery_countries b</span><br><span class="line">					<span class="keyword">WHERE</span> b.gov_form <span class="operator">=</span> <span class="string">&#x27;Constitutional Monarchy&#x27;</span></span><br><span class="line">			    	    <span class="keyword">OR</span> b.gov_form <span class="keyword">LIKE</span> <span class="string">&#x27;%Republic%&#x27;</span>)</span><br><span class="line">				       <span class="keyword">ORDER</span> <span class="keyword">BY</span> a.inflation_rate <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q4"><a href="#Q4" class="headerlink" title="Q4."></a>Q4.</h3><p>2015년 각 대륙별 <code>inflation_rate</code>가 가장 심한 국가와 <code>inflation_rate</code>를 구한다.</p>
+<ul>
+<li>힌트) 아래 쿼리 실행</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> country_name, continent, inflation_rate</span><br><span class="line">	<span class="keyword">FROM</span> subquery_countries</span><br><span class="line">	    <span class="keyword">INNER</span> <span class="keyword">JOIN</span> economies</span><br><span class="line">		<span class="keyword">USING</span> (code)</span><br><span class="line">	<span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="operator">=</span> <span class="number">2015</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="A4"><a href="#A4" class="headerlink" title="A4."></a>A4.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">With</span> basis <span class="keyword">AS</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> country_name, continent, inflation_rate</span><br><span class="line">		    <span class="keyword">FROM</span> subquery_countries</span><br><span class="line">			<span class="keyword">INNER</span> <span class="keyword">JOIN</span> economies</span><br><span class="line">			<span class="keyword">USING</span> (code)</span><br><span class="line">			<span class="keyword">WHERE</span> <span class="keyword">year</span> <span class="operator">=</span> <span class="number">2015</span></span><br><span class="line">		)</span><br><span class="line">	, max_inf <span class="keyword">AS</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> continent, <span class="built_in">MAX</span>(inflation_rate) <span class="keyword">as</span> inflation_rate</span><br><span class="line">		    <span class="keyword">FROM</span> basis</span><br><span class="line">		    <span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line">		)</span><br><span class="line"><span class="keyword">SELECT</span> a.country_name, b.continent, b.inflation_rate</span><br><span class="line">	<span class="keyword">FROM</span> basis a, max_inf b</span><br><span class="line">	<span class="keyword">WHERE</span> a.inflation_rate <span class="operator">=</span> b.inflation_rate;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="SQL-Window-Function"><a href="#SQL-Window-Function" class="headerlink" title="SQL Window Function"></a>SQL Window Function</h2><h3 id="Q1-1"><a href="#Q1-1" class="headerlink" title="Q1."></a>Q1.</h3><p>각 행에 숫자를 <em>1, 2, 3, …</em> 형태로 추가한다. (<code>row_n</code>으로 표시)</p>
+<ul>
+<li><code>row_n</code> 기준으로 오름차순으로 출력</li>
+<li>테이블명에 <em>alias</em>를 적용한다.</li>
+</ul>
+<h3 id="A1-1"><a href="#A1-1" class="headerlink" title="A1."></a>A1.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">With</span> sub_table <span class="keyword">AS</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> ROWNUM<span class="number">-95</span> <span class="keyword">AS</span> ROW_N</span><br><span class="line">	        , <span class="keyword">YEAR</span>, CITY, SPORT, DISCIPLINE, ATHLETE</span><br><span class="line">		<span class="keyword">FROM</span> summer_medals</span><br><span class="line">		)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line">	<span class="keyword">FROM</span> sub_table</span><br><span class="line">	<span class="keyword">WHERE</span> ROW_N <span class="operator">&gt;</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q2-1"><a href="#Q2-1" class="headerlink" title="Q2."></a>Q2.</h3><p>올림픽 년도를 오름차순 순번대로 작성한다.</p>
+<ul>
+<li>힌트) 서브쿼리와 윈도우 함수를 이용한다.</li>
+</ul>
+<h3 id="A2-1"><a href="#A2-1" class="headerlink" title="A2."></a>A2.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">year</span></span><br><span class="line">      , <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">year</span>) <span class="keyword">as</span> ROW_N</span><br><span class="line">	<span class="keyword">FROM</span> (<span class="keyword">SELECT</span> <span class="keyword">year</span></span><br><span class="line">	       <span class="keyword">FROM</span> summer_medals</span><br><span class="line">		   <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">year</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q3-1"><a href="#Q3-1" class="headerlink" title="Q3."></a>Q3.</h3><p>(1) WITH 절 사용하여 각 운동선수들이 획득한 메달 갯수를 내림차순으로 정렬하도록 한다.<br>(2) (1) 쿼리를 활용하여 그리고 선수들의 랭킹을 추가한다.</p>
+<ul>
+<li>상위 5개만 추출 : <code>OFFSET 0 ROWS FETCH NEXT 5 ROWS ONLY</code></li>
+</ul>
+<h3 id="A3-1"><a href="#A3-1" class="headerlink" title="A3."></a>A3.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">With</span> basis <span class="keyword">AS</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> ATHLETE, <span class="built_in">COUNT</span>() <span class="keyword">AS</span> MEDALS</span><br><span class="line">			<span class="keyword">FROM</span> summer_medals</span><br><span class="line">			<span class="keyword">GROUP</span> <span class="keyword">BY</span> ATHLETE</span><br><span class="line">			<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">COUNT</span>() <span class="keyword">desc</span></span><br><span class="line">		)</span><br><span class="line"><span class="keyword">SELECT</span> MEDALS, ATHLETE, ROWNUM</span><br><span class="line">	<span class="keyword">FROM</span> basis</span><br><span class="line">	<span class="keyword">OFFSET</span> <span class="number">0</span> <span class="keyword">ROWS</span> <span class="keyword">FETCH</span> NEXT <span class="number">5</span> <span class="keyword">ROWS</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Q4-1"><a href="#Q4-1" class="headerlink" title="Q4."></a>Q4.</h3><p>다음 쿼리는 남자 69KG 역도 경기에서 매년 금메달리스트 조회하는 쿼리이다.</p>
+<p>이때 매년 전년도 챔피언도 같이 조회하도록 한다. (<code>LAG</code> &amp; <code>WITH</code>절 사용)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Year</span>, Country <span class="keyword">AS</span> champion</span><br><span class="line">	<span class="keyword">FROM</span> summer_medals</span><br><span class="line">	<span class="keyword">WHERE</span> Discipline <span class="operator">=</span> <span class="string">&#x27;Weightlifting&#x27;</span></span><br><span class="line">	    <span class="keyword">AND</span> Event <span class="operator">=</span> <span class="string">&#x27;69KG&#x27;</span></span><br><span class="line">		<span class="keyword">AND</span> Gender <span class="operator">=</span> <span class="string">&#x27;Men&#x27;</span></span><br><span class="line">		<span class="keyword">AND</span> Medal <span class="operator">=</span> <span class="string">&#x27;Gold&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="A4-1"><a href="#A4-1" class="headerlink" title="A4."></a>A4.</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> basis <span class="keyword">AS</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> <span class="keyword">Year</span>, Country <span class="keyword">AS</span> champion</span><br><span class="line">			<span class="keyword">FROM</span> summer_medals</span><br><span class="line">			<span class="keyword">WHERE</span> Discipline <span class="operator">=</span> <span class="string">&#x27;Weightlifting&#x27;</span></span><br><span class="line">				<span class="keyword">AND</span> Event <span class="operator">=</span> <span class="string">&#x27;69KG&#x27;</span></span><br><span class="line">				<span class="keyword">AND</span> Gender <span class="operator">=</span> <span class="string">&#x27;Men&#x27;</span></span><br><span class="line">				<span class="keyword">AND</span> Medal <span class="operator">=</span> <span class="string">&#x27;Gold&#x27;</span></span><br><span class="line">		)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">year</span>, champion</span><br><span class="line">      , <span class="built_in">LAG</span>(champion, <span class="number">1</span>) <span class="keyword">OVER</span>(<span class="keyword">order</span> <span class="keyword">by</span> champion) <span class="keyword">AS</span> LAST_CHAMPION</span><br><span class="line">	<span class="keyword">FROM</span> basis;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/05/02/SQL/SQL%20TEST%206-7/" data-id="cl8x10dlq000u9wlfeklx49m4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "SQL TEST 6-7",
+        "image": "http://gonekng.github.io",
+        "keywords": "sql Oracle",
+        "genre": "sql Oracle",
+        "datePublished": "2022-05-02",
+        "dateCreated": "2022-05-02",
+        "dateModified": "2022-10-17",
+        "url": "http://gonekng.github.io/2022/05/02/SQL/SQL TEST 6-7/",
+        "description": "SQL Subquery
+‘오라클 SQL과 PL&#x2F;SQL을 다루는 기술 (길벗)’
+
+Q1.populations 테이블에서 2015년 평균 기대수명보다 높은 모든 정보를 조회한다.
+A1.12345678SELECT *	FROM populations	WHERE year = 2015		AND life_expectancy		    &gt; (SELECT AVG",
+        "wordCount": 871
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Setting VS Code for Web Development
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">SQL EXERCISE 6-7</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/05/02/SQL/SQL%20TEST%206-7/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

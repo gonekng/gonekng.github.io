@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>ML Practice 7_3 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,google colab,machine learning" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/ML/">ML</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/ML/ML_ch_7_3" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ML Practice 7_3
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/04/05/Python/ML/ML_ch_7_3/" class="article-date">
+       <time datetime="2022-04-05T03:14:17.000Z" itemprop="datePublished">2022-04-05</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/04/05/Python/ML/ML_ch_7_3/" class="article-date">
+     <time datetime="2022-10-05T05:39:53.612Z" itemprop="dateModified">2022-10-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/google-colab/" rel="tag">google colab</a>, <a class="tag-link-link" href="/tags/machine-learning/" rel="tag">machine learning</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="Create-DNN-Model"><a href="#Create-DNN-Model" class="headerlink" title="Create DNN Model"></a>Create DNN Model</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">(train_input, train_target), (test_input, test_target) = \</span><br><span class="line">    keras.datasets.fashion_mnist.load_data()</span><br><span class="line"></span><br><span class="line">train_scaled = train_input / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">train_scaled, val_scaled, train_target, val_target = train_test_split(</span><br><span class="line">    train_scaled, train_target, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<ul>
+<li>Define function of create model</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">model_fn</span>(<span class="params">a_layer=<span class="literal">None</span></span>):</span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>)))</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">&#x27;relu&#x27;</span>))</span><br><span class="line">    <span class="keyword">if</span> a_layer:</span><br><span class="line">      model.add(a_layer)</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line">  </span><br><span class="line">model = model_fn()</span><br><span class="line">model.summary</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;bound method Model.summary of &lt;keras.engine.sequential.Sequential object at 0x7f9181716750&gt;&gt;
+</code></pre>
+<h1 id="Loss-Curve"><a href="#Loss-Curve" class="headerlink" title="Loss Curve"></a>Loss Curve</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">history = model.fit(train_scaled, train_target, epochs = <span class="number">5</span>, verbose = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>verbose default 1: print the indicator along with the progress bar per epoch.</li>
+<li>verbose 2: print the indicator without the progress bar per epoch.</li>
+<li>verbose 0: print none</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(history) <span class="comment"># class</span></span><br><span class="line"><span class="built_in">print</span>(history.history) <span class="comment"># dictionary</span></span><br><span class="line"><span class="built_in">print</span>(history.history.keys())</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;keras.callbacks.History object at 0x7f917bab27d0&gt;
+&#123;&#39;loss&#39;: [0.5360119342803955, 0.3935061991214752, 0.3552784025669098, 0.33411645889282227, 0.31946054100990295], &#39;accuracy&#39;: [0.8113541603088379, 0.8598541617393494, 0.8732083439826965, 0.8820000290870667, 0.8862708210945129]&#125;
+dict_keys([&#39;loss&#39;, &#39;accuracy&#39;])
+</code></pre>
+<ul>
+<li>loss curve (epoch 5)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Python/ML/ML_ch_7_3_1.png"></p>
+<ul>
+<li>accuracy curve (epoch 5)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;accuracy&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Python/ML/ML_ch_7_3_2.png"></p>
+<ul>
+<li>loss curve (epoch 20)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>)</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Python/ML/ML_ch_7_3_3.png"></p>
+<h1 id="Validation-Loss"><a href="#Validation-Loss" class="headerlink" title="Validation Loss"></a>Validation Loss</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/20
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.5344 - accuracy: 0.8118 - val_loss: 0.4414 - val_accuracy: 0.8471
+Epoch 2/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3950 - accuracy: 0.8577 - val_loss: 0.3638 - val_accuracy: 0.8668
+Epoch 3/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3573 - accuracy: 0.8702 - val_loss: 0.3754 - val_accuracy: 0.8682
+Epoch 4/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3365 - accuracy: 0.8791 - val_loss: 0.3783 - val_accuracy: 0.8701
+Epoch 5/20
+1500/1500 [==============================] - 5s 4ms/step - loss: 0.3191 - accuracy: 0.8865 - val_loss: 0.3576 - val_accuracy: 0.8772
+Epoch 6/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3085 - accuracy: 0.8898 - val_loss: 0.3556 - val_accuracy: 0.8806
+Epoch 7/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2982 - accuracy: 0.8948 - val_loss: 0.3736 - val_accuracy: 0.8807
+Epoch 8/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2910 - accuracy: 0.8976 - val_loss: 0.3443 - val_accuracy: 0.8869
+Epoch 9/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2841 - accuracy: 0.8998 - val_loss: 0.3757 - val_accuracy: 0.8832
+Epoch 10/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2755 - accuracy: 0.9031 - val_loss: 0.4034 - val_accuracy: 0.8766
+Epoch 11/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2700 - accuracy: 0.9059 - val_loss: 0.4085 - val_accuracy: 0.8792
+Epoch 12/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2655 - accuracy: 0.9075 - val_loss: 0.3936 - val_accuracy: 0.8835
+Epoch 13/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2589 - accuracy: 0.9105 - val_loss: 0.4122 - val_accuracy: 0.8812
+Epoch 14/20
+1500/1500 [==============================] - 5s 4ms/step - loss: 0.2545 - accuracy: 0.9116 - val_loss: 0.4056 - val_accuracy: 0.8842
+Epoch 15/20
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2506 - accuracy: 0.9137 - val_loss: 0.4048 - val_accuracy: 0.8815
+Epoch 16/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2454 - accuracy: 0.9159 - val_loss: 0.4132 - val_accuracy: 0.8808
+Epoch 17/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2410 - accuracy: 0.9177 - val_loss: 0.4343 - val_accuracy: 0.8831
+Epoch 18/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2356 - accuracy: 0.9190 - val_loss: 0.4574 - val_accuracy: 0.8767
+Epoch 19/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2326 - accuracy: 0.9201 - val_loss: 0.4499 - val_accuracy: 0.8817
+Epoch 20/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2284 - accuracy: 0.9204 - val_loss: 0.4834 - val_accuracy: 0.8751
+</code></pre>
+<p><img src="/images/Python/ML/ML_ch_7_3_4.png"></p>
+<ul>
+<li>There is a large difference in loss between training data and verification data.</li>
+<li>This is a typical overfitting model.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn()</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>,</span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.5231 - accuracy: 0.8183 - val_loss: 0.4741 - val_accuracy: 0.8357
+Epoch 2/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3940 - accuracy: 0.8576 - val_loss: 0.3736 - val_accuracy: 0.8671
+Epoch 3/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3557 - accuracy: 0.8703 - val_loss: 0.3567 - val_accuracy: 0.8712
+Epoch 4/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3273 - accuracy: 0.8796 - val_loss: 0.3398 - val_accuracy: 0.8790
+Epoch 5/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3091 - accuracy: 0.8872 - val_loss: 0.3324 - val_accuracy: 0.8803
+Epoch 6/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2904 - accuracy: 0.8925 - val_loss: 0.3194 - val_accuracy: 0.8842
+Epoch 7/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2802 - accuracy: 0.8967 - val_loss: 0.3333 - val_accuracy: 0.8796
+Epoch 8/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2679 - accuracy: 0.9010 - val_loss: 0.3265 - val_accuracy: 0.8830
+Epoch 9/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2588 - accuracy: 0.9040 - val_loss: 0.3298 - val_accuracy: 0.8858
+Epoch 10/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2482 - accuracy: 0.9068 - val_loss: 0.3282 - val_accuracy: 0.8840
+Epoch 11/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2413 - accuracy: 0.9094 - val_loss: 0.3098 - val_accuracy: 0.8889
+Epoch 12/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2315 - accuracy: 0.9131 - val_loss: 0.3250 - val_accuracy: 0.8867
+Epoch 13/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2260 - accuracy: 0.9141 - val_loss: 0.3164 - val_accuracy: 0.8911
+Epoch 14/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2181 - accuracy: 0.9185 - val_loss: 0.3511 - val_accuracy: 0.8774
+Epoch 15/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2128 - accuracy: 0.9200 - val_loss: 0.3397 - val_accuracy: 0.8817
+Epoch 16/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2059 - accuracy: 0.9222 - val_loss: 0.3219 - val_accuracy: 0.8903
+Epoch 17/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2021 - accuracy: 0.9240 - val_loss: 0.3423 - val_accuracy: 0.8859
+Epoch 18/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.1952 - accuracy: 0.9277 - val_loss: 0.3313 - val_accuracy: 0.8916
+Epoch 19/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.1918 - accuracy: 0.9272 - val_loss: 0.3396 - val_accuracy: 0.8871
+Epoch 20/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.1879 - accuracy: 0.9295 - val_loss: 0.3354 - val_accuracy: 0.8904
+</code></pre>
+<p><img src="/images/Python/ML/ML_ch_7_3_5.png"></p>
+<ul>
+<li>Overfitting has decreased a little, but it is still necessary to improve.</li>
+</ul>
+<h1 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h1><ul>
+<li>Basically, it is a principle to calculate all parameters.</li>
+<li>Neurons without some output are excluded from the calculation.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>)) <span class="comment"># drop out 30%</span></span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Model: &quot;sequential_5&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten_5 (Flatten)         (None, 784)               0         
+                                                                 
+ dense_10 (Dense)            (None, 100)               78500     
+                                                                 
+ dropout (Dropout)           (None, 100)               0         
+                                                                 
+ dense_11 (Dense)            (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>,</span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">1</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br><span class="line"></span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.5967 - accuracy: 0.7907 - val_loss: 0.4495 - val_accuracy: 0.8294
+Epoch 2/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.4413 - accuracy: 0.8409 - val_loss: 0.4071 - val_accuracy: 0.8472
+Epoch 3/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.4044 - accuracy: 0.8547 - val_loss: 0.3616 - val_accuracy: 0.8674
+Epoch 4/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3833 - accuracy: 0.8603 - val_loss: 0.3605 - val_accuracy: 0.8651
+Epoch 5/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3688 - accuracy: 0.8646 - val_loss: 0.3423 - val_accuracy: 0.8750
+Epoch 6/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3542 - accuracy: 0.8696 - val_loss: 0.3479 - val_accuracy: 0.8744
+Epoch 7/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3439 - accuracy: 0.8725 - val_loss: 0.3449 - val_accuracy: 0.8752
+Epoch 8/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3356 - accuracy: 0.8763 - val_loss: 0.3356 - val_accuracy: 0.8802
+Epoch 9/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3280 - accuracy: 0.8796 - val_loss: 0.3361 - val_accuracy: 0.8801
+Epoch 10/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3212 - accuracy: 0.8781 - val_loss: 0.3394 - val_accuracy: 0.8734
+Epoch 11/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3200 - accuracy: 0.8813 - val_loss: 0.3327 - val_accuracy: 0.8763
+Epoch 12/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3115 - accuracy: 0.8852 - val_loss: 0.3325 - val_accuracy: 0.8776
+Epoch 13/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3061 - accuracy: 0.8860 - val_loss: 0.3216 - val_accuracy: 0.8860
+Epoch 14/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3034 - accuracy: 0.8860 - val_loss: 0.3193 - val_accuracy: 0.8864
+Epoch 15/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2961 - accuracy: 0.8880 - val_loss: 0.3198 - val_accuracy: 0.8846
+Epoch 16/20
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.2913 - accuracy: 0.8900 - val_loss: 0.3310 - val_accuracy: 0.8823
+Epoch 17/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2870 - accuracy: 0.8933 - val_loss: 0.3162 - val_accuracy: 0.8848
+Epoch 18/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2838 - accuracy: 0.8931 - val_loss: 0.3321 - val_accuracy: 0.8838
+Epoch 19/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2829 - accuracy: 0.8935 - val_loss: 0.3320 - val_accuracy: 0.8840
+Epoch 20/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2814 - accuracy: 0.8942 - val_loss: 0.3218 - val_accuracy: 0.8882
+</code></pre>
+<p><img src="/images/Python/ML/ML_ch_7_3_6.png"></p>
+<ul>
+<li>Overfitting has improved a lot.</li>
+</ul>
+<h1 id="Save-and-Load-Model"><a href="#Save-and-Load-Model" class="headerlink" title="Save and Load Model"></a>Save and Load Model</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>,</span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">10</span>, verbose=<span class="number">0</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>save_weights() : method of saving the parameters of a model</li>
+<li>save() : method of saving both the parameters and structure of a model</li>
+<li>‘.h5’ : HDF5 format</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model.save_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br><span class="line">model.save(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!ls -al *.h5</span><br></pre></td></tr></table></figure>
+
+<pre><code>-rw-r--r-- 1 root root 982664 Apr  5 02:37 best-model.h5
+-rw-r--r-- 1 root root 333448 Apr  5 02:42 model-weights.h5
+-rw-r--r-- 1 root root 982664 Apr  5 02:42 model-whole.h5
+</code></pre>
+<ul>
+<li>load previously saved parameters</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.load_weights(<span class="string">&#x27;model-weights.h5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Returns the largest value in the predict method result</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">val_labels = np.argmax(model.predict(val_scaled), axis=-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(np.mean(val_labels == val_target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>0.8825833333333334
+</code></pre>
+<ul>
+<li>load previously saved model</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;model-whole.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.3248 - accuracy: 0.8826
+
+
+
+
+
+[0.3247545063495636, 0.8825833201408386]
+</code></pre>
+<h1 id="Callback"><a href="#Callback" class="headerlink" title="Callback"></a>Callback</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">1</span>, </span><br><span class="line">          validation_data=(val_scaled, val_target),</span><br><span class="line">          callbacks=[checkpoint_cb])</span><br></pre></td></tr></table></figure>
+
+<pre><code>Epoch 1/20
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.5955 - accuracy: 0.7909 - val_loss: 0.4305 - val_accuracy: 0.8437
+Epoch 2/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.4369 - accuracy: 0.8436 - val_loss: 0.3847 - val_accuracy: 0.8572
+Epoch 3/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.4027 - accuracy: 0.8533 - val_loss: 0.3737 - val_accuracy: 0.8633
+Epoch 4/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3833 - accuracy: 0.8607 - val_loss: 0.3648 - val_accuracy: 0.8628
+Epoch 5/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3675 - accuracy: 0.8662 - val_loss: 0.3481 - val_accuracy: 0.8703
+Epoch 6/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3544 - accuracy: 0.8710 - val_loss: 0.3434 - val_accuracy: 0.8758
+Epoch 7/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3435 - accuracy: 0.8736 - val_loss: 0.3388 - val_accuracy: 0.8781
+Epoch 8/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3360 - accuracy: 0.8759 - val_loss: 0.3333 - val_accuracy: 0.8760
+Epoch 9/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3261 - accuracy: 0.8777 - val_loss: 0.3333 - val_accuracy: 0.8755
+Epoch 10/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3203 - accuracy: 0.8808 - val_loss: 0.3319 - val_accuracy: 0.8807
+Epoch 11/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3154 - accuracy: 0.8822 - val_loss: 0.3275 - val_accuracy: 0.8794
+Epoch 12/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3063 - accuracy: 0.8849 - val_loss: 0.3206 - val_accuracy: 0.8842
+Epoch 13/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3024 - accuracy: 0.8871 - val_loss: 0.3239 - val_accuracy: 0.8815
+Epoch 14/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3002 - accuracy: 0.8882 - val_loss: 0.3249 - val_accuracy: 0.8838
+Epoch 15/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2928 - accuracy: 0.8911 - val_loss: 0.3237 - val_accuracy: 0.8827
+Epoch 16/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2891 - accuracy: 0.8911 - val_loss: 0.3216 - val_accuracy: 0.8839
+Epoch 17/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2854 - accuracy: 0.8918 - val_loss: 0.3301 - val_accuracy: 0.8844
+Epoch 18/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2834 - accuracy: 0.8942 - val_loss: 0.3315 - val_accuracy: 0.8833
+Epoch 19/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2776 - accuracy: 0.8959 - val_loss: 0.3381 - val_accuracy: 0.8790
+Epoch 20/20
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2758 - accuracy: 0.8965 - val_loss: 0.3273 - val_accuracy: 0.8830
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f916df86590&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = keras.models.load_model(<span class="string">&#x27;best-model.h5&#x27;</span>)</span><br><span class="line">model.evaluate(val_scaled, val_target)</span><br></pre></td></tr></table></figure>
+
+<pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.3206 - accuracy: 0.8842
+
+
+
+
+
+[0.32058343291282654, 0.8842499852180481]
+</code></pre>
+<ul>
+<li>early stopping : to stop training before overfitting begins</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">model = model_fn(keras.layers.Dropout(<span class="number">0.3</span>))</span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, </span><br><span class="line">              metrics=<span class="string">&#x27;accuracy&#x27;</span>)</span><br><span class="line">checkpoint_cb = keras.callbacks.ModelCheckpoint(<span class="string">&#x27;best-model.h5&#x27;</span>, </span><br><span class="line">                                                save_best_only=<span class="literal">True</span>)</span><br><span class="line">early_stopping_cb = keras.callbacks.EarlyStopping(patience=<span class="number">2</span>,</span><br><span class="line">                                                  restore_best_weights=<span class="literal">True</span>)</span><br><span class="line">history = model.fit(train_scaled, train_target, epochs=<span class="number">20</span>, verbose=<span class="number">0</span>, </span><br><span class="line">                    validation_data=(val_scaled, val_target),</span><br><span class="line">                    callbacks=[checkpoint_cb, early_stopping_cb])</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(early_stopping_cb.stopped_epoch)</span><br></pre></td></tr></table></figure>
+
+<pre><code>5
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(history.history[<span class="string">&#x27;loss&#x27;</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">&#x27;val_loss&#x27;</span>])</span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;loss&#x27;</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;train&#x27;</span>, <span class="string">&#x27;val&#x27;</span>])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Python/ML/ML_ch_7_3_7.png"></p>
+<ul>
+<li>It stopped early in 5 epoch, and the issue of overfitting was solved.</li>
+</ul>
+<p><em>Ref.) <u> 혼자 공부하는 머신러닝+딥러닝 (박해선, 한빛미디어) <u/></em></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/04/05/Python/ML/ML_ch_7_3/" data-id="cl8x10dmz002q9wlfb5zu30ua" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "ML Practice 7_3",
+        "image": "http://gonekng.github.io/images/Python/ML/ML_ch_7_3_1.png",
+        "keywords": "python google colab machine learning",
+        "genre": "python ML",
+        "datePublished": "2022-04-05",
+        "dateCreated": "2022-04-05",
+        "dateModified": "2022-10-05",
+        "url": "http://gonekng.github.io/2022/04/05/Python/ML/ML_ch_7_3/",
+        "description": "Create DNN Model12345678910from tensorflow import kerasfrom sklearn.model_selection import train_test_split(train_input, train_target), (test_input, test_target) = \    keras.datasets.fashion_mnist.lo",
+        "wordCount": 3143
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/04/06/Python/Tutorial/Pipeline_tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pipeline Tutorial
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/04/05/Python/ML/ML_ch_7_2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">ML Practice 7_2</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/04/05/Python/ML/ML_ch_7_3/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

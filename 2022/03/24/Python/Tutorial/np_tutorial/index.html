@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Numpy tutorial | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,google colab,numpy" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/tutorial/">tutorial</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Tutorial/np_tutorial" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Numpy tutorial
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/24/Python/Tutorial/np_tutorial/" class="article-date">
+       <time datetime="2022-03-24T02:51:00.000Z" itemprop="datePublished">2022-03-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/24/Python/Tutorial/np_tutorial/" class="article-date">
+     <time datetime="2022-10-05T05:39:54.385Z" itemprop="dateModified">2022-10-05</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/google-colab/" rel="tag">google colab</a>, <a class="tag-link-link" href="/tags/numpy/" rel="tag">numpy</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="파이썬-라이브러리-설치"><a href="#파이썬-라이브러리-설치" class="headerlink" title="파이썬 라이브러리 설치"></a>파이썬 라이브러리 설치</h1><p>in R (코드에서 실행)</p>
+<ul>
+<li>install.package(“패키지명”)</li>
+<li>library(패키지명)</li>
+</ul>
+<p>in Python (터미널에서 실행)</p>
+<ul>
+<li>방법1. conda 설치 (주 사용목적: 데이터 과학)<ul>
+<li>아나콘다 설치 후에 conda 설치 가능</li>
+</ul>
+</li>
+<li>방법2. pip 설치 (개발, 데이터 과학, 그 외)<ul>
+<li>아나콘다 없이도 python만 설치하면 됨</li>
+</ul>
+</li>
+</ul>
+<h1 id="NumPy-라이브러리"><a href="#NumPy-라이브러리" class="headerlink" title="NumPy 라이브러리"></a>NumPy 라이브러리</h1><ul>
+<li>파이썬의 대표적인 배열 라이브러리</li>
+<li>파이썬 수치 연산과 관련된 모든 라이브러리의 기본<ul>
+<li>scikit learn, TensorFlow, PyTorch 등등</li>
+</ul>
+</li>
+<li>.array, .reshape, .matlib 등등 다양한 메서드 활용</li>
+</ul>
+<h2 id="Numpy-라이브러리-불러오기"><a href="#Numpy-라이브러리-불러오기" class="headerlink" title="Numpy 라이브러리 불러오기"></a>Numpy 라이브러리 불러오기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="built_in">print</span>(np.__version__)</span><br></pre></td></tr></table></figure>
+
+<pre><code>1.21.5
+</code></pre>
+<h1 id="NumPy-배열-생성"><a href="#NumPy-배열-생성" class="headerlink" title="NumPy 배열 생성"></a>NumPy 배열 생성</h1><h2 id="리스트를-배열로-변환"><a href="#리스트를-배열로-변환" class="headerlink" title="리스트를 배열로 변환"></a>리스트를 배열로 변환</h2><ul>
+<li>NumPy 배열로 변환하여 저장</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">temp = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"><span class="built_in">print</span>(temp)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp))</span><br><span class="line"></span><br><span class="line">arr = np.array(temp)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(arr))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&lt;class &#39;list&#39;&gt;
+[ 1  2  3  4  5  6  7  8  9 10]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</code></pre>
+<ul>
+<li>NumPy 배열에도 인덱싱, 슬라이싱 동일하게 적용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(arr[<span class="number">4</span>])</span><br><span class="line"><span class="built_in">print</span>(arr[<span class="number">3</span>:<span class="number">7</span>])</span><br><span class="line"><span class="built_in">print</span>(arr[::<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>5
+[4 5 6 7]
+[1 3 5 7 9]
+</code></pre>
+<ul>
+<li>NumPy를 통한 기초 통계 함수 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;sum:&quot;</span>, np.<span class="built_in">sum</span>(arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;mean:&quot;</span>, np.mean(arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;median:&quot;</span>, np.median(arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;min:&quot;</span>, np.<span class="built_in">min</span>(arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;max:&quot;</span>, np.<span class="built_in">max</span>(arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;std:&quot;</span>, np.std(arr))</span><br></pre></td></tr></table></figure>
+
+<pre><code>sum: 55
+mean: 5.5
+median: 5.5
+min: 1
+max: 10
+std: 2.8722813232690143
+</code></pre>
+<h2 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">math_scores = [<span class="number">90</span>, <span class="number">80</span>, <span class="number">88</span>]</span><br><span class="line">english_scores = [<span class="number">80</span>, <span class="number">70</span>, <span class="number">90</span>]</span><br><span class="line">total_scores = math_scores + english_scores <span class="comment"># 단순한 리스트 연결 수행</span></span><br><span class="line"><span class="built_in">print</span>(total_scores)</span><br><span class="line"></span><br><span class="line">math_arr = np.array(math_scores)</span><br><span class="line">english_arr = np.array(english_scores)</span><br><span class="line">total_arr = math_arr + english_arr <span class="comment"># 각 요소의 덧셈 수행</span></span><br><span class="line"><span class="built_in">print</span>(total_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[90, 80, 88, 80, 70, 90]
+[170 150 178]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">arr1 = np.array([<span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>])</span><br><span class="line">arr2 = np.array([<span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 사칙연산</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;덧셈:&quot;</span>, np.add(arr1, arr2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;뺄셈:&quot;</span>, np.subtract(arr1, arr2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;곱셈:&quot;</span>, np.multiply(arr1, arr2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;나눗셈:&quot;</span>, np.divide(arr1, arr2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;거듭제곱:&quot;</span>, np.power(arr1, arr2))</span><br></pre></td></tr></table></figure>
+
+<pre><code>덧셈: [6 7 7]
+뺄셈: [-2  3  1]
+곱셈: [ 8 10 12]
+나눗셈: [0.5        2.5        1.33333333]
+거듭제곱: [16 25 64]
+</code></pre>
+<h2 id="소수점-처리"><a href="#소수점-처리" class="headerlink" title="소수점 처리"></a>소수점 처리</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 소수점 절삭</span></span><br><span class="line">temp_arr = np.trunc([-<span class="number">1.23</span>, <span class="number">1.23</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line">temp_arr = np.fix([-<span class="number">1.23</span>, <span class="number">1.23</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[-1.  1.]
+[-1.  1.]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 올림</span></span><br><span class="line">temp_arr = np.ceil([-<span class="number">1.23789</span>, <span class="number">1.23789</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 내림</span></span><br><span class="line">temp_arr = np.floor([-<span class="number">1.23789</span>, <span class="number">1.23789</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 반올림</span></span><br><span class="line">temp_arr = np.around([-<span class="number">1.23789</span>, <span class="number">1.23789</span>], <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line">temp_arr = np.around([-<span class="number">1.23789</span>, <span class="number">1.23789</span>], <span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[-1.  2.]
+[-2.  1.]
+[-1.24  1.24]
+[-1.2379  1.2379]
+</code></pre>
+<h2 id="배열의-형태-및-차원"><a href="#배열의-형태-및-차원" class="headerlink" title="배열의 형태 및 차원"></a>배열의 형태 및 차원</h2><ul>
+<li>0차원부터 3차원까지 생성하는 방법</li>
+<li>.shape : axis 축 기준으로 배열의 형태 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0차원 배열</span></span><br><span class="line">temp_arr = np.array(<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>20
+&lt;class &#39;numpy.ndarray&#39;&gt;
+배열의 형태: ()
+배열의 차원: 0
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1차원 배열</span></span><br><span class="line">temp_arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1 2 3 5]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+배열의 형태: (4,)
+배열의 차원: 1
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2차원 배열</span></span><br><span class="line">temp_arr = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">6</span>],[<span class="number">9</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>]])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1 2 3 5]
+ [4 5 1 6]
+ [9 0 2 3]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+배열의 형태: (3, 4)
+배열의 차원: 2
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3차원 배열</span></span><br><span class="line">temp_arr = np.array([[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">6</span>],[<span class="number">9</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>]],</span><br><span class="line">                     [[<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>],[<span class="number">4</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">6</span>]]])</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[[1 2 3 5]
+  [4 5 1 6]
+  [9 0 2 3]]
+
+ [[1 1 2 3]
+  [2 3 1 7]
+  [4 9 5 6]]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+배열의 형태: (2, 3, 4)
+배열의 차원: 3
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># parameter를 활용한 배열의 최소 차원 명시</span></span><br><span class="line">temp_arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>], ndmin=<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1 2 3 4]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+배열의 형태: (1, 4)
+배열의 차원: 2
+</code></pre>
+<h2 id="배열을-생성하는-다양한-방법"><a href="#배열을-생성하는-다양한-방법" class="headerlink" title="배열을 생성하는 다양한 방법"></a>배열을 생성하는 다양한 방법</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.arange(<span class="number">5</span>) <span class="comment"># [0:4]</span></span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line">temp_arr = np.arange(<span class="number">1</span>,<span class="number">11</span>,<span class="number">3</span>) <span class="comment"># [1:11:3]</span></span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4]
+[ 1  4  7 10]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zero_arr = np.zeros((<span class="number">2</span>,<span class="number">3</span>)) <span class="comment"># 0으로만 이루어진 배열</span></span><br><span class="line"><span class="built_in">print</span>(zero_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(zero_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;데이터 타입:&quot;</span>, zero_arr.dtype)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[0. 0. 0.]
+ [0. 0. 0.]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+데이터 타입: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.ones((<span class="number">2</span>,<span class="number">3</span>)) <span class="comment"># 1로만 이루어진 배열</span></span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;데이터 타입:&quot;</span>, temp_arr.dtype)</span><br><span class="line"></span><br><span class="line">temp_arr = np.ones((<span class="number">2</span>,<span class="number">3</span>), dtype=<span class="string">&quot;int32&quot;</span>) <span class="comment"># 자체적인 데이터 형변환</span></span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;데이터 타입:&quot;</span>, temp_arr.dtype)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1. 1. 1.]
+ [1. 1. 1.]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+데이터 타입: float64
+[[1 1 1]
+ [1 1 1]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+데이터 타입: int32
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.ones((<span class="number">2</span>,<span class="number">6</span>))</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_arr.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_arr.ndim)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">temp_res = temp_arr.reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_res)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_res.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_res.ndim)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">temp_res2 = temp_arr.reshape(<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_res2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_res2.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_res2.ndim)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1 1 1 1 1 1]
+ [1 1 1 1 1 1]]
+배열의 형태: (2, 6)
+배열의 차원: 2
+
+
+[[1 1 1 1]
+ [1 1 1 1]
+ [1 1 1 1]]
+배열의 형태: (3, 4)
+배열의 차원: 2
+
+
+[[[1 1 1]
+  [1 1 1]]
+
+ [[1 1 1]
+  [1 1 1]]]
+배열의 형태: (2, 2, 3)
+배열의 차원: 3
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.ones((<span class="number">12</span>,<span class="number">6</span>))</span><br><span class="line">temp_res = temp_arr.reshape(<span class="number">3</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_res)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 형태:&quot;</span>, temp_res.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;배열의 차원:&quot;</span>, temp_res.ndim)</span><br><span class="line"></span><br><span class="line"><span class="comment"># temp_res2 = temp_arr.reshape(5,-1)</span></span><br><span class="line"><span class="comment"># ValueError: cannot reshape array of size 72 into shape (5,newaxis)</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]]
+배열의 형태: (3, 24)
+배열의 차원: 2
+</code></pre>
+<h1 id="NumPy-조건식"><a href="#NumPy-조건식" class="headerlink" title="NumPy 조건식"></a>NumPy 조건식</h1><ul>
+<li>조건식이 하나일 때: np.where</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5보다 큰 값은 기존 값 * 10</span></span><br><span class="line"><span class="built_in">print</span>(np.where(temp_arr &gt; <span class="number">5</span>, temp_arr * <span class="number">10</span>, temp_arr))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+[ 0  1  2  3  4  5 60 70 80 90]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.arange(<span class="number">21</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10보다 작은 값은 기존 값 * 10</span></span><br><span class="line"><span class="built_in">print</span>(np.where(temp_arr &lt; <span class="number">10</span>, temp_arr * <span class="number">10</span>, temp_arr))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+[ 0 10 20 30 40 50 60 70 80 90 10 11 12 13 14 15 16 17 18 19 20]
+</code></pre>
+<ul>
+<li>조건식이 2개 이상일 때: np.select</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">temp_arr = np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(temp_arr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5보다 큰 값은 기존 값 * 2, 2보다 작은 값은 기존 값 + 100</span></span><br><span class="line">condlist = [temp_arr &gt; <span class="number">5</span>, temp_arr &lt; <span class="number">2</span>] <span class="comment"># The list of conditions</span></span><br><span class="line">choicelist = [temp_arr * <span class="number">2</span>, temp_arr + <span class="number">100</span>] <span class="comment"># The list of outputs</span></span><br><span class="line">np.select(condlist, choicelist, default = temp_arr)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[0 1 2 3 4 5 6 7 8 9]
+
+
+
+
+
+array([100, 101,   2,   3,   4,   5,  12,  14,  16,  18])
+</code></pre>
+<h1 id="NumPy-Broadcasting"><a href="#NumPy-Broadcasting" class="headerlink" title="NumPy Broadcasting"></a>NumPy Broadcasting</h1><ul>
+<li>서로 다른 크기의 배열을 계산할 때의 기본적인 규칙</li>
+<li>url : <a target="_blank" rel="noopener" href="https://numpy.org/doc/stable/user/basics.broadcasting.html?highlight=broadcasting">https://numpy.org/doc/stable/user/basics.broadcasting.html?highlight=broadcasting</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/03/24/Python/Tutorial/np_tutorial/" data-id="cl8x10dno003h9wlf7s0mcxdn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Numpy tutorial",
+        "image": "http://gonekng.github.io",
+        "keywords": "python google colab numpy",
+        "genre": "python tutorial",
+        "datePublished": "2022-03-24",
+        "dateCreated": "2022-03-24",
+        "dateModified": "2022-10-05",
+        "url": "http://gonekng.github.io/2022/03/24/Python/Tutorial/np_tutorial/",
+        "description": "파이썬 라이브러리 설치in R (코드에서 실행)
+
+install.package(“패키지명”)
+library(패키지명)
+
+in Python (터미널에서 실행)
+
+방법1. conda 설치 (주 사용목적: 데이터 과학)
+아나콘다 설치 후에 conda 설치 가능
+
+
+방법2. pip 설치 (개발, 데이터 과학, 그 외)
+아나콘다 없이도 python만 설치하면 됨
+
+",
+        "wordCount": 1559
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/24/Python/Tutorial/pd_tutorial_01/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pandas tutorial 1
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/03/22/Python/Basic/python_basic_4/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python Basic 4</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/git_install/0.png)" alt="Git Installation in Windows11" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Setting/setting_VSCode/0.png)" alt="Setting VS Code for Web Development" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/sql_ex/0.png)" alt="SQL EXERCISE 6-7" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20EXERCISE%206-7/" class="title">SQL EXERCISE 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T00:32:11.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sql/SQLdeveloper/1.jpg)" alt="Conneting SQL Developer with Github" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/04/26/SQL/Conneting%20SQL%20Developer%20with%20Github/" class="title">Conneting SQL Developer with Github</a></p>
+                            <p class="item-date"><time datetime="2022-04-26T07:02:41.000Z" itemprop="datePublished">2022-04-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">36</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/03/24/Python/Tutorial/np_tutorial/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
