@@ -53,7 +53,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+</head>
 
 <body>
     <div id="wrap">
@@ -170,7 +170,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/11/15/Python/Exercise/coding_test_ex1/" class="article-date">
-     <time datetime="2022-11-15T06:59:06.739Z" itemprop="dateModified">2022-11-15</time>
+     <time datetime="2022-11-15T07:37:30.102Z" itemprop="dateModified">2022-11-15</time>
   </a>
 </div>
 
@@ -197,9 +197,7 @@
 
             
 
-            <h1 id="K번째수"><a href="#K번째수" class="headerlink" title="K번째수"></a>K번째수</h1><p>출처 : <a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/42748">Programmers</a></p>
-<h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.</p>
-<p>예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i &#x3D; 2, j &#x3D; 5, k &#x3D; 3이라면</p>
+            <h1 id="K번째수"><a href="#K번째수" class="headerlink" title="K번째수"></a>K번째수</h1><h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.<br>예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i &#x3D; 2, j &#x3D; 5, k &#x3D; 3이라면,</p>
 <ol>
 <li>array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.</li>
 <li>1에서 나온 배열을 정렬하면 [2, 3, 5, 6]입니다.</li>
@@ -238,6 +236,10 @@
 <h2 id="풀이-2"><a href="#풀이-2" class="headerlink" title="풀이 2"></a>풀이 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">solution</span>(<span class="params">array, commands</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x:<span class="built_in">sorted</span>(array[x[<span class="number">0</span>]-<span class="number">1</span>:x[<span class="number">1</span>]])[x[<span class="number">2</span>]-<span class="number">1</span>], commands))</span><br></pre></td></tr></table></figure>
 
 <h2 id="풀이-3"><a href="#풀이-3" class="headerlink" title="풀이 3"></a>풀이 3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">solution</span>(<span class="params">array, commands</span>):</span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> command <span class="keyword">in</span> commands:</span><br><span class="line">        i,j,k = command</span><br><span class="line">        answer.append(<span class="built_in">list</span>(<span class="built_in">sorted</span>(array[i-<span class="number">1</span>:j]))[k-<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+
+<p>출처 : <a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/42748">Programmers</a></p>
+
         </div>
         <footer class="article-footer">
             
@@ -322,12 +324,10 @@
         "dateCreated": "2022-11-15",
         "dateModified": "2022-11-15",
         "url": "http://gonekng.github.io/2022/11/15/Python/Exercise/coding_test_ex1/",
-        "description": "K번째수출처 : Programmers
-문제배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.
-예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i &#x3D; 2, j &#x3D; 5, k &#x3D; 3이라면
+        "description": "K번째수문제배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i &#x3D; 2, j &#x3D; 5, k &#x3D; 3이라면,
 
 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.
-1에",
+1에서 나온 배열을 정렬하면 [2,",
         "wordCount": 383
     }
 </script>
