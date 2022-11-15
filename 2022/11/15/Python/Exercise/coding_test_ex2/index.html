@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Coding Test Ex.2 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,programmers" />
+    
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favion_github.png" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/Oracle/">Oracle</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/coding-test/">coding test</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Exercise/coding_test_ex2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Coding Test Ex.2
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/11/15/Python/Exercise/coding_test_ex2/" class="article-date">
+       <time datetime="2022-11-15T07:45:15.000Z" itemprop="datePublished">2022-11-15</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/11/15/Python/Exercise/coding_test_ex2/" class="article-date">
+     <time datetime="2022-11-15T07:43:28.504Z" itemprop="dateModified">2022-11-15</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/programmers/" rel="tag">programmers</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="성격유형검사"><a href="#성격유형검사" class="headerlink" title="성격유형검사"></a>성격유형검사</h1><h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>나만의 카카오 성격 유형 검사지를 만들려고 합니다. 성격 유형 검사는 다음과 같은 4개 지표로 성격 유형을 구분합니다. 성격은 각 지표에서 두 유형 중 하나로 결정됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>지표 번호</th>
+<th>성격 유형</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1번 지표</td>
+<td>라이언형(R), 튜브형(T)</td>
+</tr>
+<tr>
+<td>2번 지표</td>
+<td>콘형(C), 프로도형(F)</td>
+</tr>
+<tr>
+<td>3번 지표</td>
+<td>제이지형(J), 무지형(M)</td>
+</tr>
+<tr>
+<td>4번 지표</td>
+<td>어피치형(A), 네오형(N)</td>
+</tr>
+</tbody></table>
+<p>4개의 지표가 있으므로 성격 유형은 총 16(&#x3D;2 x 2 x 2 x 2)가지가 나올 수 있습니다. 예를 들어, “RFMN”이나 “TCMA”와 같은 성격 유형이 있습니다.</p>
+<p>검사지에는 총 n개의 질문이 있고, 각 질문에는 아래와 같은 7개의 선택지가 있습니다.</p>
+<ul>
+<li><code>매우 비동의</code></li>
+<li><code>비동의</code></li>
+<li><code>약간 비동의</code></li>
+<li><code>모르겠음</code></li>
+<li><code>약간 동의</code></li>
+<li><code>동의</code></li>
+<li><code>매우 동의</code></li>
+</ul>
+<p>각 질문은 1가지 지표로 성격 유형 점수를 판단합니다. 예를 들어, 어떤 한 질문에서 4번 지표로 아래 표처럼 점수를 매길 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>네오형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>네오형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>네오형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>어피치형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>어피치형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>어피치형 3점</td>
+</tr>
+</tbody></table>
+<p>검사자가 질문에서 <code>약간 동의</code> 를 선택할 경우 어피치형(A) 성격 유형 1점을 받게 됩니다. 만약 검사자가 <code>매우 비동의</code> 를 선택할 경우 네오형(N) 성격 유형 3점을 받게 됩니다.</p>
+<p>위 예시처럼 네오형이 비동의, 어피치형이 동의인 경우만 주어지지 않고, 질문에 따라 네오형이 동의, 어피치형이 비동의인 경우도 주어질 수 있습니다. 하지만 각 선택지는 고정적인 크기의 점수를 가지고 있습니다.</p>
+<ul>
+<li><code>매우 동의</code>나 <code>매우 비동의</code> 를 선택하면 3점을 얻습니다.</li>
+<li><code>동의</code>나 <code>비동의</code> 를 선택하면 2점을 얻습니다.</li>
+<li><code>약간 동의</code>나 <code>약간 비동의</code> 를 선택하면 1점을 얻습니다.</li>
+<li><code>모르겠음</code> 를 선택하면 점수를 얻지 않습니다.</li>
+</ul>
+<p>검사 결과는 모든 질문의 성격 유형 점수를 더하여 각 지표에서 더 높은 점수를 받은 성격 유형이 검사자의 성격 유형이라고 판단합니다. 단, 하나의 지표에서 각 성격 유형 점수가 같으면, 두 성격 유형 중 사전 순으로 빠른 성격 유형을 검사자의 성격 유형이라고 판단합니다.</p>
+<p>질문마다 판단하는 지표를 담은 1차원 문자열 배열 <code>survey</code>와 검사자가 각 질문마다 선택한 선택지를 담은 1차원 정수 배열 <code>choices</code>가 매개변수로 주어집니다. 이때, 검사자의 성격 유형 검사 결과를 지표 번호 순서대로 return 하도록 solution 함수를 완성해주세요.</p>
+<h3 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h3><ul>
+<li>1 ≤ <code>survey</code>의 길이 ( &#x3D; <code>n</code>) ≤ 1,000<ul>
+<li><code>survey</code>의 원소는 <code>&quot;RT&quot;, &quot;TR&quot;, &quot;FC&quot;, &quot;CF&quot;, &quot;MJ&quot;, &quot;JM&quot;, &quot;AN&quot;, &quot;NA&quot;</code> 중 하나입니다.</li>
+<li><code>survey[i]</code>의 첫 번째 캐릭터는 i+1번 질문의 비동의 관련 선택지를 선택하면 받는 성격 유형을 의미합니다.</li>
+<li><code>survey[i]</code>의 두 번째 캐릭터는 i+1번 질문의 동의 관련 선택지를 선택하면 받는 성격 유형을 의미합니다.</li>
+</ul>
+</li>
+<li><code>choices</code>의 길이 &#x3D; <code>survey</code>의 길이<ul>
+<li><p><code>choices[i]</code>는 검사자가 선택한 i+1번째 질문의 선택지를 의미합니다.</p>
+</li>
+<li><p>1 ≤ <code>choices</code>의 원소 ≤ 7</p>
+<table>
+<thead>
+<tr>
+<th>choices</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>매우 비동의</td>
+</tr>
+<tr>
+<td>2</td>
+<td>비동의</td>
+</tr>
+<tr>
+<td>3</td>
+<td>약간 비동의</td>
+</tr>
+<tr>
+<td>4</td>
+<td>모르겠음</td>
+</tr>
+<tr>
+<td>5</td>
+<td>약간 동의</td>
+</tr>
+<tr>
+<td>6</td>
+<td>동의</td>
+</tr>
+<tr>
+<td>7</td>
+<td>매우 동의</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="입출력-예시"><a href="#입출력-예시" class="headerlink" title="입출력 예시"></a>입출력 예시</h3><table>
+<thead>
+<tr>
+<th>survey</th>
+<th>choices</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[“AN”, “CF”, “MJ”, “RT”, “NA”]</td>
+<td>[5, 3, 2, 7, 5]</td>
+<td>“TCMA”</td>
+</tr>
+<tr>
+<td>[“TR”, “RT”, “TR”]</td>
+<td>[7, 1, 3]</td>
+<td>“RCJA”</td>
+</tr>
+</tbody></table>
+<p><strong>입출력 예 #1</strong></p>
+<p>1번 질문의 점수 배치는 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>어피치형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>어피치형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>어피치형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>네오형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>네오형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>네오형 3점</td>
+</tr>
+</tbody></table>
+<p>1번 질문에서는 지문의 예시와 다르게 비동의 관련 선택지를 선택하면 어피치형(A) 성격 유형의 점수를 얻고, 동의 관련 선택지를 선택하면 네오형(N) 성격 유형의 점수를 얻습니다. 1번 질문에서 검사자는 <code>약간 동의</code> 선택지를 선택했으므로 네오형(N) 성격 유형 점수 1점을 얻게 됩니다.</p>
+<p>2번 질문의 점수 배치는 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>콘형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>콘형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>콘형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>프로도형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>프로도형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>프로도형 3점</td>
+</tr>
+</tbody></table>
+<p>2번 질문에서 검사자는 <code>약간 비동의</code> 선택지를 선택했으므로 콘형(C) 성격 유형 점수 1점을 얻게 됩니다.</p>
+<p>3번 질문의 점수 배치는 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>무지형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>무지형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>무지형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>제이지형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>제이지형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>제이지형 3점</td>
+</tr>
+</tbody></table>
+<p>3번 질문에서 검사자는 <code>비동의</code> 선택지를 선택했으므로 무지형(M) 성격 유형 점수 2점을 얻게 됩니다.</p>
+<p>4번 질문의 점수 배치는 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>라이언형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>라이언형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>라이언형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>튜브형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>튜브형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>튜브형 3점</td>
+</tr>
+</tbody></table>
+<p>4번 질문에서 검사자는 <code>매우 동의</code> 선택지를 선택했으므로 튜브형(T) 성격 유형 점수 3점을 얻게 됩니다.</p>
+<p>5번 질문의 점수 배치는 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>선택지</th>
+<th>성격 유형 점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>매우 비동의</td>
+<td>네오형 3점</td>
+</tr>
+<tr>
+<td>비동의</td>
+<td>네오형 2점</td>
+</tr>
+<tr>
+<td>약간 비동의</td>
+<td>네오형 1점</td>
+</tr>
+<tr>
+<td>모르겠음</td>
+<td>어떤 성격 유형도 점수를 얻지 않습니다</td>
+</tr>
+<tr>
+<td>약간 동의</td>
+<td>어피치형 1점</td>
+</tr>
+<tr>
+<td>동의</td>
+<td>어피치형 2점</td>
+</tr>
+<tr>
+<td>매우 동의</td>
+<td>어피치형 3점</td>
+</tr>
+</tbody></table>
+<p>5번 질문에서 검사자는 <code>약간 동의</code> 선택지를 선택했으므로 어피치형(A) 성격 유형 점수 1점을 얻게 됩니다.</p>
+<p>1번부터 5번까지 질문의 성격 유형 점수를 합치면 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>지표 번호</th>
+<th>성격 유형</th>
+<th>점수</th>
+<th>성격 유형</th>
+<th>점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1번 지표</td>
+<td>라이언형(R)</td>
+<td>0</td>
+<td>튜브형(T)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2번 지표</td>
+<td>콘형(C)</td>
+<td>1</td>
+<td>프로도형(F)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3번 지표</td>
+<td>제이지형(J)</td>
+<td>0</td>
+<td>무지형(M)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4번 지표</td>
+<td>어피치형(A)</td>
+<td>1</td>
+<td>네오형(N)</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>각 지표에서 더 점수가 높은 <code>T</code>,<code>C</code>,<code>M</code>이 성격 유형입니다.하지만, 4번 지표는 1점으로 동일한 점수입니다. 따라서, 4번 지표의 성격 유형은 사전순으로 빠른 <code>A</code>입니다.</p>
+<p>따라서 <code>&quot;TCMA&quot;</code>를 return 해야 합니다.</p>
+<p><strong>입출력 예 #2</strong></p>
+<p>1번부터 3번까지 질문의 성격 유형 점수를 합치면 아래 표와 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>지표 번호</th>
+<th>성격 유형</th>
+<th>점수</th>
+<th>성격 유형</th>
+<th>점수</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1번 지표</td>
+<td>라이언형(R)</td>
+<td>6</td>
+<td>튜브형(T)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2번 지표</td>
+<td>콘형(C)</td>
+<td>0</td>
+<td>프로도형(F)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3번 지표</td>
+<td>제이지형(J)</td>
+<td>0</td>
+<td>무지형(M)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4번 지표</td>
+<td>어피치형(A)</td>
+<td>0</td>
+<td>네오형(N)</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>1번 지표는 튜브형(T)보다 라이언형(R)의 점수가 더 높습니다. 따라서 첫 번째 지표의 성격 유형은 <code>R</code>입니다.하지만, 2, 3, 4번 지표는 모두 0점으로 동일한 점수입니다. 따라서 2, 3, 4번 지표의 성격 유형은 사전순으로 빠른 <code>C</code>, <code>J</code>, <code>A</code>입니다.</p>
+<p>따라서 <code>&quot;RCJA&quot;</code>를 return 해야 합니다.</p>
+<br>
+
+<h2 id="풀이-1"><a href="#풀이-1" class="headerlink" title="풀이 1"></a>풀이 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">solution</span>(<span class="params">survey, choices</span>):</span><br><span class="line">    answer = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    score = [[<span class="number">0</span>,<span class="number">0</span>], <span class="comment"># R, T</span></span><br><span class="line">             [<span class="number">0</span>,<span class="number">0</span>], <span class="comment"># C, F</span></span><br><span class="line">             [<span class="number">0</span>,<span class="number">0</span>], <span class="comment"># J, M</span></span><br><span class="line">             [<span class="number">0</span>,<span class="number">0</span>]] <span class="comment"># A, N</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i, string <span class="keyword">in</span> <span class="built_in">enumerate</span>(survey):</span><br><span class="line">        <span class="keyword">if</span> string == <span class="string">&quot;RT&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;TR&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">0</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;CF&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;FC&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">1</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;JM&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;MJ&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">2</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;AN&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">elif</span> string == <span class="string">&quot;NA&quot;</span>:</span><br><span class="line">            <span class="keyword">if</span> choices[i] == <span class="number">1</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">2</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">3</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">5</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">6</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">2</span></span><br><span class="line">            <span class="keyword">elif</span> choices[i] == <span class="number">7</span>:</span><br><span class="line">                score[<span class="number">3</span>][<span class="number">0</span>] += <span class="number">3</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> score[<span class="number">0</span>][<span class="number">0</span>] &gt;= score[<span class="number">0</span>][<span class="number">1</span>]:</span><br><span class="line">        answer = answer + <span class="string">&#x27;R&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = answer + <span class="string">&#x27;T&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> score[<span class="number">1</span>][<span class="number">0</span>] &gt;= score[<span class="number">1</span>][<span class="number">1</span>]:</span><br><span class="line">        answer = answer + <span class="string">&#x27;C&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = answer + <span class="string">&#x27;F&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> score[<span class="number">2</span>][<span class="number">0</span>] &gt;= score[<span class="number">2</span>][<span class="number">1</span>]:</span><br><span class="line">        answer = answer + <span class="string">&#x27;J&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = answer + <span class="string">&#x27;M&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> score[<span class="number">3</span>][<span class="number">0</span>] &gt;= score[<span class="number">3</span>][<span class="number">1</span>]:</span><br><span class="line">        answer = answer + <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = answer + <span class="string">&#x27;N&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+<h2 id="풀이-2"><a href="#풀이-2" class="headerlink" title="풀이 2"></a>풀이 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">solution</span>(<span class="params">survey, choices</span>):</span><br><span class="line"></span><br><span class="line">    my_dict = &#123;<span class="string">&quot;RT&quot;</span>:<span class="number">0</span>,<span class="string">&quot;CF&quot;</span>:<span class="number">0</span>,<span class="string">&quot;JM&quot;</span>:<span class="number">0</span>,<span class="string">&quot;AN&quot;</span>:<span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> A,B <span class="keyword">in</span> <span class="built_in">zip</span>(survey,choices):</span><br><span class="line">        <span class="keyword">if</span> A <span class="keyword">not</span> <span class="keyword">in</span> my_dict.keys():</span><br><span class="line">            A = A[::-<span class="number">1</span>]</span><br><span class="line">            my_dict[A] -= B-<span class="number">4</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            my_dict[A] += B-<span class="number">4</span></span><br><span class="line"></span><br><span class="line">    result = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> my_dict.keys():</span><br><span class="line">        <span class="keyword">if</span> my_dict[name] &gt; <span class="number">0</span>:</span><br><span class="line">            result += name[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">elif</span> my_dict[name] &lt; <span class="number">0</span>:</span><br><span class="line">            result += name[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result += <span class="built_in">sorted</span>(name)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h2 id="풀이-3"><a href="#풀이-3" class="headerlink" title="풀이 3"></a>풀이 3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">solution</span>(<span class="params">설문_조사_배열, 선택지_배열</span>):</span><br><span class="line">    지표 = &#123;&#125;</span><br><span class="line">    지표[<span class="string">&#x27;RT&#x27;</span>] = 지표[<span class="string">&#x27;TR&#x27;</span>] = &#123;<span class="string">&#x27;R&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;T&#x27;</span>: <span class="number">0</span>,&#125;</span><br><span class="line">    지표[<span class="string">&#x27;FC&#x27;</span>] = 지표[<span class="string">&#x27;CF&#x27;</span>] = &#123;<span class="string">&#x27;C&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;F&#x27;</span>: <span class="number">0</span>,&#125;</span><br><span class="line">    지표[<span class="string">&#x27;MJ&#x27;</span>] = 지표[<span class="string">&#x27;JM&#x27;</span>] = &#123;<span class="string">&#x27;J&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;M&#x27;</span>: <span class="number">0</span>,&#125;</span><br><span class="line">    지표[<span class="string">&#x27;AN&#x27;</span>] = 지표[<span class="string">&#x27;NA&#x27;</span>] = &#123;<span class="string">&#x27;A&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;N&#x27;</span>: <span class="number">0</span>,&#125;</span><br><span class="line">    점수 = &#123;</span><br><span class="line">        <span class="string">&#x27;매우 비동의&#x27;</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="string">&#x27;비동의&#x27;</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">&#x27;약간 비동의&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">&#x27;모르겠음&#x27;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="string">&#x27;약간 동의&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">&#x27;동의&#x27;</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">&#x27;매우 동의&#x27;</span>: <span class="number">3</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    비동의 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">    동의 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">    선택지 = &#123;</span><br><span class="line">        <span class="number">1</span>: <span class="string">&#x27;매우 비동의&#x27;</span>,</span><br><span class="line">        <span class="number">2</span>: <span class="string">&#x27;비동의&#x27;</span>,</span><br><span class="line">        <span class="number">3</span>: <span class="string">&#x27;약간 비동의&#x27;</span>,</span><br><span class="line">        <span class="number">4</span>: <span class="string">&#x27;모르겠음&#x27;</span>,</span><br><span class="line">        <span class="number">5</span>: <span class="string">&#x27;약간 동의&#x27;</span>,</span><br><span class="line">        <span class="number">6</span>: <span class="string">&#x27;동의&#x27;</span>,</span><br><span class="line">        <span class="number">7</span>: <span class="string">&#x27;매우 동의&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    answer = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> 인덱스 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(설문_조사_배열)):</span><br><span class="line">        비동의_캐릭터, 동의_캐릭터 = 설문_조사_배열[인덱스]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> 선택지_배열[인덱스] <span class="keyword">in</span> 비동의:</span><br><span class="line">            지표[설문_조사_배열[인덱스]][비동의_캐릭터] += 점수[선택지[선택지_배열[인덱스]]]</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> 선택지_배열[인덱스] <span class="keyword">in</span> 동의:</span><br><span class="line">            지표[설문_조사_배열[인덱스]][동의_캐릭터] += 점수[선택지[선택지_배열[인덱스]]]</span><br><span class="line"></span><br><span class="line">    결과_배열 = [지표[<span class="string">&#x27;RT&#x27;</span>].items(), 지표[<span class="string">&#x27;FC&#x27;</span>].items(), 지표[<span class="string">&#x27;MJ&#x27;</span>].items(), 지표[<span class="string">&#x27;AN&#x27;</span>].items()]</span><br><span class="line">    정렬된_배열 = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> 결과 <span class="keyword">in</span> 결과_배열:</span><br><span class="line">        정렬된_배열.append(<span class="built_in">sorted</span>(결과, key=<span class="keyword">lambda</span> x: -x[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join([캐릭터_점수_튜플[<span class="number">0</span>] <span class="keyword">for</span> [캐릭터_점수_튜플, _] <span class="keyword">in</span> 정렬된_배열])</span><br></pre></td></tr></table></figure>
+
+<p>출처 : <a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/118666">Programmers</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/11/15/Python/Exercise/coding_test_ex2/" data-id="clahwrfqd0000k8lf7dbi7gfm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Coding Test Ex.2",
+        "image": "http://gonekng.github.io",
+        "keywords": "python programmers",
+        "genre": "python coding test",
+        "datePublished": "2022-11-15",
+        "dateCreated": "2022-11-15",
+        "dateModified": "2022-11-15",
+        "url": "http://gonekng.github.io/2022/11/15/Python/Exercise/coding_test_ex2/",
+        "description": "성격유형검사문제나만의 카카오 성격 유형 검사지를 만들려고 합니다. 성격 유형 검사는 다음과 같은 4개 지표로 성격 유형을 구분합니다. 성격은 각 지표에서 두 유형 중 하나로 결정됩니다.
+
+
+
+지표 번호
+성격 유형
+
+
+
+1번 지표
+라이언형(R), 튜브형(T)
+
+
+2번 지표
+콘형(C), 프로도형(F)
+
+
+3번 지표
+제이지형(J), 무지형(M)
+
+
+4번 지표
+어",
+        "wordCount": 4148
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/11/15/Python/Exercise/coding_test_ex1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Coding Test Ex.1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/coding-test/">coding test</a></p>
+                            <p class="item-title"><a href="/2022/11/15/Python/Exercise/coding_test_ex2/" class="title">Coding Test Ex.2</a></p>
+                            <p class="item-date"><time datetime="2022-11-15T07:45:15.000Z" itemprop="datePublished">2022-11-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/coding-test/">coding test</a></p>
+                            <p class="item-title"><a href="/2022/11/15/Python/Exercise/coding_test_ex1/" class="title">Coding Test Ex.1</a></p>
+                            <p class="item-date"><time datetime="2022-11-15T06:43:00.000Z" itemprop="datePublished">2022-11-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/10/17/Setting/Git%20Installation%20in%20Windows11/" class="title">Git Installation in Windows11</a></p>
+                            <p class="item-date"><time datetime="2022-10-17T07:14:08.000Z" itemprop="datePublished">2022-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2022/05/03/Setting/Setting%20VS%20Code%20for%20Web%20Development/" class="title">Setting VS Code for Web Development</a></p>
+                            <p class="item-date"><time datetime="2022-05-03T06:53:01.000Z" itemprop="datePublished">2022-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/sql/Oracle/">Oracle</a></p>
+                            <p class="item-title"><a href="/2022/05/02/SQL/SQL%20TEST%206-7/" class="title">SQL TEST 6-7</a></p>
+                            <p class="item-date"><time datetime="2022-05-02T03:08:45.000Z" itemprop="datePublished">2022-05-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/Oracle/">Oracle</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/Oracle/" style="font-size: 13.33px;">Oracle</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/programmers/" style="font-size: 11.11px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/11/15/Python/Exercise/coding_test_ex2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
