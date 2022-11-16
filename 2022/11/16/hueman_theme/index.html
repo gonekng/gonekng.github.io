@@ -6,9 +6,11 @@
     
 
     
-    <title>Archive: 2022/3 | Jiwon&#39;s Blog</title>
+    <title>Hexo 블로그 Hueman 테마 설정 | Jiwon&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="hexo,hueman" />
     
     
 
@@ -49,7 +51,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
     <div id="wrap">
@@ -134,359 +136,250 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2022/3
+    <a class="page-title-link" href="/categories/hexo/">hexo</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-hueman_theme" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-31T08:05:57.000Z" itemprop="datePublished">2022-03-31</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/31/Python/ML/ML_ch_6_3/">ML Practice 6_3</a>
+        Hexo 블로그 Hueman 테마 설정
         </h1>
     
 
-        <p class="article-excerpt">
-            Dimensionaliy Reduction: Decreasing the size of the data by selecting some features that best represent the data
-To prevent overfitting and improve model performance
-PCA(Principal Component Analysis),
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
+            </header>
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/11/16/hueman_theme/" class="article-date">
+       <time datetime="2022-11-16T08:01:23.000Z" itemprop="datePublished">2022-11-16</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/11/16/hueman_theme/" class="article-date">
+     <time datetime="2022-11-16T08:03:30.447Z" itemprop="dateModified">2022-11-16</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="tag-link-link" href="/tags/hueman/" rel="tag">hueman</a>
+    </div>
+
+                
+
+                
+
             </div>
-            <div class="date"><time datetime="2022-03-31T08:04:50.000Z" itemprop="datePublished">2022-03-31</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/31/Python/ML/ML_ch_6_2/">ML Practice 6_2</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            
 
-        <p class="article-excerpt">
-            K-means Clustering
-Find mean of pixel value : cluster center, centroid
-Determine the centers of k clusters at random.
-Find the nearest cluster center from each sample and designate it as a sample of t
-        </p>
+            
+
+            
+
+            <h1 id="Install-theme"><a href="#Install-theme" class="headerlink" title="Install theme"></a>Install theme</h1><ol>
+<li>블로그와 연결된 루트 폴더에서 git 명령어로 <code>Hueman</code> 테마를 다운로드한다.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> [https://github.com/ppoffice/hexo-theme-hueman.git](https://github.com/ppoffice/hexo-theme-hueman.git) themes/hueman</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>블로그의 <code>_config.yml</code>을 수정합니다.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: hueman</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>themes 폴더 안에 있는 <code>_config.yml.example</code>의 이름을 <code>_config.yml</code>로 수정한다.  </p>
+</li>
+<li><p>검색 기능을 위해 <code>hexo-generator-json-content</code>를 설치한다.</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="Change-settings"><a href="#Change-settings" class="headerlink" title="Change settings"></a>Change settings</h1><p>앞에서 이름을 변경했던 <code>_config.yml</code> 파일을 수정하면 각종 설정을 변경할 수 있다.</p>
+<h3 id="메뉴"><a href="#메뉴" class="headerlink" title="메뉴"></a><strong>메뉴</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menus</span></span><br><span class="line">menu:</span><br><span class="line">    Home: /</span><br><span class="line">    <span class="comment"># Delete this row if you don&#x27;t want categories in your header nav bar</span></span><br><span class="line">    Categories:</span><br><span class="line">    About: https://about.me/gonekng</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>각 메뉴를 클릭했을 때 이동할 경로를 지정할 수 있다. 이때 카테고리는 따로 지정하지 않아도 각 게시글에서 지정한대로 자동 적용된다.</li>
+<li>About 메뉴는 블로그 주인에 대한 자기소개 페이지로 이동하기 위한 것으로, 필자는 <a target="_blank" rel="noopener" href="http://about.me/">About.me</a> 라는 사이트를 이용하여 만든 프로필 URL을 연결했다.</li>
+</ul>
+<h3 id="커스터마이징"><a href="#커스터마이징" class="headerlink" title="커스터마이징"></a>커스터마이징</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Customize</span></span><br><span class="line">customize:</span><br><span class="line">    logo:</span><br><span class="line">        width: 165</span><br><span class="line">        height: 60</span><br><span class="line">        url: images/logo-header.png</span><br><span class="line">    theme_color: <span class="string">&#x27;#006bde&#x27;</span></span><br><span class="line">    highlight: androidstudio</span><br><span class="line">    sidebar: right <span class="comment"># sidebar position, options: left, right</span></span><br><span class="line">    thumbnail: <span class="literal">false</span> <span class="comment"># enable posts thumbnail, options: true, false</span></span><br><span class="line">    favicon:  <span class="comment"># path to favicon</span></span><br><span class="line">    social_links: <span class="comment"># for more icons, please see http://fontawesome.io/icons/#brand</span></span><br><span class="line">        instagram: https://instagram.com/gone_kng</span><br><span class="line">        github: https://github.com/gonekng</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>메뉴 위에 삽입할 로고 파일 url을 지정할 수 있다. <code>hueman/source/css/images</code> 폴더 내부에 저장된 이미지를 사용할 수도 있고, 웹 이미지 url도 가능하다.</p>
+</li>
+<li><p>테마의 색상을 지정할 수 있다.</p>
+</li>
+<li><p>게시글에 포함된 코드 블럭에서 적용되는 하이라이트를 지정할 수 있다. 기본값은 <code>androidstudio</code>이며, <code>hueman/source/css/_highlight</code> 폴더에 있는 것들 중 선택할 수 있다.</p>
+</li>
+<li><p>사이드바의 위치를 조정할 수 있다.</p>
+</li>
+<li><p>게시글의 썸네일을 표시하거나 숨길 수 있다.</p>
+<ul>
+<li><p>게시글의 썸네일은 게시글에 포함된 첫번째 사진이 기본값이며, 게시글의 front-matter 부분에서 경로를 추가하면 변경 가능하다.</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Hello World</span><br><span class="line">date: 2022/11/16 16:36:10</span><br><span class="line">thumbnail: images/example.jpg</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>파비콘(URL 앞에 붙는 작은 아이콘)을 지정할 수 있다.</p>
+</li>
+<li><p>연결하고자 하는 SNS 링크를 추가할 수 있다. 아이콘은 <a target="_blank" rel="noopener" href="http://fontawesome.io/icons/#brand">FontAwesome</a>에서 선택하여 이름과 URL을 지정하면 적용된다.</p>
+</li>
+</ul>
+<h3 id="위젯"><a href="#위젯" class="headerlink" title="위젯"></a><strong>위젯</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Widgets</span></span><br><span class="line">widgets:</span><br><span class="line">    - recent_posts</span><br><span class="line">    - category</span><br><span class="line">    - archive</span><br><span class="line">    - tagcloud</span><br><span class="line">    - tag</span><br><span class="line">    - links</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>사이드바에 추가되는 다양한 위젯을 지정할 수 있으며, 작성한 순서대로 차례로 보여지게 된다.</p>
+</li>
+<li><p>링크 위젯에 들어갈 내용은 <code>_config.yml</code> 하단에서 다음의 코드를 통해 추가할 수 있다.</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line">miscellaneous:</span><br><span class="line">    links:</span><br><span class="line">        Hexo: http://hexo.io</span><br><span class="line">        Naver blog: https://blog.naver.com/donumm</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="검색"><a href="#검색" class="headerlink" title="검색"></a><strong>검색</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Search</span></span><br><span class="line">search:</span><br><span class="line">    insight: <span class="literal">true</span> <span class="comment"># you need to install `hexo-generator-json-content` before using Insight Search</span></span><br><span class="line">    swiftype: <span class="comment"># enter swiftype install key here</span></span><br><span class="line">    baidu: <span class="literal">false</span> <span class="comment"># you need to disable other search engines to use Baidu search, options: true, false</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>블로그 내의 검색 기능을 설정할 수 있다. 필자는 테마에서 기본적으로 제공하는 Insight Search를 사용하였다. 앞서 언급했듯이 <code>hexo-generator-json-content</code>를 설치해야 사용 가능하다.</li>
+</ul>
+<h3 id="댓글"><a href="#댓글" class="headerlink" title="댓글"></a><strong>댓글</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comment</span></span><br><span class="line">comment:</span><br><span class="line">    disqus: gonekng <span class="comment"># enter disqus shortname here</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>댓글 기능은 기본적으로 제공하는 <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a> 서비스를 사용하면 된다.  <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a> 사이트에 회원가입 및 로그인 후 해당하는 아이디를 입력한다.</li>
+<li>자세한 내용은 별도의 게시글에서 추후 다룰 예정이다.</li>
+</ul>
+<h3 id="공유"><a href="#공유" class="headerlink" title="공유"></a><strong>공유</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Share</span></span><br><span class="line">share: default <span class="comment"># options: jiathis, bdshare, addtoany, default</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>해당 게시글의 공유 기능에도 몇가지 옵션이 있으나, 필자는 기본값으로 설정하였다.</li>
+</ul>
+<br>
+
+<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><p><img src="/hueman_result.png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/11/16/hueman_theme/" data-id="clajcxb73000008lfgmlw5yq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Hexo 블로그 Hueman 테마 설정",
+        "image": "http://gonekng.github.io/hueman_result.png",
+        "keywords": "hexo hueman",
+        "genre": "hexo",
+        "datePublished": "2022-11-16",
+        "dateCreated": "2022-11-16",
+        "dateModified": "2022-11-16",
+        "url": "http://gonekng.github.io/2022/11/16/hueman_theme/",
+        "description": "Install theme
+블로그와 연결된 루트 폴더에서 git 명령어로 Hueman 테마를 다운로드한다.
+
+1$ git clone [https://github.com/ppoffice/hexo-theme-hueman.git](https://github.com/ppoffice/hexo-theme-hueman.git) themes/hueman
+
+
+블로그의 _co",
+        "wordCount": 697
+    }
+</script>
+
 </article>
-    
-        </div>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-31T08:03:00.000Z" itemprop="datePublished">2022-03-31</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/31/Python/ML/ML_ch_6_1/">ML Practice 6_1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Unsupervised Learning
-No dependent variables and targets. (↔ Supervised Learning)
-Clustering (Multiple class)
-Must be many different types of data
-Linked to deep learning
-
-
-Dimensionality reduction
-
-I
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-31T03:40:40.000Z" itemprop="datePublished">2022-03-31</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/31/Python/ML/plot_tree_ex/">ML Practice Tree plot Example</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Goal : To change the color of tree plot1!pip install -U matplotlib
-
-Requirement already satisfied: matplotlib in c:\programdata\anaconda3\lib\site-packages (3.4.3)
-Collecting matplotlib
-  Downloading 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-30T07:48:30.000Z" itemprop="datePublished">2022-03-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/30/Python/ML/ML_ch_5_3/">ML Practice 5_3</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Ensemble
-algorithm that performs best in dealing with structured data
-Bagging : A method of aggregating results by taking multiple bootstrap samples and training each model. (parallel learning)
-Random
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-30T06:40:40.000Z" itemprop="datePublished">2022-03-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/30/Python/ML/ML_ch_5_2/">ML Practice 5_2</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Cross Validation: Repeated process of spliting validation set and evaluating model.
-Train set : Validation set : Test set &#x3D; 6 : 2 : 2 (generally)
-Test sets are not used in the model learning proc
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-30T06:10:20.000Z" itemprop="datePublished">2022-03-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/30/Python/ML/ML_ch_5_1/">ML Practice 5_1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Prepare Data
-Import wine data set
-class 0: red wine
-class 1: white wine
 
 
+    
+    </section>
 
-123import pandas as pdwine = pd.read_csv(&quot;https://bit.ly/wine_csv_data&quot;)print(wine.head())
-
-   alcohol  sugar    pH
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-29T07:10:25.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Python/ML/ML_ch_4_2/">ML Practice 4_2</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Gradient Descent(경사 하강법): Algorithm for finding the minimum value of a loss function using a sample of a training set
-stochastic gradient descent(확률적 경사 하강법; SGD)
-method of randomly selecting one samp
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-29T03:50:45.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Python/ML/ML_ch_4_1/">ML Practice 4_1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Prepare DataImport data set1234import pandas as pdfish = pd.read_csv(&#x27;https://bit.ly/fish_csv_data&#x27;)print(fish.head())
-
-  Species  Weight  Length  Diagonal   Height   Width
-0   Bream   242.0
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a>
-            </div>
-            <div class="date"><time datetime="2022-03-28T15:34:50.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Python/ML/ML_ch_3_3/">ML Practice 3_3</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Prepare Data123import pandas as pddf = pd.read_csv(&#x27;https://bit.ly/perch_csv_data&#x27;)perch_full = df.to_numpy() # Convert Pandas DataFrame to Numpy Array
-
-
-12345678import numpy as npperch_weig
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 3</span>
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2022/03/page/2/">2</a><a class="page-number" href="/archives/2022/03/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/03/page/2/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -515,6 +408,19 @@ method of randomly selecting one samp
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/11/15/Python/Exercise/coding_test_ex2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Coding Test Ex.2</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -672,11 +578,13 @@ method of randomly selecting one samp
     var disqus_shortname = 'gonekng';
     
     
+    var disqus_url = 'http://gonekng.github.io/2022/11/16/hueman_theme/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
