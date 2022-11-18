@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Jupyter Notebook에서 SQL 실행하기 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="sql,oracle" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/sql/">sql</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-SQL/Jupyter Notebook에서 SQL 실행하기" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Jupyter Notebook에서 SQL 실행하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/11/18/SQL/Jupyter%20Notebook%EC%97%90%EC%84%9C%20SQL%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" class="article-date">
+       <time datetime="2022-11-18T14:37:04.000Z" itemprop="datePublished">2022-11-18</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/11/18/SQL/Jupyter%20Notebook%EC%97%90%EC%84%9C%20SQL%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" class="article-date">
+     <time datetime="2022-11-18T14:40:43.879Z" itemprop="dateModified">2022-11-18</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/oracle/" rel="tag">oracle</a>, <a class="tag-link-link" href="/tags/sql/" rel="tag">sql</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="라이브러리-설치"><a href="#라이브러리-설치" class="headerlink" title="라이브러리 설치"></a>라이브러리 설치</h2><ul>
+<li><p>공통적으로 다음 라이브러리를 설치한다</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ipython-sql</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/sql/sql_Jupiter/0.png" alt="Untitled"></p>
+</li>
+<li><p>접속하고자 하는 DB에 맞게 라이브러리를 설치한다</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sql server</span></span><br><span class="line">pip install pyodbc</span><br><span class="line"></span><br><span class="line"><span class="comment"># PostgreSQL </span></span><br><span class="line">pip install pyscopg2</span><br><span class="line"></span><br><span class="line"><span class="comment"># MySQL</span></span><br><span class="line">pip install PyMySQL</span><br><span class="line"></span><br><span class="line"><span class="comment"># Oracle</span></span><br><span class="line">pip install cx_Oracle</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/sql/sql_Jupiter/1.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="Jupyter-Notebook에서-설정하기"><a href="#Jupyter-Notebook에서-설정하기" class="headerlink" title="Jupyter Notebook에서 설정하기"></a>Jupyter Notebook에서 설정하기</h2><ul>
+<li><p>Jupyter Notebook에서 매직명령어로 익스텐션을 로드한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%load_ext sql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다음과 같은 창이 뜨면 Install을 누른다.</p>
+<p>  <img src="/images/sql/sql_Jupiter/2.png" alt="Untitled"></p>
+</li>
+<li><p>설치하면 정상적으로 실행이 된다</p>
+<p>  <img src="/images/sql/sql_Jupiter/3.png" alt="Untitled"></p>
+</li>
+<li><p>접속하려는 DB에 맞는 코드를 입력 후 실행</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># <span class="variable constant_">SQL</span> <span class="title class_">Server</span></span><br><span class="line">%sql mssql+<span class="attr">pyodbc</span>:<span class="comment">//user_name:password@host:port_number/db</span></span><br><span class="line"></span><br><span class="line"># <span class="title class_">PostgreSQL</span></span><br><span class="line">%sql <span class="attr">postgresql</span>:<span class="comment">//user_name:password@host:port_number/db</span></span><br><span class="line">            </span><br><span class="line"># <span class="title class_">MySQL</span></span><br><span class="line">%sql <span class="attr">mysql</span>:<span class="comment">//user_name:password@host:port_number/db</span></span><br><span class="line"></span><br><span class="line"># <span class="title class_">Oracle</span></span><br><span class="line">%sql <span class="attr">oracle</span>:<span class="comment">//user_name:password@127.0.0.1:port_number/db</span></span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/sql/sql_Jupiter/4.png" alt="Untitled"></p>
+</li>
+<li><p>연결이 되었으면 코드 앞에 <code>%%sql</code>을 붙이고 쿼리를 실행한다 (세미콜론 제외)</p>
+<p>  <img src="/images/sql/sql_Jupiter/5.png" alt="Untitled"></p>
+</li>
+<li><p>Jupyterlab에서 잘 실행되는 것을 확인할 수 있다.</p>
+<p>  <img src="/images/sql/sql_Jupiter/6.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>참고1 : <a target="_blank" rel="noopener" href="https://95pbj.tistory.com/47">https://95pbj.tistory.com/47</a></li>
+<li>참고2 : <a target="_blank" rel="noopener" href="https://towardsdatascience.com/heres-how-to-run-sql-in-jupyter-notebooks-f26eb90f3259">https://towardsdatascience.com/heres-how-to-run-sql-in-jupyter-notebooks-f26eb90f3259</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/11/18/SQL/Jupyter%20Notebook%EC%97%90%EC%84%9C%20SQL%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" data-id="clamlzuh80000wslf24wh0zm4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Jupyter Notebook에서 SQL 실행하기",
+        "image": "http://gonekng.github.io/images/sql/sql_Jupiter/0.png",
+        "keywords": "sql oracle",
+        "genre": "sql",
+        "datePublished": "2022-11-18",
+        "dateCreated": "2022-11-18",
+        "dateModified": "2022-11-18",
+        "url": "http://gonekng.github.io/2022/11/18/SQL/Jupyter Notebook에서 SQL 실행하기/",
+        "description": "라이브러리 설치
+공통적으로 다음 라이브러리를 설치한다
+  1pip install ipython-sql
+  
+
+접속하고자 하는 DB에 맞게 라이브러리를 설치한다
+  1234567891011# sql serverpip install pyodbc# PostgreSQL pip install pyscopg2# MySQLpip install PyMySQL# Oracl",
+        "wordCount": 226
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/11/16/hexo/disqus_comment/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Disqus로 블로그 댓글 기능 설정</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sql/">sql</a></p>
+                            <p class="item-title"><a href="/2022/11/18/SQL/Jupyter%20Notebook%EC%97%90%EC%84%9C%20SQL%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/" class="title">Jupyter Notebook에서 SQL 실행하기</a></p>
+                            <p class="item-date"><time datetime="2022-11-18T14:37:04.000Z" itemprop="datePublished">2022-11-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/hexo/">hexo</a></p>
+                            <p class="item-title"><a href="/2022/11/16/hexo/disqus_comment/" class="title">Disqus로 블로그 댓글 기능 설정</a></p>
+                            <p class="item-date"><time datetime="2022-11-16T09:55:51.000Z" itemprop="datePublished">2022-11-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/hexo/">hexo</a></p>
+                            <p class="item-title"><a href="/2022/11/16/hexo/hueman_theme/" class="title">Hexo 블로그 Hueman 테마 설정</a></p>
+                            <p class="item-date"><time datetime="2022-11-16T08:01:23.000Z" itemprop="datePublished">2022-11-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/coding-test/">coding test</a></p>
+                            <p class="item-title"><a href="/2022/11/15/Python/Exercise/coding_test_ex2/" class="title">Coding Test Ex.2</a></p>
+                            <p class="item-date"><time datetime="2022-11-15T07:45:15.000Z" itemprop="datePublished">2022-11-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/coding-test/">coding test</a></p>
+                            <p class="item-title"><a href="/2022/11/15/Python/Exercise/coding_test_ex1/" class="title">Coding Test Ex.1</a></p>
+                            <p class="item-date"><time datetime="2022-11-15T06:43:00.000Z" itemprop="datePublished">2022-11-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">38</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/hueman/" style="font-size: 11.11px;">hueman</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/oracle/" style="font-size: 13.33px;">oracle</a> <a href="/tags/pandas/" style="font-size: 12.22px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/programmers/" style="font-size: 11.11px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disqus/" rel="tag">disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/" rel="tag">hueman</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2022/11/18/SQL/Jupyter%20Notebook%EC%97%90%EC%84%9C%20SQL%20%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
