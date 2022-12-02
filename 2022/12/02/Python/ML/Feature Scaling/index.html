@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/12/02/Python/ML/Feature%20Scaling/" class="article-date">
-     <time datetime="2022-12-02T11:23:50.514Z" itemprop="dateModified">2022-12-02</time>
+     <time datetime="2022-12-02T11:33:27.103Z" itemprop="dateModified">2022-12-02</time>
   </a>
 </div>
 
@@ -195,13 +195,7 @@
 
             
 
-            <h1 id="정규화-vs-표준화"><a href="#정규화-vs-표준화" class="headerlink" title="정규화 vs 표준화"></a>정규화 vs 표준화</h1><ul>
-<li>정규화 : <strong>데이터의 범위의 차이를 왜곡하지 않고 공통 척도로 변경하는 것</strong><ul>
-<li>ML에서 모든 데이터셋이 정규화 될 필요는 없고, 피처의 범위가 다른 경우에 필요하다.</li>
-</ul>
-</li>
-<li>표준화 : <strong>데이터가 표준정규분포의 속성을 갖도록 재조정되는 것</strong></li>
-</ul>
+            <h2 id="정규화-vs-표준화"><a href="#정규화-vs-표준화" class="headerlink" title="정규화 vs 표준화"></a>정규화 vs 표준화</h2><p>정규화 : <strong>데이터의 범위의 차이를 왜곡하지 않고 공통 척도로 변경하는 것</strong><br>표준화 : <strong>데이터가 표준정규분포의 속성을 갖도록 재조정되는 것</strong></p>
 <table>
 <thead>
 <tr>
@@ -210,20 +204,20 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Scaling에 최대&#x2F;최소값이 사용된다.</td>
-<td>Scaling에 평균 및 표준편차가 사용된다.</td>
+<td>Scaling에 최대&#x2F;최소값 사용</td>
+<td>Scaling에 평균 및 표준편차 사용</td>
 </tr>
 <tr>
-<td>[0,1] 또는 [-1,1] 사이의 값으로 변환된다.</td>
-<td>특정 범위로 제한되지 않는다.</td>
+<td>[0,1] 또는 [-1,1] 사이의 값으로 변환</td>
+<td>특정 범위로 제한되지 않음</td>
 </tr>
 <tr>
-<td>Feature의 크기(범위)가 다를 때 사용한다.</td>
-<td>평균을 0, 표준편차를 1로 만들고자 할 때 사용한다.</td>
+<td>Feature의 크기(범위)가 다를 때 사용</td>
+<td>평균을 0, 표준편차를 1로 만들고자 할 때 사용</td>
 </tr>
 <tr>
-<td>Feature의 분포에 대해 모를 때 유용하다.</td>
-<td>Feature가 정규분포(에 근사)인 경우 유용하다.</td>
+<td>Feature의 분포에 대해 모를 때 유용</td>
+<td>Feature가 정규분포(에 근사)인 경우 유용</td>
 </tr>
 <tr>
 <td>MinMaxScaler, MinAbsScaler, Normalizer</td>
@@ -233,36 +227,38 @@
 <Br>
 
 
-<h1 id="Python-Scaler-종류"><a href="#Python-Scaler-종류" class="headerlink" title="Python Scaler 종류"></a>Python Scaler 종류</h1><h3 id="StandardScaler"><a href="#StandardScaler" class="headerlink" title="StandardScaler"></a>StandardScaler</h3><pre><code>- 평균이 0, 분산이 1인 정규분포 (표준정규분포화)
-- 이상치의 영향 많이 받음
-    
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line">std = StandardScaler()</span><br><span class="line">std.fit(X_train)</span><br><span class="line">X_train_scaled = std.transform(X_train)</span><br><span class="line">X_test_scaled = std.transform(X_test)</span><br></pre></td></tr></table></figure>
-    
-</code></pre>
-<h3 id="MinMaxScaler"><a href="#MinMaxScaler" class="headerlink" title="MinMaxScaler"></a>MinMaxScaler</h3><pre><code>- 0과 1 사이의 값으로 변환
-- 이상치의 영향 많이 받음
-    
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">mms = MinMaxScaler()</span><br><span class="line">mms.fit(X_train)</span><br><span class="line">X_train_scaled = mms.transform(X_train)</span><br><span class="line">X_test_scaled = mms.transform(X_test)</span><br></pre></td></tr></table></figure>
-    
-</code></pre>
-<h3 id="MaxAbsScaler"><a href="#MaxAbsScaler" class="headerlink" title="MaxAbsScaler"></a>MaxAbsScaler</h3><pre><code>- -1과 1 사이의 값으로 변환
-- 이상치의 영향 많이 받음
-    
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MaxAbsScaler</span><br><span class="line"></span><br><span class="line">mas = MaxAbsScaler()</span><br><span class="line">mas.fit(X_train)</span><br><span class="line">X_train_scaled = mas.transform(X_train)</span><br><span class="line">X_test_scaled = mas.transform(X_test)</span><br></pre></td></tr></table></figure>
-    
-</code></pre>
-<h3 id="RobustScaler"><a href="#RobustScaler" class="headerlink" title="RobustScaler"></a>RobustScaler</h3><pre><code>- StandardScaler와 유사하나, 평균과 분산 대신 중간값과 사분위값을 사용
-- 이상치의 영향 최소화
-    
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line">std = StandardScaler()</span><br><span class="line">std.fit(X_train)</span><br><span class="line">X_train_scaled = std.transform(X_train)</span><br><span class="line">X_test_scaled = std.transform(X_test)</span><br></pre></td></tr></table></figure>
-    
-</code></pre>
-<h3 id="Normalizer"><a href="#Normalizer" class="headerlink" title="Normalizer"></a>Normalizer</h3><pre><code>- 각 열이 아닌 행마다 정규화 수행
-- 한 행의 모든 피처들 사이의 유클리드 거리가 1이 되도록 함
-- 학습이 빠르고, 과대적합 가능성을 낮출 수 있음
-    
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> RobustScaler</span><br><span class="line"></span><br><span class="line">rbs = RobustScaler()</span><br><span class="line">X_train_scaled = rbs.fit_transform(X_train)</span><br><span class="line">X_test_scaled = rbs.transform(X_test)</span><br></pre></td></tr></table></figure>
-</code></pre>
+<h2 id="Scaler-종류"><a href="#Scaler-종류" class="headerlink" title="Scaler 종류"></a>Scaler 종류</h2><h3 id="StandardScaler"><a href="#StandardScaler" class="headerlink" title="StandardScaler"></a>StandardScaler</h3><ul>
+<li><p>평균이 0, 분산이 1인 표준정규분포화</p>
+</li>
+<li><p>이상치의 영향 많이 받음</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line">std = StandardScaler()</span><br><span class="line">std.fit(X_train)</span><br><span class="line">X_train_scaled = std.transform(X_train)</span><br><span class="line">X_test_scaled = std.transform(X_test)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="RobustScaler"><a href="#RobustScaler" class="headerlink" title="RobustScaler"></a>RobustScaler</h3><ul>
+<li><p>평균과 분산 대신 중간값과 사분위값을 사용</p>
+</li>
+<li><p>이상치의 영향 최소화</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line">std = StandardScaler()</span><br><span class="line">std.fit(X_train)</span><br><span class="line">X_train_scaled = std.transform(X_train)</span><br><span class="line">X_test_scaled = std.transform(X_test)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="MinMaxScaler"><a href="#MinMaxScaler" class="headerlink" title="MinMaxScaler"></a>MinMaxScaler</h3><ul>
+<li><p>0과 1 사이의 값으로 변환</p>
+</li>
+<li><p>이상치의 영향 많이 받음</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line">mms = MinMaxScaler()</span><br><span class="line">mms.fit(X_train)</span><br><span class="line">X_train_scaled = mms.transform(X_train)</span><br><span class="line">X_test_scaled = mms.transform(X_test)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="MaxAbsScaler"><a href="#MaxAbsScaler" class="headerlink" title="MaxAbsScaler"></a>MaxAbsScaler</h3><ul>
+<li><p>-1과 1 사이의 값으로 변환</p>
+</li>
+<li><p>이상치의 영향 많이 받음</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MaxAbsScaler</span><br><span class="line"></span><br><span class="line">mas = MaxAbsScaler()</span><br><span class="line">mas.fit(X_train)</span><br><span class="line">X_train_scaled = mas.transform(X_train)</span><br><span class="line">X_test_scaled = mas.transform(X_test)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Normalizer"><a href="#Normalizer" class="headerlink" title="Normalizer"></a>Normalizer</h3><ul>
+<li><p>각 열이 아닌 행마다 정규화 수행</p>
+</li>
+<li><p>한 행의 모든 피처들 사이의 유클리드 거리가 1이 되도록 함</p>
+</li>
+<li><p>학습이 빠르고, 과대적합 가능성을 낮출 수 있음</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> RobustScaler</span><br><span class="line"></span><br><span class="line">rbs = RobustScaler()</span><br><span class="line">X_train_scaled = rbs.fit_transform(X_train)</span><br><span class="line">X_test_scaled = rbs.transform(X_test)</span><br></pre></td></tr></table></figure></li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -348,13 +344,7 @@
         "dateCreated": "2022-12-02",
         "dateModified": "2022-12-02",
         "url": "http://gonekng.github.io/2022/12/02/Python/ML/Feature Scaling/",
-        "description": "정규화 vs 표준화
-정규화 : 데이터의 범위의 차이를 왜곡하지 않고 공통 척도로 변경하는 것
-ML에서 모든 데이터셋이 정규화 될 필요는 없고, 피처의 범위가 다른 경우에 필요하다.
-
-
-표준화 : 데이터가 표준정규분포의 속성을 갖도록 재조정되는 것
-
+        "description": "정규화 vs 표준화정규화 : 데이터의 범위의 차이를 왜곡하지 않고 공통 척도로 변경하는 것표준화 : 데이터가 표준정규분포의 속성을 갖도록 재조정되는 것
 
 
 
@@ -363,8 +353,12 @@ ML에서 모든 데이터셋이 정규화 될 필요는 없고, 피처의 범위
 
 
 
-Scaling에 최대&#x2",
-        "wordCount": 352
+Scaling에 최대&#x2F;최소값 사용
+Scaling에 평균 및 표준편차 사용
+
+
+[0,1] 또는 [-1,1] 사이의 값",
+        "wordCount": 279
     }
 </script>
 
