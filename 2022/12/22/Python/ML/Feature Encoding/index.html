@@ -6,9 +6,11 @@
     
 
     
-    <title>Tag: statistic | Jiwon&#39;s Blog</title>
+    <title>Feature Encoding | Jiwon&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,machine learning,scikit-learn" />
     
     
 
@@ -49,7 +51,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
     <div id="wrap">
@@ -134,61 +136,203 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>statistic</em>
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/ML/">ML</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Python/ML/Feature Encoding" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/r/">r</a>
-            </div>
-            <div class="date"><time datetime="2022-03-15T07:42:09.000Z" itemprop="datePublished">2022-03-15</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/15/R/R_basic_stat/">R_basic_statistics</a>
+        Feature Encoding
         </h1>
     
 
-        <p class="article-excerpt">
-            통계 분석 개요
-기술통계(discriptive Statistics) : 평균, 최솟값, 최댓값, 중앙값 등 데이터의 특징을 서술하는 것
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/12/22/Python/ML/Feature%20Encoding/" class="article-date">
+       <time datetime="2022-12-22T14:21:54.000Z" itemprop="datePublished">2022-12-22</time>
+    </a>
+  </div>
 
-추론통계(inferential Statistics) : 변수 간의 관계를 파악하여 변수 간 인과관계나 새로운 사실을 밝혀내는 것
 
-평균 차이 검정 : 집단별 평균의 차이가 실제로 있는가를 검정하는 것
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/12/22/Python/ML/Feature%20Encoding/" class="article-date">
+     <time datetime="2022-12-22T14:30:44.900Z" itemprop="dateModified">2022-12-22</time>
+  </a>
+</div>
 
-교차분석 : 범주형
-        </p>
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/machine-learning/" rel="tag">machine learning</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-link-link" href="/tags/scikit-learn/" rel="tag">scikit-learn</a>
     </div>
-</article>
-    
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="데이터-인코딩"><a href="#데이터-인코딩" class="headerlink" title="데이터 인코딩"></a>데이터 인코딩</h2><p>Scikit-learn 알고리즘은 수치형 변수만 입력값으로 허용하기 때문에, 머신러닝을 위해서는 모든 문자열 데이터를 인코딩하여 수치형으로 변환해야 한다.</p>
+<p>일반적으로 문자열 데이터는 범주형 데이터와 텍스트 데이터를 의미하는데, 범주형 데이터는 각 범주에 대응하는 수치형 변수로 변환하는 것이 효과적이지만 텍스트 데이터는 구분자 역할이거나 추가적인 정보를 제공하기 위한 경우가 많다.<br>이런 경우에는 머신러닝 수행에 있어서 불필요할 가능성이 높으므로 형식적인 인코딩보다는 변수의 특성을 잘 살펴본 후 삭제하는 것이 좋다.</p>
+<p>머신러닝을 위한 대표적인 인코딩 방식으로는<br><strong>Label Encoding</strong>(레이블 인코딩)과 <strong>One-Hot Encoding</strong>(원-핫 인코딩)이 있다.</p>
+<br>
+
+
+<h2 id="Label-Encoding"><a href="#Label-Encoding" class="headerlink" title="Label Encoding"></a>Label Encoding</h2><p>레이블 인코딩은 간단하게 문자열 값을 각 범주에 해당하는 숫자로 변환하는 방식이다.</p>
+<p>하지만 이는 단순히 구분을 위한 숫자이기 때문에 머신러닝에 이를 적용할 경우 각 숫자를 가중치로 해석하여 값을 왜곡하고 결과적으로 모델의 성능이 떨어지는 경우가 발생할 수 있다.</p>
+<p>따라서 레이블 인코딩은 선형 회귀와 같은 알고리즘에는 적용하지 않는 것이 좋다.<br>반면 트리 계열의 비선형 알고리즘은 숫자의 이러한 특성을 반영하지 않으므로 큰 무리 없이 사용 가능하다.</p>
+<ul>
+<li><p><code>Scikit-learn</code>의 <code>LabelEncoder</code>를 활용한다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"></span><br><span class="line">cities = [<span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;Paris&#x27;</span>, <span class="string">&#x27;Tokyo&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;Berlin&#x27;</span>]</span><br><span class="line">encoder = LabelEncoder()</span><br><span class="line">encoder.fit(cities)</span><br><span class="line">labels = encoder.transform(cities)</span><br><span class="line"><span class="built_in">print</span>(labels)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [4 1 3 5 1 2 4 0]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>classes_</code> 속성을 통해 각 숫자가 가리키는 범주를 알 수 있다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(encoder.classes_)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;Berlin&#x27; &#x27;LA&#x27; &#x27;London&#x27; &#x27;Paris&#x27; &#x27;Seoul&#x27; &#x27;Tokyo&#x27;]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>inverse_transform</code> 속성을 통해 역변환 할 수 있다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(encoder.inverse_transform([<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;LA&#x27; &#x27;Seoul&#x27; &#x27;Tokyo&#x27; &#x27;Berlin&#x27; &#x27;London&#x27; &#x27;Paris&#x27;]</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h2 id="One-Hot-Encoding"><a href="#One-Hot-Encoding" class="headerlink" title="One-Hot Encoding"></a>One-Hot Encoding</h2><p>원-핫 인코딩은 각 범주에 대응되는 새로운 변수를 추가해 고유 값에 해당하는 칼럼에만 1을 표시하고 나머지 칼럼에는 0을 표시하는 방식이다. </p>
+<p>![](&#x2F;images&#x2F;Python&#x2F;ML&#x2F;Feature Encoding.png)</p>
+<p>따라서 인코딩에 앞서 모든 문자열 값이 숫자형으로 변환되어야 하며, 입력 값으로 2차원 데이터가 필요하다.</p>
+<p>단, 범주가 많을 경우 과도하게 많은 변수가 생성될 수 있기 때문에 레이블 인코딩과 적절하게 혼용하는 것이 좋다.</p>
+<ul>
+<li><p><code>Scikit-learn</code>의 <code>OneHotEncoder</code> 클래스</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OneHotEncoder</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">cities = [<span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;Paris&#x27;</span>, <span class="string">&#x27;Tokyo&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;Berlin&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Step1: 모든 문자를 숫자형으로 변환합니다.</span></span><br><span class="line">encoder = LabelEncoder()</span><br><span class="line">encoder.fit(cities)</span><br><span class="line">labels = encoder.transform(cities)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Step2: 2차원 데이터로 변환합니다.</span></span><br><span class="line">labels = labels.reshape(-<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Step3: One-Hot Encoding 적용합니다.</span></span><br><span class="line">oh_encoder = OneHotEncoder()</span><br><span class="line">oh_encoder.fit(labels)</span><br><span class="line">oh_labels = oh_encoder.transform(labels)</span><br><span class="line"><span class="built_in">print</span>(oh_labels.toarray())</span><br><span class="line"><span class="built_in">print</span>(oh_labels.shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [[0. 0. 0. 0. 1. 0.]</span></span><br><span class="line"><span class="comment">#  [0. 1. 0. 0. 0. 0.]</span></span><br><span class="line"><span class="comment">#  [0. 0. 0. 1. 0. 0.]</span></span><br><span class="line"><span class="comment">#  [0. 0. 0. 0. 0. 1.]</span></span><br><span class="line"><span class="comment">#  [0. 1. 0. 0. 0. 0.]</span></span><br><span class="line"><span class="comment">#  [0. 0. 1. 0. 0. 0.]</span></span><br><span class="line"><span class="comment">#  [0. 0. 0. 0. 1. 0.]</span></span><br><span class="line"><span class="comment">#  [1. 0. 0. 0. 0. 0.]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (8, 6)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Pandas</code>의 <code>get_dummies</code> 함수</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">cities = [<span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;Paris&#x27;</span>, <span class="string">&#x27;Tokyo&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;Berlin&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;item&#x27;</span>:cities&#125;)</span><br><span class="line"><span class="built_in">print</span>(pd.get_dummies(df))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a target="_blank" rel="noopener" href="https://nicola-ml.tistory.com/62">데이터 전처리하기 : 레이블 인코딩 (Label Encoding), 원-핫 인코딩(One-Hot Encoding), get_dummies()를 Pandas에서 사용하기</a></p>
+
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2022/12/22/Python/ML/Feature%20Encoding/" data-id="clbz6lz9u0000mklf4euk8xlb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Feature Encoding",
+        "image": "http://gonekng.github.io",
+        "keywords": "python machine learning scikit-learn",
+        "genre": "python ML",
+        "datePublished": "2022-12-22",
+        "dateCreated": "2022-12-22",
+        "dateModified": "2022-12-22",
+        "url": "http://gonekng.github.io/2022/12/22/Python/ML/Feature Encoding/",
+        "description": "데이터 인코딩Scikit-learn 알고리즘은 수치형 변수만 입력값으로 허용하기 때문에, 머신러닝을 위해서는 모든 문자열 데이터를 인코딩하여 수치형으로 변환해야 한다.
+일반적으로 문자열 데이터는 범주형 데이터와 텍스트 데이터를 의미하는데, 범주형 데이터는 각 범주에 대응하는 수치형 변수로 변환하는 것이 효과적이지만 텍스트 데이터는 구분자 역할이거나 추가적인",
+        "wordCount": 570
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
 
-    </div></section>
+    
+    </section>
 
 
 
@@ -218,6 +362,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/12/10/etc/%ED%86%A0%EC%9D%98%EB%A9%B4%EC%A0%91%20TIP/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">토의면접 TIP</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -375,11 +532,13 @@
     var disqus_shortname = 'gonekng';
     
     
+    var disqus_url = 'http://gonekng.github.io/2022/12/22/Python/ML/Feature%20Encoding/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
