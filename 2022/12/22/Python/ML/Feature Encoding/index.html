@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/12/22/Python/ML/Feature%20Encoding/" class="article-date">
-     <time datetime="2022-12-22T14:55:27.913Z" itemprop="dateModified">2022-12-22</time>
+     <time datetime="2022-12-22T14:58:43.429Z" itemprop="dateModified">2022-12-22</time>
   </a>
 </div>
 
@@ -204,7 +204,7 @@
 
 <h2 id="Label-Encoding"><a href="#Label-Encoding" class="headerlink" title="Label Encoding"></a>Label Encoding</h2><p>레이블 인코딩은 간단하게 문자열 값을 각 범주에 해당하는 숫자로 변환하는 방식이다.</p>
 <p>하지만 이는 단순히 구분을 위한 숫자이기 때문에<br>일부 알고리즘에서는 각 숫자를 가중치로 해석하여 값을 왜곡하고<br>결과적으로 모델의 예측 성능이 떨어지는 경우도 발생한다.</p>
-<p>따라서 레이블 인코딩은 선형 회귀와 같은 알고리즘에는 적용하지 않는 것이 좋다.<br>반면 트리 계열의 비선형 알고리즘은 숫자의 이러한 특성을 반영하지 않으므로 큰 무리 없이 사용 가능하다.</p>
+<p>따라서 레이블 인코딩은 선형 회귀와 같은 알고리즘에는 적용하지 않는 것이 좋다.<br>반면 트리 계열의 비선형 알고리즘은 이러한 특성을 반영하지 않으므로 적용해도 좋다.</p>
 <ul>
 <li><p><code>Scikit-learn</code>의 <code>LabelEncoder</code>를 활용한다.</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"></span><br><span class="line">cities = [<span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;Paris&#x27;</span>, <span class="string">&#x27;Tokyo&#x27;</span>, <span class="string">&#x27;LA&#x27;</span>, <span class="string">&#x27;London&#x27;</span>, <span class="string">&#x27;Seoul&#x27;</span>, <span class="string">&#x27;Berlin&#x27;</span>]</span><br><span class="line">encoder = LabelEncoder()</span><br><span class="line">encoder.fit(cities)</span><br><span class="line">labels = encoder.transform(cities)</span><br><span class="line"><span class="built_in">print</span>(labels)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [4 1 3 5 1 2 4 0]</span></span><br></pre></td></tr></table></figure>
@@ -318,7 +318,7 @@
         "url": "http://gonekng.github.io/2022/12/22/Python/ML/Feature Encoding/",
         "description": "데이터 인코딩Scikit-learn 알고리즘은 수치형 변수만 입력값으로 허용하기 때문에,머신러닝을 위해서는 모든 문자열 데이터를 인코딩하여 수치형으로 변환해야 한다.
 일반적으로 문자열 데이터는 범주형 데이터와 텍스트 데이터를 의미하는데,범주형 데이터는 각 범주에 대응하는 수치형 변수로 변환하는 것이 효과적이지만텍스트 데이터는 구분자 역할이거나 추가적인 정보",
-        "wordCount": 560
+        "wordCount": 556
     }
 </script>
 
