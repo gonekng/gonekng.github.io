@@ -6,7 +6,7 @@
     
 
     
-    <title>Git Bash에서 파이썬 가상환경 설정하기 | Jiwon&#39;s Blog</title>
+    <title>파이썬 가상환경 설정하기 (Git Bash) | Jiwon&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -148,7 +148,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Git Bash에서 파이썬 가상환경 설정하기
+        파이썬 가상환경 설정하기 (Git Bash)
         </h1>
     
 
@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2023/02/06/Python/Setting/venv/" class="article-date">
-     <time datetime="2023-02-09T14:47:48.137Z" itemprop="dateModified">2023-02-09</time>
+     <time datetime="2023-02-09T14:54:20.296Z" itemprop="dateModified">2023-02-09</time>
   </a>
 </div>
 
@@ -197,19 +197,18 @@
 
             <h2 id="가상환경-virtual-environment-이란"><a href="#가상환경-virtual-environment-이란" class="headerlink" title="가상환경(virtual environment)이란?"></a>가상환경(virtual environment)이란?</h2><ul>
 <li>현재 설치된 파이썬 환경과 별개로 존재하는 독립적인 환경을 의미</li>
-<li>다수의 프로그램을 개발하는 경우 패키지 간의 버전이 달라서 발생하는 문제를 해결하기 위함</li>
+<li>다수의 프로그램을 개발할때 패키지 간의 버전이 달라서 발생하는 문제를 해결</li>
 <li>표준 라이브러리 : <code>venv</code></li>
 <li>비표준 라이브러리 : <code>virtualvenv</code>, <code>pyenv</code>, <code>pipenv</code> 등등</li>
 </ul>
 <br>
 
 <h2 id="가상환경-설정"><a href="#가상환경-설정" class="headerlink" title="가상환경 설정"></a>가상환경 설정</h2><ol>
-<li>Git Bash에서 프로젝트 폴더로 이동한 후 가상환경 디렉토리를 생성한다. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv 가상환경이름</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>venv</code> : 파이썬에서 가상환경을 만들고 관리하는 모듈</li>
-</ul>
+<li><p>Git Bash에서 프로젝트 폴더로 이동한 후 가상환경 디렉토리를 생성한다.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv 가상환경이름</span><br></pre></td></tr></table></figure>
 </li>
-<li>생성한 가성환경을 활성화한다. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 활성화(Windows)</span></span><br><span class="line"><span class="built_in">source</span> 가상환경이름/Scripts/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 활성화(Mac)</span></span><br><span class="line"><span class="built_in">source</span> 가상환경이름/bin/activate</span><br></pre></td></tr></table></figure>
+<li><p>생성한 가성환경을 활성화한다.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 활성화(Windows)</span></span><br><span class="line"><span class="built_in">source</span> 가상환경이름/Scripts/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 활성화(Mac)</span></span><br><span class="line"><span class="built_in">source</span> 가상환경이름/bin/activate</span><br></pre></td></tr></table></figure>
 <ul>
 <li>비활성화 : <code>deactivate</code></li>
 </ul>
@@ -219,10 +218,10 @@
 
 <h2 id="패키지-관리"><a href="#패키지-관리" class="headerlink" title="패키지 관리"></a>패키지 관리</h2><ol>
 <li><p>패키지 추가</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install 패키지이름</span><br></pre></td></tr></table></figure>
 <ul>
 <li>패키지의 특정 버전을 지정하여 설치할 수 있음</li>
 </ul>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install 패키지이름</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>패키지 업데이트</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade 패키지이름</span><br></pre></td></tr></table></figure>
@@ -310,7 +309,7 @@
             "@type": "Person",
             "name": "Jiwon Kang"
         },
-        "headline": "Git Bash에서 파이썬 가상환경 설정하기",
+        "headline": "파이썬 가상환경 설정하기 (Git Bash)",
         "image": "http://gonekng.github.io",
         "keywords": "python git",
         "genre": "python setting",
@@ -320,15 +319,15 @@
         "url": "http://gonekng.github.io/2023/02/06/Python/Setting/venv/",
         "description": "가상환경(virtual environment)이란?
 현재 설치된 파이썬 환경과 별개로 존재하는 독립적인 환경을 의미
-다수의 프로그램을 개발하는 경우 패키지 간의 버전이 달라서 발생하는 문제를 해결하기 위함
+다수의 프로그램을 개발할때 패키지 간의 버전이 달라서 발생하는 문제를 해결
 표준 라이브러리 : venv
 비표준 라이브러리 : virtualvenv, pyenv, pipenv 등등
 
 
 
 가상환경 설정
-Git Bash에서 프로젝트 ",
-        "wordCount": 170
+Git Bash에서 프로젝트 폴더로 이동한 ",
+        "wordCount": 162
     }
 </script>
 
@@ -400,7 +399,7 @@ Git Bash에서 프로젝트 ",
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/setting/">setting</a></p>
-                            <p class="item-title"><a href="/2023/02/06/Python/Setting/venv/" class="title">Git Bash에서 파이썬 가상환경 설정하기</a></p>
+                            <p class="item-title"><a href="/2023/02/06/Python/Setting/venv/" class="title">파이썬 가상환경 설정하기 (Git Bash)</a></p>
                             <p class="item-date"><time datetime="2023-02-06T14:47:10.000Z" itemprop="datePublished">2023-02-06</time></p>
                         </div>
                     </li>
