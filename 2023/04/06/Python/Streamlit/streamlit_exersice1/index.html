@@ -51,7 +51,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
     <div id="wrap">
@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2023/04/06/Python/Streamlit/streamlit_exersice1/" class="article-date">
-     <time datetime="2023-04-06T13:44:02.749Z" itemprop="dateModified">2023-04-06</time>
+     <time datetime="2023-04-06T13:49:30.459Z" itemprop="dateModified">2023-04-06</time>
   </a>
 </div>
 
@@ -195,8 +195,12 @@
 
             
 
-            <h1 id="Streamlit이란"><a href="#Streamlit이란" class="headerlink" title="Streamlit이란?"></a>Streamlit이란?</h1><p>Python으로 작성된 <strong>데이터 시각화 및 웹 애플리케이션 개발용 프레임워크</strong>로,<br>웹 어플리케이션 개발 시간을 줄일 수 있고, 데이터 시각화 라이브러리와 연동하여 직관적인 분석이 가능한 것이 특징이다.<br>다만, 다른 웹 프레임워크에 비해 고급 기능이나 복잡한 애플리케이션을 만드는 데에는 다소 제한적이다.  </p>
-<h1 id="Streamlit-예제"><a href="#Streamlit-예제" class="headerlink" title="Streamlit 예제"></a>Streamlit 예제</h1><p>이번 예제는 지인들과의 약속 장소를 정하던 중 Streamlit을 이용하여 홍대입구역까지의 거리를 알아보기 위해 만든 웹애플리케이션이다.<br>Folium 패키지를 이용하여 지도 상에 각 위치를 표시하고, Streamlit에서 제공하는 탭 기능을 이용하여 데이터와 지도를 함께 제공한다.<br>이때 Vworld에서 제공하는 API를 통해 지도에 배경 레이어를 삽입하여 보기 쉽게 시각화하였다.  </p>
+            <h1 id="Streamlit이란"><a href="#Streamlit이란" class="headerlink" title="Streamlit이란?"></a>Streamlit이란?</h1><p>Python으로 작성된 <strong>데이터 시각화 및 웹 애플리케이션 개발용 프레임워크</strong></p>
+<ul>
+<li>웹 어플리케이션 개발 시간을 줄일 수 있고, 데이터 시각화 라이브러리와 연동하여 직관적인 분석이 가능</li>
+<li>다른 웹 프레임워크에 비해 고급 기능이나 복잡한 애플리케이션을 만드는 데에는 다소 제한적</li>
+</ul>
+<h1 id="Streamlit-예제"><a href="#Streamlit-예제" class="headerlink" title="Streamlit 예제"></a>Streamlit 예제</h1><p>이번 예제는 지인들과의 약속 장소를 정하던 중 Streamlit을 이용하여 홍대입구역까지의 거리를 알아보기 위해 만든 간단한 웹애플리케이션이다. Folium 패키지를 이용하여 지도 상에 각 위치를 표시하고, Streamlit에서 제공하는 탭 기능을 이용하여 데이터와 지도를 함께 제공한다. 이때 Vworld에서 제공하는 API를 통해 지도에 배경 레이어를 삽입하여 보기 쉽게 시각화하였다.</p>
 <h2 id="1-필요한-라이브러리-Import"><a href="#1-필요한-라이브러리-Import" class="headerlink" title="1. 필요한 라이브러리 Import"></a>1. 필요한 라이브러리 Import</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> folium</span><br><span class="line"><span class="keyword">import</span> vworld_key</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -408,9 +412,13 @@
         "dateCreated": "2023-04-06",
         "dateModified": "2023-04-06",
         "url": "http://gonekng.github.io/2023/04/06/Python/Streamlit/streamlit_exersice1/",
-        "description": "Streamlit이란?Python으로 작성된 데이터 시각화 및 웹 애플리케이션 개발용 프레임워크로,웹 어플리케이션 개발 시간을 줄일 수 있고, 데이터 시각화 라이브러리와 연동하여 직관적인 분석이 가능한 것이 특징이다.다만, 다른 웹 프레임워크에 비해 고급 기능이나 복잡한 애플리케이션을 만드는 데에는 다소 제한적이다.  
-Streamlit 예제이번 예제는 지",
-        "wordCount": 2023
+        "description": "Streamlit이란?Python으로 작성된 데이터 시각화 및 웹 애플리케이션 개발용 프레임워크
+
+웹 어플리케이션 개발 시간을 줄일 수 있고, 데이터 시각화 라이브러리와 연동하여 직관적인 분석이 가능
+다른 웹 프레임워크에 비해 고급 기능이나 복잡한 애플리케이션을 만드는 데에는 다소 제한적
+
+Streamlit 예제이번 예제는 지인들과의 약속 장소를 정하던 중",
+        "wordCount": 2019
     }
 </script>
 
