@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Streamlit &amp; Sqlite3 연동 예제 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,pandas,streamlit,sqlite" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/development/">development</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/streamlit/">streamlit</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/streamlit/">streamlit</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Streamlit/streamlit_exersice2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Streamlit &amp; Sqlite3 연동 예제
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2023/04/06/Python/Streamlit/streamlit_exersice2/" class="article-date">
+       <time datetime="2023-04-06T13:29:04.000Z" itemprop="datePublished">2023-04-06</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2023/04/06/Python/Streamlit/streamlit_exersice2/" class="article-date">
+     <time datetime="2024-02-13T13:44:47.211Z" itemprop="dateModified">2024-02-13</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/pandas/" rel="tag">pandas</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-link-link" href="/tags/sqlite/" rel="tag">sqlite</a>, <a class="tag-link-link" href="/tags/streamlit/" rel="tag">streamlit</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>Streamlit 기반 웹 대시보드를 Sqlite DB와 연동하는 작업<ul>
+<li><code>Sqlite</code>  : 별도의 프로그램 설치 없이 Python 코드로 손쉽게 DB를 구성할 수 있음</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-필요한-라이브러리-임포트"><a href="#0-필요한-라이브러리-임포트" class="headerlink" title="0 :: 필요한 라이브러리 임포트"></a>0 :: 필요한 라이브러리 임포트</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time, sys, os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-새로운-데이터베이스-생성-및-연동"><a href="#1-새로운-데이터베이스-생성-및-연동" class="headerlink" title="1 :: 새로운 데이터베이스 생성 및 연동"></a>1 :: 새로운 데이터베이스 생성 및 연동</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">create_connection</span>(<span class="params">db_file</span>):</span><br><span class="line"></span><br><span class="line">    conn = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        conn = sqlite3.connect(db_file)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        st.write(e)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> conn</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_database</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE1 : 데이터베이스 만들기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    db_filename = st.text_input(<span class="string">&quot;데이터베이스 이름을 입력하세요.&quot;</span>)</span><br><span class="line">    create_db = st.button(<span class="string">&#x27;데이터베이스 생성&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> create_db:</span><br><span class="line">        <span class="keyword">if</span> db_filename.endswith(<span class="string">&#x27;.db&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> db_filename <span class="keyword">not</span> <span class="keyword">in</span> [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(os.getcwd())]:</span><br><span class="line">                conn = create_connection(db_filename)</span><br><span class="line">                st.success(<span class="string">&#x27;데이터베이스 생성 완료.&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                st.error(<span class="string">&#x27;이미 존재하는 데이터베이스입니다. 다시 입력하세요.&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            st.error(<span class="string">&#x27;파일이름은 .db로 끝나야 합니다. 다시 입력하세요.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>sqlite3</code>  라이브러리의 <code>connect</code>  함수를 통해 db_file을 연동</li>
+<li>‘데이터베이스 생성’ 버튼을 클릭하면 텍스트로 입력받은 이름의 .db 파일을 생성<ul>
+<li>파일이름은 .db로 끝나야 하며, 이미 존재하는 이름인 경우 에러 발생</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-CSV-파일-업로드-및-DB-저장"><a href="#2-CSV-파일-업로드-및-DB-저장" class="headerlink" title="2 :: CSV 파일 업로드 및 DB 저장"></a>2 :: CSV 파일 업로드 및 DB 저장</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">upload_data</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE2 : 파일 업로드하기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    sqlite_dbs = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&#x27;.&#x27;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.db&#x27;</span>)]</span><br><span class="line">    db_filename = st.selectbox(<span class="string">&#x27;데이터베이스를 선택하세요.&#x27;</span>, sqlite_dbs)</span><br><span class="line">    <span class="keyword">if</span> db_filename <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        conn = create_connection(db_filename)</span><br><span class="line">        cursor = conn.cursor()</span><br><span class="line">        cursor.execute(<span class="string">&quot;SELECT name FROM sqlite_master WHERE type=&#x27;table&#x27;;&quot;</span>)</span><br><span class="line">        tables = cursor.fetchall()</span><br><span class="line">        tables = [table[<span class="number">0</span>] <span class="keyword">for</span> table <span class="keyword">in</span> tables]</span><br><span class="line">        table_name = st.text_input(<span class="string">&#x27;테이블 이름을 입력하세요.&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(table_name) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> table_name <span class="keyword">not</span> <span class="keyword">in</span> tables:</span><br><span class="line">                uploaded_file = st.file_uploader(<span class="string">&#x27;업로드할 파일을 첨부하세요.&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> uploaded_file <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        df = pd.read_csv(uploaded_file, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line">                        st.write(<span class="string">&#x27;**Data loaded successfully. These are the first 3 rows.**&#x27;</span>)</span><br><span class="line">                        st.dataframe(df.head(<span class="number">3</span>), use_container_width=<span class="literal">True</span>)</span><br><span class="line">                    </span><br><span class="line">                        col1, col2 = st.columns([<span class="number">8</span>,<span class="number">1</span>])</span><br><span class="line">                        is_apply = col2.button(<span class="string">&#x27;Upload&#x27;</span>, use_container_width=<span class="literal">True</span>)</span><br><span class="line">                        <span class="keyword">if</span> is_apply:</span><br><span class="line">                            pg_bar = col1.progress(<span class="number">0</span>, text=<span class="string">&quot;⏩Progress&quot;</span>)</span><br><span class="line">                            <span class="keyword">for</span> percent_complete <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">                                time.sleep(<span class="number">0.01</span>)</span><br><span class="line">                                pg_bar.progress(percent_complete + <span class="number">1</span>, text=<span class="string">&quot;Progress&quot;</span>)</span><br><span class="line">                                df.to_sql(name=table_name, con=conn, if_exists=<span class="string">&#x27;replace&#x27;</span>, index=<span class="literal">False</span>)</span><br><span class="line">                            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">                            st.success(<span class="string">&quot;업로드가 완료되었습니다.&quot;</span>)</span><br><span class="line">                    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                        st.write(e)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                st.error(<span class="string">&quot;이미 존재하는 테이블입니다. 다시 입력하세요.&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st.error(<span class="string">&#x27;DB 파일이 존재하지 않습니다. DB 파일을 먼저 생성하세요.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>현재 경로의 .db 파일 중 하나를 선택하고, CSV 파일을 불러온 후 테이블에 저장<ul>
+<li>텍스트로 입력받은 테이블 이름이 이미 존재하는 경우 에러 발생</li>
+<li>CSV 파일을 불러온 후 첫 3행 출력 내용을 확인한 후 업로드하도록 설정</li>
+<li>업로드 버튼 클릭 시 바로 테이블에 저장이 됨 → Progress Bar는 보여주기용</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-SQL-쿼리로-데이터-조작-및-CSV-파일로-저장"><a href="#3-SQL-쿼리로-데이터-조작-및-CSV-파일로-저장" class="headerlink" title="3 :: SQL 쿼리로 데이터 조작 및 CSV 파일로 저장"></a>3 :: SQL 쿼리로 데이터 조작 및 CSV 파일로 저장</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">run_query</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE3 : SQL 쿼리로 데이터 조작하기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    sqlite_dbs = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&#x27;.&#x27;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.db&#x27;</span>)]</span><br><span class="line">    db_filename = st.selectbox(<span class="string">&#x27;DB Filename&#x27;</span>, sqlite_dbs)</span><br><span class="line">    query = st.text_area(<span class="string">&#x27;SQL Query&#x27;</span>, height=<span class="number">150</span>)</span><br><span class="line">    <span class="keyword">if</span> db_filename <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(query) == <span class="number">0</span>:</span><br><span class="line">            is_disabled = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            is_disabled = <span class="literal">False</span></span><br><span class="line">        submitted = st.button(<span class="string">&#x27;Run Query&#x27;</span>, disabled=is_disabled)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> submitted:</span><br><span class="line">            conn = create_connection(db_filename)</span><br><span class="line">            query = conn.execute(query)</span><br><span class="line">            cols = [column[<span class="number">0</span>] <span class="keyword">for</span> column <span class="keyword">in</span> query.description]</span><br><span class="line">            results_df= pd.DataFrame.from_records(</span><br><span class="line">                data = query.fetchall(), </span><br><span class="line">                columns = cols</span><br><span class="line">            )</span><br><span class="line">            st.dataframe(results_df)</span><br><span class="line">            <span class="keyword">if</span> st.button(<span class="string">&#x27;Download&#x27;</span>):</span><br><span class="line">                convert_df(results_df)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st.error(<span class="string">&#x27;DB 파일이 존재하지 않습니다. DB 파일을 먼저 생성하세요.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">convert_df</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="keyword">return</span> df.to_csv(index=<span class="literal">False</span>).encode(<span class="string">&#x27;cp949&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>현재 경로의 .db 파일 중 하나를 선택하고, SQL 쿼리를 입력하여 해당 DB의 데이터를 조작(CRUD)<ul>
+<li>SQL 쿼리를 입력해야 Run Query 버튼이 활성화되도록 설정</li>
+</ul>
+</li>
+<li><code>convert_df</code> : 쿼리 실행 후의 데이터 테이블을 CSV 파일로 저장하는 함수</li>
+</ul>
+<h2 id="4-기본-화면-구성-및-사이드바-설정"><a href="#4-기본-화면-구성-및-사이드바-설정" class="headerlink" title="4 :: 기본 화면 구성 및 사이드바 설정"></a>4 :: 기본 화면 구성 및 사이드바 설정</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Page Configuration</span></span><br><span class="line">    st.set_page_config(</span><br><span class="line">        page_title=<span class="string">&quot;Sqlite3 DB Connect with Streamlit&quot;</span>,</span><br><span class="line">        page_icon=<span class="string">&quot;⚒️&quot;</span>,</span><br><span class="line">        layout=<span class="string">&quot;wide&quot;</span>,</span><br><span class="line">        initial_sidebar_state=<span class="string">&quot;auto&quot;</span>,</span><br><span class="line">        menu_items=&#123;</span><br><span class="line">            <span class="string">&#x27;Get Help&#x27;</span>: <span class="string">&#x27;mailto:donumm64@gmail.com&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;About&#x27;</span>: <span class="string">&quot;*Made by gonekng*&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 사이드바 설정</span></span><br><span class="line">    st.sidebar.subheader(<span class="string">&quot;🎈Streamlit으로 Sqlite3 DB 연동하기&quot;</span>)</span><br><span class="line">    st.sidebar.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    page_names_to_funcs = &#123;</span><br><span class="line">        <span class="string">&quot;Create Database&quot;</span>: create_database,</span><br><span class="line">        <span class="string">&quot;Upload Data&quot;</span>: upload_data,</span><br><span class="line">        <span class="string">&quot;Run Query&quot;</span>: run_query,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    selected_page = st.sidebar.selectbox(<span class="string">&quot;Select a page&quot;</span>, page_names_to_funcs.keys(), label_visibility=<span class="string">&#x27;collapsed&#x27;</span>)</span><br><span class="line">    page_names_to_funcs[selected_page]()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>st.set_page_config</code> : 기본 페이지 설정</li>
+<li><code>page_names_to_funcs</code> : 각 페이지를 구성하는 함수 매칭</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>Streamlit Documentation : <a target="_blank" rel="noopener" href="https://docs.streamlit.io/">https://docs.streamlit.io/</a></li>
+<li>참고블로그 : <a target="_blank" rel="noopener" href="https://dschloe.github.io/python/2023/02/streamlite_with_sqlite/">https://blog.naver.com/v-world/222009887650</a></li>
+</ul>
+<h1 id="전체-코드"><a href="#전체-코드" class="headerlink" title="전체 코드"></a>전체 코드</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time, sys, os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> streamlit <span class="keyword">as</span> st</span><br><span class="line"></span><br><span class="line"><span class="comment"># DB 연동</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_connection</span>(<span class="params">db_file</span>):</span><br><span class="line"></span><br><span class="line">    conn = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        conn = sqlite3.connect(db_file)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        st.write(e)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> conn</span><br><span class="line"></span><br><span class="line"><span class="comment"># DB 생성</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_database</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE1 : 데이터베이스 만들기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    db_filename = st.text_input(<span class="string">&quot;데이터베이스 이름을 입력하세요.&quot;</span>)</span><br><span class="line">    create_db = st.button(<span class="string">&#x27;데이터베이스 생성&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> create_db:</span><br><span class="line">        <span class="keyword">if</span> db_filename.endswith(<span class="string">&#x27;.db&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> db_filename <span class="keyword">not</span> <span class="keyword">in</span> [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(os.getcwd())]:</span><br><span class="line">                conn = create_connection(db_filename)</span><br><span class="line">                st.success(<span class="string">&#x27;데이터베이스 생성 완료.&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                st.error(<span class="string">&#x27;이미 존재하는 데이터베이스입니다. 다시 입력하세요.&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>: </span><br><span class="line">            st.error(<span class="string">&#x27;파일이름은 .db로 끝나야 합니다. 다시 입력하세요.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 데이터 업로드</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">upload_data</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE2 : 파일 업로드하기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    sqlite_dbs = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&#x27;.&#x27;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.db&#x27;</span>)]</span><br><span class="line">    db_filename = st.selectbox(<span class="string">&#x27;데이터베이스를 선택하세요.&#x27;</span>, sqlite_dbs)</span><br><span class="line">    <span class="keyword">if</span> db_filename <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        conn = create_connection(db_filename)</span><br><span class="line">        cursor = conn.cursor()</span><br><span class="line">        cursor.execute(<span class="string">&quot;SELECT name FROM sqlite_master WHERE type=&#x27;table&#x27;;&quot;</span>)</span><br><span class="line">        tables = cursor.fetchall()</span><br><span class="line">        tables = [table[<span class="number">0</span>] <span class="keyword">for</span> table <span class="keyword">in</span> tables]</span><br><span class="line">        table_name = st.text_input(<span class="string">&#x27;테이블 이름을 입력하세요.&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(table_name) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> table_name <span class="keyword">not</span> <span class="keyword">in</span> tables:</span><br><span class="line">                uploaded_file = st.file_uploader(<span class="string">&#x27;업로드할 파일을 첨부하세요.&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> uploaded_file <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        df = pd.read_csv(uploaded_file, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line">                        st.write(<span class="string">&#x27;**Data loaded successfully. These are the first 3 rows.**&#x27;</span>)</span><br><span class="line">                        st.dataframe(df.head(<span class="number">3</span>), use_container_width=<span class="literal">True</span>)</span><br><span class="line">                    </span><br><span class="line">                        col1, col2 = st.columns([<span class="number">8</span>,<span class="number">1</span>])</span><br><span class="line">                        is_apply = col2.button(<span class="string">&#x27;Upload&#x27;</span>, use_container_width=<span class="literal">True</span>)</span><br><span class="line">                        <span class="keyword">if</span> is_apply:</span><br><span class="line">                            pg_bar = col1.progress(<span class="number">0</span>, text=<span class="string">&quot;⏩Progress&quot;</span>)</span><br><span class="line">                            <span class="keyword">for</span> percent_complete <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">                                time.sleep(<span class="number">0.01</span>)</span><br><span class="line">                                pg_bar.progress(percent_complete + <span class="number">1</span>, text=<span class="string">&quot;Progress&quot;</span>)</span><br><span class="line">                                df.to_sql(name=table_name, con=conn, if_exists=<span class="string">&#x27;replace&#x27;</span>, index=<span class="literal">False</span>)</span><br><span class="line">                            time.sleep(<span class="number">0.1</span>)</span><br><span class="line">                            st.success(<span class="string">&quot;업로드가 완료되었습니다.&quot;</span>)</span><br><span class="line">                    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                        st.write(e)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                st.error(<span class="string">&quot;이미 존재하는 테이블입니다. 다시 입력하세요.&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st.error(<span class="string">&#x27;DB 파일이 존재하지 않습니다. DB 파일을 먼저 생성하세요.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 쿼리 실행</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_query</span>():</span><br><span class="line"></span><br><span class="line">    st.write(<span class="string">&quot;# PAGE3 : SQL 쿼리로 데이터 조작하기&quot;</span>)</span><br><span class="line">    st.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    sqlite_dbs = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&#x27;.&#x27;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;.db&#x27;</span>)]</span><br><span class="line">    db_filename = st.selectbox(<span class="string">&#x27;DB Filename&#x27;</span>, sqlite_dbs)</span><br><span class="line">    query = st.text_area(<span class="string">&#x27;SQL Query&#x27;</span>, height=<span class="number">150</span>)</span><br><span class="line">    <span class="keyword">if</span> db_filename <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(query) == <span class="number">0</span>:</span><br><span class="line">            is_disabled = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            is_disabled = <span class="literal">False</span></span><br><span class="line">        submitted = st.button(<span class="string">&#x27;Run Query&#x27;</span>, disabled=is_disabled)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> submitted:</span><br><span class="line">            conn = create_connection(db_filename)</span><br><span class="line">            query = conn.execute(query)</span><br><span class="line">            cols = [column[<span class="number">0</span>] <span class="keyword">for</span> column <span class="keyword">in</span> query.description]</span><br><span class="line">            results_df= pd.DataFrame.from_records(</span><br><span class="line">                data = query.fetchall(), </span><br><span class="line">                columns = cols</span><br><span class="line">            )</span><br><span class="line">            st.dataframe(results_df)</span><br><span class="line">            <span class="keyword">if</span> st.button(<span class="string">&#x27;Download&#x27;</span>):</span><br><span class="line">                convert_df(results_df)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st.error(<span class="string">&#x27;DB 파일이 존재하지 않습니다. DB 파일을 먼저 생성하세요.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">convert_df</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="keyword">return</span> df.to_csv(index=<span class="literal">False</span>).encode(<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --------------------- 메인 함수 --------------------- #</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Page Configuration</span></span><br><span class="line">    st.set_page_config(</span><br><span class="line">        page_title=<span class="string">&quot;Sqlite3 DB Connect with Streamlit&quot;</span>,</span><br><span class="line">        page_icon=<span class="string">&quot;⚒️&quot;</span>,</span><br><span class="line">        layout=<span class="string">&quot;wide&quot;</span>,</span><br><span class="line">        initial_sidebar_state=<span class="string">&quot;auto&quot;</span>,</span><br><span class="line">        menu_items=&#123;</span><br><span class="line">            <span class="string">&#x27;Get Help&#x27;</span>: <span class="string">&#x27;mailto:donumm64@gmail.com&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;About&#x27;</span>: <span class="string">&quot;*Made by gonekng*&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 사이드바 설정</span></span><br><span class="line">    st.sidebar.subheader(<span class="string">&quot;🎈Streamlit으로 Sqlite3 DB 연동하기&quot;</span>)</span><br><span class="line">    st.sidebar.write(<span class="string">&quot;---&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    page_names_to_funcs = &#123;</span><br><span class="line">        <span class="string">&quot;Create Database&quot;</span>: create_database,</span><br><span class="line">        <span class="string">&quot;Upload Data&quot;</span>: upload_data,</span><br><span class="line">        <span class="string">&quot;Run Query&quot;</span>: run_query,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    selected_page = st.sidebar.selectbox(<span class="string">&quot;Select a page&quot;</span>, page_names_to_funcs.keys(), label_visibility=<span class="string">&#x27;collapsed&#x27;</span>)</span><br><span class="line">    page_names_to_funcs[selected_page]()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2023/04/06/Python/Streamlit/streamlit_exersice2/" data-id="clskf3bd100001slfa3m54xp9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Streamlit &amp; Sqlite3 연동 예제",
+        "image": "http://gonekng.github.io",
+        "keywords": "python pandas streamlit sqlite",
+        "genre": "python streamlit",
+        "datePublished": "2023-04-06",
+        "dateCreated": "2023-04-06",
+        "dateModified": "2024-02-13",
+        "url": "http://gonekng.github.io/2023/04/06/Python/Streamlit/streamlit_exersice2/",
+        "description": "
+Streamlit 기반 웹 대시보드를 Sqlite DB와 연동하는 작업
+Sqlite  : 별도의 프로그램 설치 없이 Python 코드로 손쉽게 DB를 구성할 수 있음
+
+
+
+0 :: 필요한 라이브러리 임포트123456import time, sys, osimport numpy as npimport pandas as pdimport sqlite3import s",
+        "wordCount": 3898
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2023/04/06/Python/Streamlit/streamlit_exersice1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Streamlit을 이용한 지도 시각화 예제
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2023/02/06/Python/Setting/venv/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">파이썬 가상환경 설정하기 (Git Bash)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/streamlit/">streamlit</a></p>
+                            <p class="item-title"><a href="/2023/04/06/Python/Streamlit/streamlit_exersice1/" class="title">Streamlit을 이용한 지도 시각화 예제</a></p>
+                            <p class="item-date"><time datetime="2023-04-06T13:29:04.000Z" itemprop="datePublished">2023-04-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/streamlit/">streamlit</a></p>
+                            <p class="item-title"><a href="/2023/04/06/Python/Streamlit/streamlit_exersice2/" class="title">Streamlit &amp; Sqlite3 연동 예제</a></p>
+                            <p class="item-date"><time datetime="2023-04-06T13:29:04.000Z" itemprop="datePublished">2023-04-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2023/02/06/Python/Setting/venv/" class="title">파이썬 가상환경 설정하기 (Git Bash)</a></p>
+                            <p class="item-date"><time datetime="2023-02-06T14:47:10.000Z" itemprop="datePublished">2023-02-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a></p>
+                            <p class="item-title"><a href="/2022/12/22/Python/ML/Feature%20Encoding/" class="title">Feature Encoding</a></p>
+                            <p class="item-date"><time datetime="2022-12-22T14:21:54.000Z" itemprop="datePublished">2022-12-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a></p>
+                            <p class="item-title"><a href="/2022/12/10/etc/%ED%86%A0%EC%9D%98%EB%A9%B4%EC%A0%91%20TIP/" class="title">토의면접 TIP</a></p>
+                            <p class="item-date"><time datetime="2022-12-10T14:23:51.000Z" itemprop="datePublished">2022-12-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/development/">development</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">43</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/setting/">setting</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/streamlit/">streamlit</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12px;">BeautifulSoup</a> <a href="/tags/airflow/" style="font-size: 11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 16px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 11px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/google-colab/" style="font-size: 19px;">google colab</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hueman/" style="font-size: 11px;">hueman</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 18px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/oracle/" style="font-size: 14px;">oracle</a> <a href="/tags/pandas/" style="font-size: 13px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/programmers/" style="font-size: 11px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11px;">r</a> <a href="/tags/scikit-learn/" style="font-size: 11px;">scikit-learn</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 17px;">setting</a> <a href="/tags/spark/" style="font-size: 11px;">spark</a> <a href="/tags/sql/" style="font-size: 14px;">sql</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/streamlit/" style="font-size: 11px;">streamlit</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 15px;">wsl2</a> <a href="/tags/%EB%A9%B4%EC%A0%91/" style="font-size: 12px;">면접</a> <a href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" style="font-size: 12px;">자소서</a> <a href="/tags/%EC%B7%A8%EC%A4%80/" style="font-size: 15px;">취준</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disqus/" rel="tag">disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/" rel="tag">hueman</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/" rel="tag">scikit-learn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/streamlit/" rel="tag">streamlit</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A9%B4%EC%A0%91/" rel="tag">면접</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" rel="tag">자소서</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B7%A8%EC%A4%80/" rel="tag">취준</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2024 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2023/04/06/Python/Streamlit/streamlit_exersice2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
