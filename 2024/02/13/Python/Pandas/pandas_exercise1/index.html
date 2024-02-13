@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Pandas EX1 : split()을 이용한 텍스트 컬럼 생성 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python,pandas" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/development/">development</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/pandas/">pandas</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/streamlit/">streamlit</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/pandas/">pandas</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Pandas/pandas_exercise1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Pandas EX1 : split()을 이용한 텍스트 컬럼 생성
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2024/02/13/Python/Pandas/pandas_exercise1/" class="article-date">
+       <time datetime="2024-02-13T13:51:00.000Z" itemprop="datePublished">2024-02-13</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2024/02/13/Python/Pandas/pandas_exercise1/" class="article-date">
+     <time datetime="2024-02-13T13:52:12.918Z" itemprop="dateModified">2024-02-13</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/pandas/" rel="tag">pandas</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <ul>
+<li>연도별 전국읍면동_인구통계 데이터를 Pandas를 활용하여 통합정리하는 코드<ul>
+<li>텍스트 컬럼에 <code>split()</code> 함수를 적용하여 새로운 컬럼을 생성함</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-필요한-라이브러리-임포트"><a href="#0-필요한-라이브러리-임포트" class="headerlink" title="0 :: 필요한 라이브러리 임포트"></a>0 :: 필요한 라이브러리 임포트</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-파일-불러오기"><a href="#1-파일-불러오기" class="headerlink" title="1 :: 파일 불러오기"></a>1 :: 파일 불러오기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">file_list = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&quot;전국읍면동_인구통계&quot;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;csv&#x27;</span>)]</span><br><span class="line"><span class="keyword">for</span> i, file <span class="keyword">in</span> <span class="built_in">enumerate</span>(file_list):</span><br><span class="line">    df = pd.read_csv(<span class="string">&quot;전국읍면동_인구통계&quot;</span> + file, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line">    df = df.iloc[:,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">29</span>,<span class="number">33</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">45</span>]]</span><br><span class="line">    df[<span class="string">&#x27;행정구역&#x27;</span>] = df[<span class="string">&#x27;행정구역&#x27;</span>].<span class="built_in">str</span>[:-<span class="number">12</span>].apply(<span class="keyword">lambda</span> x: x.strip())</span><br><span class="line">    df.columns = [<span class="string">&#x27;행정구역&#x27;</span>, <span class="string">&#x27;1월&#x27;</span>,<span class="string">&#x27;2월&#x27;</span>,<span class="string">&#x27;3월&#x27;</span>,<span class="string">&#x27;4월&#x27;</span>,<span class="string">&#x27;5월&#x27;</span>,<span class="string">&#x27;6월&#x27;</span>,<span class="string">&#x27;7월&#x27;</span>,<span class="string">&#x27;8월&#x27;</span>,<span class="string">&#x27;9월&#x27;</span>,<span class="string">&#x27;10월&#x27;</span>,<span class="string">&#x27;11월&#x27;</span>,<span class="string">&#x27;12월&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>‘전국읍면동_인구통계’ 폴더 하의 CSV 파일을 차례대로 불러오는 코드<ul>
+<li><p><code>인구수_전국_2010.csv</code></p>
+<p>  <img src="C:\Users\user\Desktop\강지원\Github\myblog\source\images\Python\Pandas\Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-텍스트-컬럼-SPLIT"><a href="#2-텍스트-컬럼-SPLIT" class="headerlink" title="2 :: 텍스트 컬럼 SPLIT"></a>2 :: 텍스트 컬럼 SPLIT</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;토큰_개수&#x27;</span>] = df[<span class="string">&#x27;행정구역&#x27;</span>].apply(<span class="keyword">lambda</span> x: <span class="built_in">len</span>(<span class="built_in">str</span>(x).split()))</span><br><span class="line"><span class="keyword">for</span> tokens <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, df[<span class="string">&#x27;토큰_개수&#x27;</span>].<span class="built_in">max</span>() + <span class="number">1</span>):</span><br><span class="line">    df.loc[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == tokens, [<span class="string">f&#x27;토큰_<span class="subst">&#123;i+<span class="number">1</span>&#125;</span>&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(tokens)]] = df.loc[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == tokens, <span class="string">&#x27;행정구역&#x27;</span>].<span class="built_in">str</span>.split().tolist()</span><br><span class="line">df1 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">1</span>]</span><br><span class="line">df2 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">2</span>]</span><br><span class="line">df3 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">3</span>]</span><br><span class="line">df4 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>행정구역 컬럼 값이 단일값으로 되어있음 (ex. 서울특별시 종로구 삼청동)<ul>
+<li><p>따라서 <code>split()</code> 함수를 사용하여 공백을 기준으로 시도, 시군구, 행정동 컬럼을 구분함</p>
+<p>  → 텍스트 분할의 결과 토큰은 1~4개로 나타나며, 각 케이스의 특징을 데이터를 통해 확인하였음</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df1[<span class="string">&#x27;시도&#x27;</span>] = df1[<span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df1[<span class="string">&#x27;시군구&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line">df1[<span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>토큰이 1개인 경우<ul>
+<li><p><code>시도</code> → <code>시도</code> <code>전체</code> <code>전체</code></p>
+<p>  ex. <code>서울특별시</code> → <code>서울특별시</code> <code>전체</code> <code>전체</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시도&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_2&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_2&#x27;</span>]</span><br><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line"></span><br><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시도&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_2&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>토큰이 2개인 경우<ul>
+<li><p><code>시도 시군구</code> → <code>시도</code> <code>시군구</code> <code>전체</code></p>
+<p>  ex. <code>서울특별시 종로구</code> → <code>서울특별시</code> <code>종로구</code> <code>전체</code></p>
+</li>
+<li><p><code>세종특별자치시 행정동</code> → <code>세종특별자치시</code> <code>세종특별자치시</code> <code>행정동</code></p>
+<p>  ex. <code>세종특별자치시 한솔동</code> → <code>세종특별자치시</code> <code>세종특별자치시</code> <code>한솔동</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_2&#x27;</span>]</span><br><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line">df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>토큰이 3개인 경우<ul>
+<li><p><code>시도 시군구 행정동</code> → <code>시도</code> <code>시군구</code> <code>행정동</code></p>
+<p>  ex. <code>서울특별시 종로구 삼청동</code> → <code>서울특별시</code> <code>종로구</code> <code>삼청동</code></p>
+</li>
+<li><p><code>시도 시도 시군구</code> → <code>시도</code> <code>시군구</code> <code>전체</code></p>
+<p>  ex. <code>서울특별시 서울특별시 종로구</code> → <code>서울특별시</code> <code>종로구</code> <code>전체</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_2&#x27;</span>] + <span class="string">&quot; &quot;</span> + df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_4&#x27;</span>]</span><br><span class="line"></span><br><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>] + <span class="string">&quot; &quot;</span> + df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_4&#x27;</span>]</span><br><span class="line">df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>토큰이 4개인 경우<ul>
+<li><p><code>시도 시군구1 시군구2 행정동</code> → <code>시도</code> <code>시군구1+2</code> <code>행정동</code></p>
+<p>  ex. <code>경기도 용인시 수지구 죽전동</code> → <code>경기도</code> <code>용인시 수지구</code> <code>죽전동</code></p>
+</li>
+<li><p><code>시도 시도 시군구1 시군구2</code> → <code>시도</code> <code>시군구1+2</code> <code>전체</code></p>
+<p>  ex. <code>경기도 경기도 용인시 수지구</code> → <code>경기도</code> <code>용인시 수지구</code> <code>전체</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-테이블-취합-및-가공"><a href="#3-테이블-취합-및-가공" class="headerlink" title="3 :: 테이블 취합 및 가공"></a>3 :: 테이블 취합 및 가공</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df = pd.concat([df1,df2,df3,df4], sort=<span class="literal">True</span>)</span><br><span class="line">df = df[[<span class="string">&#x27;시도&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>, <span class="string">&#x27;1월&#x27;</span>,<span class="string">&#x27;2월&#x27;</span>,<span class="string">&#x27;3월&#x27;</span>,<span class="string">&#x27;4월&#x27;</span>,<span class="string">&#x27;5월&#x27;</span>,<span class="string">&#x27;6월&#x27;</span>,<span class="string">&#x27;7월&#x27;</span>,<span class="string">&#x27;8월&#x27;</span>,<span class="string">&#x27;9월&#x27;</span>,<span class="string">&#x27;10월&#x27;</span>,<span class="string">&#x27;11월&#x27;</span>,<span class="string">&#x27;12월&#x27;</span>]]</span><br><span class="line">df[<span class="string">&#x27;연도&#x27;</span>] = file[-<span class="number">8</span>:-<span class="number">4</span>]</span><br><span class="line">df = pd.melt(df, id_vars=[<span class="string">&#x27;시도&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>, <span class="string">&#x27;연도&#x27;</span>], var_name=<span class="string">&#x27;월&#x27;</span>, value_name=<span class="string">&#x27;인구수&#x27;</span>)</span><br><span class="line">df[<span class="string">&#x27;월&#x27;</span>] = df[<span class="string">&#x27;월&#x27;</span>].<span class="built_in">str</span>[:-<span class="number">1</span>]</span><br><span class="line">df.drop_duplicates(inplace=<span class="literal">True</span>)</span><br><span class="line">df[<span class="string">&#x27;인구수&#x27;</span>] = pd.to_numeric(df[<span class="string">&#x27;인구수&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;&#x27;</span>), errors=<span class="string">&#x27;coerce&#x27;</span>)</span><br><span class="line">df = df[df[<span class="string">&#x27;인구수&#x27;</span>] &gt; <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>concat()</code> 함수로 각각의 데이터프레임을 행을 기준으로 병합함<ul>
+<li>1월부터 12월까지의 데이터가 각 컬럼으로 구분되어있어, <code>melt()</code> 함수로 각각의 행으로 나누어 데이터 형태를 변환함</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-CSV-파일-통합저장"><a href="#4-CSV-파일-통합저장" class="headerlink" title="4 :: CSV 파일 통합저장"></a>4 :: CSV 파일 통합저장</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> i==<span class="number">0</span>:</span><br><span class="line">    df.to_csv(<span class="string">&quot;인구수_전체데이터.csv&quot;</span>, mode=<span class="string">&#x27;w&#x27;</span>, index=<span class="literal">False</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    df.to_csv(<span class="string">&quot;인구수_전체데이터.csv&quot;</span>, mode=<span class="string">&#x27;a&#x27;</span>, index=<span class="literal">False</span>, header=<span class="literal">False</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>for문의 첫번째 루프에서는 <code>to_csv()</code> 함수의 덮어쓰기(write) 모드를, 이후의 루프에서는 이어쓰기(append) 모드를 적용함</li>
+</ul>
+<h1 id="전체-코드"><a href="#전체-코드" class="headerlink" title="전체 코드"></a>전체 코드</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&quot;ignore&quot;</span>)</span><br><span class="line"></span><br><span class="line">file_list = [file <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(<span class="string">&quot;전국읍면동_인구통계&quot;</span>) <span class="keyword">if</span> file.endswith(<span class="string">&#x27;csv&#x27;</span>)]</span><br><span class="line"><span class="keyword">for</span> i, file <span class="keyword">in</span> <span class="built_in">enumerate</span>(file_list):</span><br><span class="line">    </span><br><span class="line">  <span class="comment"># CSV 파일 세팅</span></span><br><span class="line">    df = pd.read_csv(<span class="string">&quot;전국읍면동_인구통계&quot;</span> + file, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line">    df = df.iloc[:,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">29</span>,<span class="number">33</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">45</span>]]</span><br><span class="line">    df[<span class="string">&#x27;행정구역&#x27;</span>] = df[<span class="string">&#x27;행정구역&#x27;</span>].<span class="built_in">str</span>[:-<span class="number">12</span>].apply(<span class="keyword">lambda</span> x: x.strip())</span><br><span class="line">    df.columns = [<span class="string">&#x27;행정구역&#x27;</span>, <span class="string">&#x27;1월&#x27;</span>,<span class="string">&#x27;2월&#x27;</span>,<span class="string">&#x27;3월&#x27;</span>,<span class="string">&#x27;4월&#x27;</span>,<span class="string">&#x27;5월&#x27;</span>,<span class="string">&#x27;6월&#x27;</span>,<span class="string">&#x27;7월&#x27;</span>,<span class="string">&#x27;8월&#x27;</span>,<span class="string">&#x27;9월&#x27;</span>,<span class="string">&#x27;10월&#x27;</span>,<span class="string">&#x27;11월&#x27;</span>,<span class="string">&#x27;12월&#x27;</span>]</span><br><span class="line">    </span><br><span class="line">  <span class="comment"># -- 행정구역 컬럼 값이 단일값으로 되어있음 (ex. 서울특별시 종로구 삼청동)</span></span><br><span class="line">  <span class="comment"># -- 따라서 split 함수를 사용하여 공백을 기준으로 시도, 시군구, 행정동 컬럼을 구분함</span></span><br><span class="line">  <span class="comment"># 토큰개수 1~4</span></span><br><span class="line">    df[<span class="string">&#x27;토큰_개수&#x27;</span>] = df[<span class="string">&#x27;행정구역&#x27;</span>].apply(<span class="keyword">lambda</span> x: <span class="built_in">len</span>(<span class="built_in">str</span>(x).split()))</span><br><span class="line">    <span class="keyword">for</span> tokens <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, df[<span class="string">&#x27;토큰_개수&#x27;</span>].<span class="built_in">max</span>() + <span class="number">1</span>):</span><br><span class="line">        df.loc[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == tokens, [<span class="string">f&#x27;토큰_<span class="subst">&#123;i+<span class="number">1</span>&#125;</span>&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(tokens)]] = df.loc[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == tokens, <span class="string">&#x27;행정구역&#x27;</span>].<span class="built_in">str</span>.split().tolist()</span><br><span class="line">    df1 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">1</span>]</span><br><span class="line">    df2 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">2</span>]</span><br><span class="line">    df3 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">3</span>]</span><br><span class="line">    df4 = df[df[<span class="string">&#x27;토큰_개수&#x27;</span>] == <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># --- 토큰이 1개인 경우 ---</span></span><br><span class="line">  <span class="comment"># 시도 -&gt; 시도 / 전체 / 전체</span></span><br><span class="line">  <span class="comment"># ex. 서울특별시 -&gt; 서울특별시 / 전체 / 전체</span></span><br><span class="line">    df1[<span class="string">&#x27;시도&#x27;</span>] = df1[<span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df1[<span class="string">&#x27;시군구&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line">    df1[<span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># --- 토큰이 2개인 경우 ---</span></span><br><span class="line">  <span class="comment"># 시도 시군구 -&gt; 시도 / 시군구 / 전체</span></span><br><span class="line">  <span class="comment"># ex. 서울특별시 종로구 -&gt; 서울특별시 / 종로구 / 전체</span></span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시도&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_2&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_2&#x27;</span>]</span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] != <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 세종특별자치시 행정동 -&gt; 세종특별자치시 / 세종특별자치시 / 행정동</span></span><br><span class="line">  <span class="comment"># ex. 세종특별자치시 한솔동 -&gt; 세종특별자치시 / 세종특별자치시 / 한솔동</span></span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시도&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>] = df2.loc[df2[<span class="string">&#x27;토큰_1&#x27;</span>] == <span class="string">&#x27;세종특별자치시&#x27;</span>, <span class="string">&#x27;토큰_2&#x27;</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># --- 토큰이 3개인 경우 ---</span></span><br><span class="line">  <span class="comment"># 시도 시군구 행정동 -&gt; 시도 / 시군구 / 행정동</span></span><br><span class="line">  <span class="comment"># ex. 서울특별시 종로구 삼청동 -&gt; 서울특별시 / 종로구 / 삼청동</span></span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_2&#x27;</span>]</span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] != df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 시도 시도 시군구 -&gt; 시도 / 시군구 / 전체</span></span><br><span class="line">  <span class="comment"># ex. 서울특별시 서울특별시 종로구 -&gt; 서울특별시 / 종로구 / 전체</span></span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line">    df3.loc[df3[<span class="string">&#x27;토큰_1&#x27;</span>] == df3[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># --- 토큰이 4개인 경우 ---</span></span><br><span class="line">  <span class="comment"># 시도 시군구1 시군구2 행정동 -&gt; 시도 / 시군구1+2 / 행정동</span></span><br><span class="line">  <span class="comment"># ex. 경기도 용인시 수지구 죽전동 -&gt; 경기도 / 용인시 수지구 / 죽전동</span></span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_2&#x27;</span>] + <span class="string">&quot; &quot;</span> + df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>]</span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] != df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_4&#x27;</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 시도 시도 시군구1 시군구2 -&gt; 시도 / 시군구1+2 / 전체</span></span><br><span class="line">  <span class="comment"># ex. 경기도 경기도 용인시 수지구 -&gt; 경기도 / 용인시 수지구 / 전체</span></span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시도&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_1&#x27;</span>]</span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;시군구&#x27;</span>] = df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_3&#x27;</span>] + <span class="string">&quot; &quot;</span> + df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;토큰_4&#x27;</span>]</span><br><span class="line">    df4.loc[df4[<span class="string">&#x27;토큰_1&#x27;</span>] == df4[<span class="string">&#x27;토큰_2&#x27;</span>], <span class="string">&#x27;행정동&#x27;</span>] = <span class="string">&#x27;전체&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 테이블 취합 및 가공</span></span><br><span class="line">    df = pd.concat([df1,df2,df3,df4], sort=<span class="literal">True</span>)</span><br><span class="line">    df = df[[<span class="string">&#x27;시도&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>, <span class="string">&#x27;1월&#x27;</span>,<span class="string">&#x27;2월&#x27;</span>,<span class="string">&#x27;3월&#x27;</span>,<span class="string">&#x27;4월&#x27;</span>,<span class="string">&#x27;5월&#x27;</span>,<span class="string">&#x27;6월&#x27;</span>,<span class="string">&#x27;7월&#x27;</span>,<span class="string">&#x27;8월&#x27;</span>,<span class="string">&#x27;9월&#x27;</span>,<span class="string">&#x27;10월&#x27;</span>,<span class="string">&#x27;11월&#x27;</span>,<span class="string">&#x27;12월&#x27;</span>]]</span><br><span class="line">    df[<span class="string">&#x27;연도&#x27;</span>] = file[-<span class="number">8</span>:-<span class="number">4</span>]</span><br><span class="line">    df = pd.melt(df, id_vars=[<span class="string">&#x27;시도&#x27;</span>, <span class="string">&#x27;시군구&#x27;</span>, <span class="string">&#x27;행정동&#x27;</span>, <span class="string">&#x27;연도&#x27;</span>], var_name=<span class="string">&#x27;월&#x27;</span>, value_name=<span class="string">&#x27;인구수&#x27;</span>)</span><br><span class="line">    df[<span class="string">&#x27;월&#x27;</span>] = df[<span class="string">&#x27;월&#x27;</span>].<span class="built_in">str</span>[:-<span class="number">1</span>]</span><br><span class="line">    df.drop_duplicates(inplace=<span class="literal">True</span>)</span><br><span class="line">    df[<span class="string">&#x27;인구수&#x27;</span>] = pd.to_numeric(df[<span class="string">&#x27;인구수&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;&#x27;</span>), errors=<span class="string">&#x27;coerce&#x27;</span>)</span><br><span class="line">    df = df[df[<span class="string">&#x27;인구수&#x27;</span>] &gt; <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment"># CSV 파일 통합저장</span></span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">0</span>:</span><br><span class="line">        df.to_csv(<span class="string">&quot;인구수_전체데이터.csv&quot;</span>, mode=<span class="string">&#x27;w&#x27;</span>, index=<span class="literal">False</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        df.to_csv(<span class="string">&quot;인구수_전체데이터.csv&quot;</span>, mode=<span class="string">&#x27;a&#x27;</span>, index=<span class="literal">False</span>, header=<span class="literal">False</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>)</span><br></pre></td></tr></table></figure>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2024/02/13/Python/Pandas/pandas_exercise1/" data-id="clskfblly00003klfgk1vhdlt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Pandas EX1 : split()을 이용한 텍스트 컬럼 생성",
+        "image": "http://gonekng.github.ioC:\Users\user\Desktop\강지원\Github\myblog\source\images\Python\Pandas\Untitled.png",
+        "keywords": "python pandas",
+        "genre": "python pandas",
+        "datePublished": "2024-02-13",
+        "dateCreated": "2024-02-13",
+        "dateModified": "2024-02-13",
+        "url": "http://gonekng.github.io/2024/02/13/Python/Pandas/pandas_exercise1/",
+        "description": "
+연도별 전국읍면동_인구통계 데이터를 Pandas를 활용하여 통합정리하는 코드
+텍스트 컬럼에 split() 함수를 적용하여 새로운 컬럼을 생성함
+
+
+
+0 :: 필요한 라이브러리 임포트12345import osimport numpy as npimport pandas as pdimport warningswarnings.filterwarnings(&quot;ig",
+        "wordCount": 2085
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2024/02/08/Python/Streamlit/streamlit_exersice2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Streamlit &amp; Sqlite3 연동 예제</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/pandas/">pandas</a></p>
+                            <p class="item-title"><a href="/2024/02/13/Python/Pandas/pandas_exercise1/" class="title">Pandas EX1 : split()을 이용한 텍스트 컬럼 생성</a></p>
+                            <p class="item-date"><time datetime="2024-02-13T13:51:00.000Z" itemprop="datePublished">2024-02-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/streamlit/">streamlit</a></p>
+                            <p class="item-title"><a href="/2024/02/08/Python/Streamlit/streamlit_exersice2/" class="title">Streamlit &amp; Sqlite3 연동 예제</a></p>
+                            <p class="item-date"><time datetime="2024-02-08T02:17:52.000Z" itemprop="datePublished">2024-02-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/streamlit/">streamlit</a></p>
+                            <p class="item-title"><a href="/2023/04/06/Python/Streamlit/streamlit_exersice1/" class="title">Streamlit을 이용한 지도 시각화 예제</a></p>
+                            <p class="item-date"><time datetime="2023-04-06T13:29:04.000Z" itemprop="datePublished">2023-04-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/setting/">setting</a></p>
+                            <p class="item-title"><a href="/2023/02/06/Python/Setting/venv/" class="title">파이썬 가상환경 설정하기 (Git Bash)</a></p>
+                            <p class="item-date"><time datetime="2023-02-06T14:47:10.000Z" itemprop="datePublished">2023-02-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/ML/">ML</a></p>
+                            <p class="item-title"><a href="/2022/12/22/Python/ML/Feature%20Encoding/" class="title">Feature Encoding</a></p>
+                            <p class="item-date"><time datetime="2022-12-22T14:21:54.000Z" itemprop="datePublished">2022-12-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/development/">development</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">44</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/pandas/">pandas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/setting/">setting</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/streamlit/">streamlit</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12.22px;">BeautifulSoup</a> <a href="/tags/airflow/" style="font-size: 11.11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11.11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12.22px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 15.56px;">data engineering</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 11.11px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/google-colab/" style="font-size: 18.89px;">google colab</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/hueman/" style="font-size: 11.11px;">hueman</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 17.78px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/oracle/" style="font-size: 13.33px;">oracle</a> <a href="/tags/pandas/" style="font-size: 13.33px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/programmers/" style="font-size: 11.11px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.11px;">r</a> <a href="/tags/scikit-learn/" style="font-size: 11.11px;">scikit-learn</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 16.67px;">setting</a> <a href="/tags/spark/" style="font-size: 11.11px;">spark</a> <a href="/tags/sql/" style="font-size: 13.33px;">sql</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/streamlit/" style="font-size: 11.11px;">streamlit</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11.11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 14.44px;">wsl2</a> <a href="/tags/%EB%A9%B4%EC%A0%91/" style="font-size: 12.22px;">면접</a> <a href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" style="font-size: 12.22px;">자소서</a> <a href="/tags/%EC%B7%A8%EC%A4%80/" style="font-size: 14.44px;">취준</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disqus/" rel="tag">disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/" rel="tag">hueman</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/" rel="tag">scikit-learn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/streamlit/" rel="tag">streamlit</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A9%B4%EC%A0%91/" rel="tag">면접</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" rel="tag">자소서</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B7%A8%EC%A4%80/" rel="tag">취준</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2024 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2024/02/13/Python/Pandas/pandas_exercise1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
