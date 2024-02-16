@@ -51,7 +51,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+</head>
 
 <body>
     <div id="wrap">
@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2024/02/16/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(2)/" class="article-date">
-     <time datetime="2024-02-16T14:46:03.102Z" itemprop="dateModified">2024-02-16</time>
+     <time datetime="2024-02-16T14:55:38.510Z" itemprop="dateModified">2024-02-16</time>
   </a>
 </div>
 
@@ -237,10 +237,7 @@
 </ul>
 </li>
 </ol>
-<aside>
-### makemigrations와 migrate의 차이
-
-<ul>
+<h3 id="makemigrations와-migrate의-차이"><a href="#makemigrations와-migrate의-차이" class="headerlink" title="makemigrations와 migrate의 차이"></a>makemigrations와 migrate의 차이</h3><ul>
 <li><p><strong>migration</strong>은 sql로 진행됨 → 0001_initial.py와 같이 파이썬으로 표현한 다음(<strong>makemigrations</strong>), 이를 바탕으로 다시 sql로 변환하여 프로젝트에 반영함(<strong>migrate</strong>)</p>
 <ul>
 <li><strong>makemigrations</strong> : application의 모델에 대한 변화를 기록</li>
@@ -253,8 +250,6 @@
 <p>  <img src="/images/Python/Django/2/Untitled5.png"></p>
 </li>
 </ul>
-</aside>
-
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li>django Documentation : <a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/">https://docs.djangoproject.com/en/3.2/intro/tutorial01/</a></li>
 <li>참고 블로그 : <a target="_blank" rel="noopener" href="https://lucky516.tistory.com/54">https://lucky516.tistory.com/54</a></li>
@@ -347,7 +342,7 @@
         "description": "Model 생성
 polls&#x2F;model.py 작성
   12345678910from django.db import modelsclass Question(models.Model):    question_text = models.CharField(max_length=200)    pub_date = models.DateTimeField(&#x27;date",
-        "wordCount": 265
+        "wordCount": 270
     }
 </script>
 
