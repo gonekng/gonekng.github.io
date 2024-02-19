@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Django 웹개발 튜토리얼 (4) | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="development,python,django" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/development/">development</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/django/">django</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/pandas/">pandas</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/streamlit/">streamlit</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/python/django/">django</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python/Django/Django 웹개발 튜토리얼 (4)" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Django 웹개발 튜토리얼 (4)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(4)/" class="article-date">
+       <time datetime="2024-02-19T13:45:02.000Z" itemprop="datePublished">2024-02-19</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(4)/" class="article-date">
+     <time datetime="2024-02-19T13:57:18.930Z" itemprop="dateModified">2024-02-19</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/development/" rel="tag">development</a>, <a class="tag-link-link" href="/tags/django/" rel="tag">django</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="새로운-View-추가하기"><a href="#새로운-View-추가하기" class="headerlink" title="새로운 View 추가하기"></a>새로운 View 추가하기</h2><blockquote>
+<p>django의 MTV에서 View는 웹페이지와 서버의 중간다리 (MVC 패턴의 컨트롤러 역할)</p>
+</blockquote>
+<ul>
+<li>polls 어플리케이션의 구조<ul>
+<li><p>index 페이지 : Question에 대한 정보 출력</p>
+</li>
+<li><p>detail 페이지 : Question의 text를 상세히 출력 (투표형태)</p>
+</li>
+<li><p>result 페이지 : Question에 대한 결과 출력</p>
+<p>  → Vote Action : 투표 기능 구현 필요</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>polls&#x2F;views.py &gt;&gt; <code>detail</code>, <code>results</code>, <code>vote</code> 추가</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&quot;Hello, World. You&#x27;re at the polls index.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detail</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&quot;You&#x27;re looking at question %s.&quot;</span> % question_id)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">results</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    response = <span class="string">&quot;You&#x27;re looking at the results of question %s.&quot;</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(response % question_id)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">vote</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&quot;You&#x27;re voting on question %s.&quot;</span> % question_id)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>polls&#x2F;urls.py &gt;&gt; 새로 추가한 view를 url에 연결</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line"><span class="comment"># root주소 http://127.0.0.1:8000//polls/</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># ex: /polls/</span></span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, views.index, name=<span class="string">&#x27;index&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/&#x27;</span>, views.detail, name=<span class="string">&#x27;detail&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/results/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/results/&#x27;</span>, views.results, name=<span class="string">&#x27;results&#x27;</span>),</span><br><span class="line">    <span class="comment"># ex: /polls/5/vote/</span></span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/vote/&#x27;</span>, views.vote, name=<span class="string">&#x27;vote&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="실제-View-기능-구현하기"><a href="#실제-View-기능-구현하기" class="headerlink" title="실제 View 기능 구현하기"></a>실제 View 기능 구현하기</h2><ol>
+<li><p>polls&#x2F;views.py &gt;&gt; 다음 코드 입력</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">&#x27;-pub_date&#x27;</span>)[:<span class="number">5</span>]</span><br><span class="line">    output = <span class="string">&#x27;, &#x27;</span>.join([q.question_text <span class="keyword">for</span> q <span class="keyword">in</span> latest_question_list])</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(output)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 나머지 view (detail, results, vote) 내용은 그대로</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Question 모델에서 pub_date 기준 최신 데이터 5개를 불러와서 하나의 문자열로 출력하는 내용</li>
+</ul>
+</li>
+<li><p>admin 페이지에서 question 데이터 추가</p>
+<p> <img src="/images/Python/Django/4/Untitled.png"></p>
+</li>
+<li><p>index 페이지 정상출력 여부 확인</p>
+<p> <img src="/images/Python/Django/4/Untitled2.png"></p>
+</li>
+</ol>
+<h2 id="Template-이용하기"><a href="#Template-이용하기" class="headerlink" title="Template 이용하기"></a>Template 이용하기</h2><blockquote>
+<p>Template : 사용자에게 보여지는 화면 → HTML 코드 일부를 파이썬으로 작성할 수 있음(<code>&#123;% %&#125;</code>)</p>
+</blockquote>
+<ul>
+<li>템플릿 파일 저장위치 : <strong>어플리케이션폴더이름&#x2F;templates&#x2F;어플리케이션폴더이름&#x2F;템플릿파일이름</strong><ul>
+<li>django에서는 templates 폴더 안에 있는 템플릿파일이름을 기준으로 불러오기 때문에, 다른 어플리케이션의 같은 이름을 가진 템플릿 파일과 충돌하는 경우를 방지하기 위해 templates 폴더 안에 어플리케이션폴더를 한번 더 만드는 것을 권장함 → <code>template namespacing</code></li>
+</ul>
+</li>
+<li>polls&#x2F;templates&#x2F;polls&#x2F;index.html  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> latest_question_list %&#125;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> question <span class="keyword">in</span> latest_question_list %&#125;</span><br><span class="line">        &lt;li&gt;&lt;a href=<span class="string">&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;</span>&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">    &lt;p&gt;No polls are available.&lt;/p&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&#123;% %&#125;</code> (tag) : html 내에서 파이썬 코드를 실행하는 문법</li>
+<li><code>&#123;&#123; &#125;&#125;</code> (variable) : view에서 전달된 변수에 접근하는 문법</li>
+</ul>
+</li>
+<li>polls&#x2F;views.py &gt;&gt; index 템플릿을 view에 연동  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">&#x27;-pub_date&#x27;</span>)[:<span class="number">5</span>]</span><br><span class="line">    template = loader.get_template(<span class="string">&#x27;polls/index.html&#x27;</span>)</span><br><span class="line">    context = &#123;</span><br><span class="line">        <span class="string">&#x27;latest_question_list&#x27;</span>: latest_question_list,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(template.render(context, request))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 나머지 view (detail, results, vote) 내용은 그대로</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>model의 Question 데이터를 추출하여 template에 전달</p>
+<p>  <img src="/images/Python/Django/4/Untitled3.png"></p>
+<p>  <img src="/images/Python/Django/4/Untitled4.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wrapping-함수-사용하기"><a href="#wrapping-함수-사용하기" class="headerlink" title="wrapping 함수 사용하기"></a>wrapping 함수 사용하기</h2><blockquote>
+<p>여러 개의 함수를 한번에 묶어서 호출하는 함수</p>
+</blockquote>
+<ol>
+<li><p><code>render()</code></p>
+<ul>
+<li><p>polls&#x2F;views.py 코드의 loader 및 httpreponse 작업은 <code>render()</code> 함수로 간략하게 표현 가능</p>
+</li>
+<li><p>다음 코드는 기존의 코드와 같은 기능을 구현함</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>(<span class="params">request</span>):</span><br><span class="line">    latest_question_list = Question.objects.order_by(<span class="string">&#x27;-pub_date&#x27;</span>)[:<span class="number">5</span>]</span><br><span class="line">    context = &#123;<span class="string">&#x27;latest_question_list&#x27;</span>: latest_question_list&#125;</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/index.html&#x27;</span>, context)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 나머지 view (detail, results, vote) 내용은 그대로</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>get_object_or_404()</code></p>
+<ul>
+<li><p>detail view의 템플릿 작성</p>
+<ul>
+<li><p>polls&#x2F;views.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detail</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        question = Question.objects.get(pk=question_id)</span><br><span class="line">    <span class="keyword">except</span> Question.DoesNotExist:</span><br><span class="line">        <span class="keyword">raise</span> Http404(<span class="string">&quot;Question does not exist&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/detail.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>polls&#x2F;templates&#x2F;polls&#x2F;detail.html</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&#123;% <span class="keyword">for</span> choice <span class="keyword">in</span> question.choice_set.<span class="built_in">all</span> %&#125;</span><br><span class="line">    &lt;li&gt;&#123;&#123; choice.choice_text &#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>해당 question이 있는 경우 (question 및 choice 출력)</p>
+<p>  <img src="/images/Python/Django/4/Untitled5.png"></p>
+</li>
+<li><p>해당 question이 없는 경우 (404 에러 출력)</p>
+<p>  <img src="/images/Python/Django/4/Untitled6.png"></p>
+</li>
+<li><p>detail view의 404 에러를 일으키는 코드 → <code>get_object_or_404()</code> 함수로 간략하게 표현 가능</p>
+<ul>
+<li><p>polls&#x2F;view.py</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detail</span>(<span class="params">request, question_id</span>):</span><br><span class="line">    question = get_object_or_404(Question, pk=question_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;polls/detail.html&#x27;</span>, &#123;<span class="string">&#x27;question&#x27;</span>: question&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="URL-하드코드-제거하기"><a href="#URL-하드코드-제거하기" class="headerlink" title="URL 하드코드 제거하기"></a>URL 하드코드 제거하기</h2><ul>
+<li><p><code>&#123;% url %&#125;</code> 태그를 사용하면 하드코드가 아닌 유동적인 코드로 작성 가능</p>
+<p>  → <code>&#123;% url (원하는 view의 url 이름) (url에 들어갈 입력변수) %&#125;</code></p>
+</li>
+<li><p>polls&#x2F;templates&#x2F;polls&#x2F;index.html</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> latest_question_list %&#125;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> question <span class="keyword">in</span> latest_question_list %&#125;</span><br><span class="line">        &lt;li&gt;&lt;a href=<span class="string">&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;</span>&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">    &lt;p&gt;No polls are available.&lt;/p&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>&quot;/polls/&#123;&#123; question.id &#125;&#125;/&quot;</code> : detail 뷰로 이동하는 링크 → <code>&quot;&#123;% url 'detail' question.id %&#125;&quot;</code></p>
+</li>
+<li><p>polls&#x2F;urls.py에서 detail 뷰의 name 확인</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    ...</span><br><span class="line">    path(<span class="string">&#x27;&lt;int:question_id&gt;/&#x27;</span>, views.detail, name=<span class="string">&#x27;detail&#x27;</span>),</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="URL-namespacing"><a href="#URL-namespacing" class="headerlink" title="URL namespacing"></a>URL namespacing</h2><blockquote>
+<p>여러 application에서 같은 url 이름을 가지고 있는 경우 충돌을 막기 위해 django에서 url namespacing 기능 제공</p>
+</blockquote>
+<ul>
+<li><p>polls&#x2F;urls.py 코드에서 app_name 지정</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">&#x27;polls&#x27;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>polls&#x2F;templates&#x2F;polls&#x2F;detail.html 코드에서 url 정보 수정</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;li&gt;&lt;a href=<span class="string">&quot;&#123;% url &#x27;polls:detail&#x27; question.id %&#125;&quot;</span>&gt;&#123;&#123; question.question_text &#125;&#125;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>django Documentation : <a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/">https://docs.djangoproject.com/en/3.2/intro/tutorial01/</a></li>
+<li>참고 블로그 : <a target="_blank" rel="noopener" href="https://lucky516.tistory.com/58">https://lucky516.tistory.com/58</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(4)/" data-id="clsszrem60006b4lfbw0r5ekj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "Django 웹개발 튜토리얼 (4)",
+        "image": "http://gonekng.github.io/images/Python/Django/4/Untitled.png",
+        "keywords": "development python django",
+        "genre": "python django",
+        "datePublished": "2024-02-19",
+        "dateCreated": "2024-02-19",
+        "dateModified": "2024-02-19",
+        "url": "http://gonekng.github.io/2024/02/19/Python/Django/Django 웹개발 튜토리얼 (4)/",
+        "description": "새로운 View 추가하기
+django의 MTV에서 View는 웹페이지와 서버의 중간다리 (MVC 패턴의 컨트롤러 역할)
+
+
+polls 어플리케이션의 구조
+index 페이지 : Question에 대한 정보 출력
+
+detail 페이지 : Question의 text를 상세히 출력 (투표형태)
+
+result 페이지 : Question에 대한 결과 출력
+  → Vo",
+        "wordCount": 1241
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(3)/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Django 웹개발 튜토리얼 (3)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(4)/" class="title">Django 웹개발 튜토리얼 (4)</a></p>
+                            <p class="item-date"><time datetime="2024-02-19T13:45:02.000Z" itemprop="datePublished">2024-02-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(3)/" class="title">Django 웹개발 튜토리얼 (3)</a></p>
+                            <p class="item-date"><time datetime="2024-02-19T13:43:23.000Z" itemprop="datePublished">2024-02-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/02/16/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(2)/" class="title">Django 웹개발 튜토리얼 (2)</a></p>
+                            <p class="item-date"><time datetime="2024-02-16T14:23:08.000Z" itemprop="datePublished">2024-02-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/02/16/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(1)/" class="title">Django 웹개발 튜토리얼 (1)</a></p>
+                            <p class="item-date"><time datetime="2024-02-16T13:59:22.000Z" itemprop="datePublished">2024-02-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/pandas/">pandas</a></p>
+                            <p class="item-title"><a href="/2024/02/13/Python/Pandas/pandas_exercise1/" class="title">Pandas EX1 : split()을 이용한 텍스트 컬럼 생성</a></p>
+                            <p class="item-date"><time datetime="2024-02-13T13:51:00.000Z" itemprop="datePublished">2024-02-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/development/">development</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">48</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/django/">django</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/pandas/">pandas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/setting/">setting</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/streamlit/">streamlit</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/setting/">setting</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%B7%A8%EC%A4%80/">취준</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">27</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 12px;">BeautifulSoup</a> <a href="/tags/airflow/" style="font-size: 11px;">airflow</a> <a href="/tags/apache/" style="font-size: 11px;">apache</a> <a href="/tags/crawling/" style="font-size: 12px;">crawling</a> <a href="/tags/data-engineering/" style="font-size: 16px;">data engineering</a> <a href="/tags/development/" style="font-size: 14px;">development</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/django/" style="font-size: 13px;">django</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/git/" style="font-size: 11px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/google-colab/" style="font-size: 19px;">google colab</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/hueman/" style="font-size: 11px;">hueman</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/machine-learning/" style="font-size: 18px;">machine learning</a> <a href="/tags/matplotlib/" style="font-size: 10px;">matplotlib</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/oracle/" style="font-size: 14px;">oracle</a> <a href="/tags/pandas/" style="font-size: 14px;">pandas</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/programmers/" style="font-size: 11px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11px;">r</a> <a href="/tags/scikit-learn/" style="font-size: 11px;">scikit-learn</a> <a href="/tags/seaborn/" style="font-size: 10px;">seaborn</a> <a href="/tags/setting/" style="font-size: 17px;">setting</a> <a href="/tags/spark/" style="font-size: 11px;">spark</a> <a href="/tags/sql/" style="font-size: 14px;">sql</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/streamlit/" style="font-size: 11px;">streamlit</a> <a href="/tags/visualization/" style="font-size: 10px;">visualization</a> <a href="/tags/vscode/" style="font-size: 11px;">vscode</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/wsl2/" style="font-size: 15px;">wsl2</a> <a href="/tags/%EB%A9%B4%EC%A0%91/" style="font-size: 12px;">면접</a> <a href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" style="font-size: 12px;">자소서</a> <a href="/tags/%EC%B7%A8%EC%A4%80/" style="font-size: 15px;">취준</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/airflow/" rel="tag">airflow</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/" rel="tag">apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-engineering/" rel="tag">data engineering</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disqus/" rel="tag">disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/" rel="tag">django</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/" rel="tag">elasticsearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/" rel="tag">hueman</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/" rel="tag">matplotlib</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/" rel="tag">numpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pipeline/" rel="tag">pipeline</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">48</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/" rel="tag">scikit-learn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/seaborn/" rel="tag">seaborn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/setting/" rel="tag">setting</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spark/" rel="tag">spark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/streamlit/" rel="tag">streamlit</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/visualization/" rel="tag">visualization</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsl2/" rel="tag">wsl2</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%A9%B4%EC%A0%91/" rel="tag">면접</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9E%90%EC%86%8C%EC%84%9C/" rel="tag">자소서</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%B7%A8%EC%A4%80/" rel="tag">취준</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2024 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2024/02/19/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(4)/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
