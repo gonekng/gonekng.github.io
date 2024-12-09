@@ -51,7 +51,7 @@
     
 
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+</head>
 
 <body>
     <div id="wrap">
@@ -168,7 +168,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/" class="article-date">
-     <time datetime="2024-12-09T13:09:00.166Z" itemprop="dateModified">2024-12-09</time>
+     <time datetime="2024-12-09T13:19:17.877Z" itemprop="dateModified">2024-12-09</time>
   </a>
 </div>
 
@@ -213,24 +213,24 @@
 </blockquote>
 </li>
 </ul>
-<p>![<a target="_blank" rel="noopener" href="https://velog.io/@vive0508/rfm]">https://velog.io/@vive0508/rfm]</a>(‘&#x2F;images&#x2F;데이터 분석&#x2F;rfm.png’)</p>
+<p>![<a target="_blank" rel="noopener" href="https://velog.io/@vive0508/rfm]">https://velog.io/@vive0508/rfm]</a>(&#x2F;images&#x2F;데이터 분석&#x2F;rfm.png)</p>
 <hr>
-<h2 id="RFM-고객-세분화-예시"><a href="#RFM-고객-세분화-예시" class="headerlink" title="RFM 고객 세분화 예시"></a>RFM 고객 세분화 예시</h2><p>다음은 고객들의 최근 구매일, 총 구매 횟수, 총 구매 금액을 기준으로 RFM 값을 부여한 예시이다.</p>
+<h2 id="RFM-고객-세분화-예시"><a href="#RFM-고객-세분화-예시" class="headerlink" title="RFM 고객 세분화 예시"></a>RFM 고객 세분화 예시</h2><p>다음은 최근 구매일, 총 구매 횟수, 총 구매 금액을 기준으로 RFM 값을 부여한 예시이다.</p>
 <ul>
-<li>Recency : 2024-12-09 기준으로 한 달 이내에 구매한 고객은 ‘recent’, 그 외에는 ‘past’로 구분</li>
-<li>Frequency : 총 5회 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’로 구분</li>
-<li>Monetary : 총 10만원 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’로 구분</li>
+<li>Recency : 2024-12-09 기준으로 한 달 이내에 구매한 고객은 ‘recent’, 그 외에는 ‘past’</li>
+<li>Frequency : 총 5회 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’</li>
+<li>Monetary : 총 10만원 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><strong>고객번호</strong></th>
+<th><strong>번호</strong></th>
 <th><strong>최근 구매일</strong></th>
 <th><strong>총 구매 횟수(회)</strong></th>
 <th><strong>총 구매 금액(천원)</strong></th>
-<th><strong>Recency</strong></th>
-<th><strong>Frequency</strong></th>
-<th><strong>Monetary</strong></th>
+<th><strong>R</strong></th>
+<th><strong>F</strong></th>
+<th><strong>M</strong></th>
 </tr>
 </thead>
 <tbody><tr>
@@ -306,14 +306,16 @@
 <td>low</td>
 </tr>
 </tbody></table>
-<p>각 고객의 RFM 값을 기준으로 그룹을 나누어 볼 때, 그룹별 특징을 다음과 같이 추정할 수 있다.</p>
+<ul>
+<li>RFM 값을 기준으로 그룹을 나누어 볼 때, 그룹별 특징을 다음과 같이 추정할 수 있다.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th><strong>고객번호</strong></th>
-<th><strong>Recency</strong></th>
-<th><strong>Frequency</strong></th>
-<th><strong>Monetary</strong></th>
+<th><strong>번호</strong></th>
+<th><strong>R</strong></th>
+<th><strong>F</strong></th>
+<th><strong>M</strong></th>
 <th><strong>특징</strong></th>
 </tr>
 </thead>
@@ -374,14 +376,16 @@
 <td>이탈 가능성이 가장 높은 고객군</td>
 </tr>
 </tbody></table>
-<p>그렇다면 각 그룹에 대하여 어떠한 마케팅이 효과적일지도 다음과 같이 적용해볼 수 있다.</p>
+<ul>
+<li>그렇다면 각 그룹에 대하여 어떠한 마케팅이 효과적일지도 다음과 같이 적용해볼 수 있다.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th><strong>고객번호</strong></th>
-<th><strong>Recency</strong></th>
-<th><strong>Frequency</strong></th>
-<th><strong>Monetary</strong></th>
+<th><strong>번호</strong></th>
+<th><strong>R</strong></th>
+<th><strong>F</strong></th>
+<th><strong>M</strong></th>
 <th><strong>마케팅 전략</strong></th>
 </tr>
 </thead>
@@ -442,14 +446,14 @@
 <td>고객 리뷰 요청, 브랜드 이미지 홍보 등</td>
 </tr>
 </tbody></table>
-<hr>
-<h2 id="SQL-쿼리-예시"><a href="#SQL-쿼리-예시" class="headerlink" title="SQL 쿼리 예시"></a>SQL 쿼리 예시</h2><ul>
-<li><code>With</code>문에서 recency, frequency, monetary 컬럼을 각각 생성한 다음 window 함수 <code>NTILE()</code>을 사용하여 각각 5단계로 구분하는 예제</li>
+<h3 id="SQL-쿼리-예시"><a href="#SQL-쿼리-예시" class="headerlink" title="SQL 쿼리 예시"></a>SQL 쿼리 예시</h3><ul>
+<li><code>With</code>문에서 recency, frequency, monetary 컬럼을 각각 생성</li>
+<li>window 함수 <code>NTILE()</code>을 사용하여 각각 5단계로 구분</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- RFM 점수 계산을 위한 기본 쿼리</span></span><br><span class="line"><span class="keyword">WITH</span> rfm_calc <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> </span><br><span class="line">    customer_id,</span><br><span class="line">    DATEDIFF(<span class="keyword">day</span>, <span class="built_in">MAX</span>(purchase_date), <span class="built_in">CURRENT_DATE</span>) <span class="keyword">as</span> recency,</span><br><span class="line">    <span class="built_in">COUNT</span>(order_id) <span class="keyword">as</span> frequency,</span><br><span class="line">    <span class="built_in">SUM</span>(amount) <span class="keyword">as</span> monetary</span><br><span class="line">  <span class="keyword">FROM</span> orders</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id</span><br><span class="line">),</span><br><span class="line">rfm_scores <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> recency <span class="keyword">DESC</span>) <span class="keyword">as</span> R, # Recency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> frequency <span class="keyword">ASC</span>) <span class="keyword">as</span> F, # Frequency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> monetary <span class="keyword">ASC</span>) <span class="keyword">as</span> M # Monetary <span class="number">5</span>단계 구분</span><br><span class="line">  <span class="keyword">FROM</span> rfm_calc</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> rfm_scores;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- RFM 점수 계산을 위한 기본 쿼리</span></span><br><span class="line"><span class="keyword">WITH</span> rfm_calc <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> </span><br><span class="line">    customer_id,</span><br><span class="line">    DATEDIFF(<span class="keyword">day</span>, <span class="built_in">MAX</span>(purchase_date), <span class="built_in">CURRENT_DATE</span>) <span class="keyword">as</span> recency,</span><br><span class="line">    <span class="built_in">COUNT</span>(order_id) <span class="keyword">as</span> frequency,</span><br><span class="line">    <span class="built_in">SUM</span>(amount) <span class="keyword">as</span> monetary</span><br><span class="line">  <span class="keyword">FROM</span> orders</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id</span><br><span class="line">),</span><br><span class="line">rfm_scores <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> recency <span class="keyword">DESC</span>) <span class="keyword">as</span> R,   # Recency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> frequency <span class="keyword">ASC</span>) <span class="keyword">as</span> F,   # Frequency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> monetary <span class="keyword">ASC</span>) <span class="keyword">as</span> M   # Monetary <span class="number">5</span>단계 구분</span><br><span class="line">  <span class="keyword">FROM</span> rfm_calc</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> rfm_scores;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="RFM-적용-시-고려사항"><a href="#RFM-적용-시-고려사항" class="headerlink" title="RFM 적용 시 고려사항"></a>RFM 적용 시 고려사항</h2><p>비즈니스의 성격, 산업군의 특성에 따라 다음의 고객 세분화 기준 등을 다르게 적용할 필요가 있다.</p>
+<h2 id="RFM-적용-시-고려사항"><a href="#RFM-적용-시-고려사항" class="headerlink" title="RFM 적용 시 고려사항"></a>RFM 적용 시 고려사항</h2><p>비즈니스의 성격에 따라 고객 세분화 기준 등을 다르게 적용할 필요가 있다.</p>
 <ul>
 <li>Recency, Frequency, Monetary 지표의 분류 기준 및 단계 설정<ul>
 <li>쿠팡, 배달의민족 등 자주 이용하는 플랫폼의 경우 한 달 이내 구매하지 않은 고객의 Recency 단계가 낮아질 수 있으나, 여행상품을 판매하는 항공사, 숙박업체 등은 최소 3개월에서 6개월 정도 구매이력이 없더라도 Recency가 떨어진다고 보기 어렵다.</li>
@@ -462,8 +466,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://datarian.io/blog/what-is-rfm">RFM 고객 세분화 분석이란 무엇일까요</a></p>
-<p><a target="_blank" rel="noopener" href="https://velog.io/@vive0508/rfm">RFM 고객 세분화 (Segmentation)</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://datarian.io/blog/what-is-rfm">데이터리안 블로그 : RFM 고객 세분화 분석이란 무엇일까요</a><br><a target="_blank" rel="noopener" href="https://velog.io/@vive0508/rfm">Velog 블로그 : RFM 고객 세분화 (Segmentation)</a>  </p>
 
         </div>
         <footer class="article-footer">
@@ -559,7 +562,7 @@ Recency : 얼마나 최근에 구매하였는가
 Frequency : 얼마나 자주 구매하였는가
 
 방문한 빈도가 높을수록 브랜드에 대한 ",
-        "wordCount": 582
+        "wordCount": 584
     }
 </script>
 
