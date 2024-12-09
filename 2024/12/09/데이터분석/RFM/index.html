@@ -141,7 +141,7 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-데이터 분석/RFM 고객 세분화 분석" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-데이터분석/RFM" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -159,7 +159,7 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/" class="article-date">
+    <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" class="article-date">
        <time datetime="2024-12-09T13:07:15.000Z" itemprop="datePublished">2024-12-09</time>
     </a>
   </div>
@@ -167,8 +167,8 @@
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/" class="article-date">
-     <time datetime="2024-12-09T13:19:17.877Z" itemprop="dateModified">2024-12-09</time>
+  <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" class="article-date">
+     <time datetime="2024-12-09T13:39:45.494Z" itemprop="dateModified">2024-12-09</time>
   </a>
 </div>
 
@@ -197,113 +197,113 @@
 
             <h2 id="RFM-분석이란"><a href="#RFM-분석이란" class="headerlink" title="RFM 분석이란?"></a>RFM 분석이란?</h2><p>고객 관계 관리(CRM)를 위해 고객의 구매 행동 데이터를 기반으로 고객을 세분화하는 분석 기법으로, 다음의 3가지 지표를 기반으로 한다.</p>
 <ul>
-<li><p><strong>R</strong>ecency : 얼마나 <strong>최근에</strong> 구매하였는가</p>
+<li><p><strong>R</strong>ecency : 얼마나 <strong>최근에</strong> 구매하였는가  </p>
 <blockquote>
-<p>마지막으로 구매한 시점이 가까울수록 브랜드에 대한 관심도가 높다</p>
+<p>마지막으로 구매한 시점이 가까울수록 브랜드에 대한 관심도가 높다  </p>
 </blockquote>
 </li>
-<li><p><strong>F</strong>requency : 얼마나 <strong>자주</strong> 구매하였는가</p>
+<li><p><strong>F</strong>requency : 얼마나 <strong>자주</strong> 구매하였는가  </p>
 <blockquote>
-<p>방문한 빈도가 높을수록 브랜드에 대한 충성도 및 재구매 확률이 높다</p>
+<p>방문한 빈도가 높을수록 브랜드에 대한 충성도 및 재구매 확률이 높다  </p>
 </blockquote>
 </li>
-<li><p><strong>M</strong>onetary : 얼마나 <strong>많은 금액</strong>을 지출하였는가</p>
+<li><p><strong>M</strong>onetary : 얼마나 <strong>많은 금액</strong>을 지출하였는가  </p>
 <blockquote>
 <p>지출한 금액이 많을수록 브랜드에 더 큰 가치를 부여할 확률이 높다</p>
 </blockquote>
 </li>
 </ul>
-<p>![<a target="_blank" rel="noopener" href="https://velog.io/@vive0508/rfm]">https://velog.io/@vive0508/rfm]</a>(&#x2F;images&#x2F;데이터 분석&#x2F;rfm.png)</p>
+<p><img src="/images/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/rfm.png" alt="https://velog.io/@vive0508/rfm"></p>
 <hr>
-<h2 id="RFM-고객-세분화-예시"><a href="#RFM-고객-세분화-예시" class="headerlink" title="RFM 고객 세분화 예시"></a>RFM 고객 세분화 예시</h2><p>다음은 최근 구매일, 총 구매 횟수, 총 구매 금액을 기준으로 RFM 값을 부여한 예시이다.</p>
+<h2 id="RFM-고객-세분화-예시"><a href="#RFM-고객-세분화-예시" class="headerlink" title="RFM 고객 세분화 예시"></a>RFM 고객 세분화 예시</h2><p>다음은 최근 구매일, 총 구매횟수, 총 구매금액을 기준으로 RFM 값을 부여한 예시이다.</p>
 <ul>
-<li>Recency : 2024-12-09 기준으로 한 달 이내에 구매한 고객은 ‘recent’, 그 외에는 ‘past’</li>
+<li>Recency : 2024-12-09 기준 한 달 이내에 구매한 고객은 ‘recent’, 그 외에는 ‘past’</li>
 <li>Frequency : 총 5회 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’</li>
 <li>Monetary : 총 10만원 이상 구매한 고객은 ‘high’, 그 외에는 ‘low’</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><strong>번호</strong></th>
-<th><strong>최근 구매일</strong></th>
-<th><strong>총 구매 횟수(회)</strong></th>
-<th><strong>총 구매 금액(천원)</strong></th>
-<th><strong>R</strong></th>
-<th><strong>F</strong></th>
-<th><strong>M</strong></th>
+<th align="center"><center><strong>번호</strong></center></th>
+<th align="center"><center><strong>최근 구매일</strong></center></th>
+<th align="right"><center><strong>총 구매횟수(회)</strong></center></th>
+<th align="right"><center><strong>총 구매금액(천원)</strong></center></th>
+<th align="center"><center><strong>Recency</strong></center></th>
+<th align="center"><center><strong>Frequency</strong></center></th>
+<th align="center"><center><strong>Monetary</strong></center></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td>
-<td>2024-11-28</td>
-<td>15</td>
-<td>125.5</td>
-<td>recent</td>
-<td>high</td>
-<td>high</td>
+<td align="center">1</td>
+<td align="center">2024-11-28</td>
+<td align="right">15</td>
+<td align="right">125.5</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">high</td>
 </tr>
 <tr>
-<td>2</td>
-<td>2024-12-01</td>
-<td>9</td>
-<td>21.8</td>
-<td>recent</td>
-<td>high</td>
-<td>low</td>
+<td align="center">2</td>
+<td align="center">2024-12-01</td>
+<td align="right">9</td>
+<td align="right">21.8</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">low</td>
 </tr>
 <tr>
-<td>3</td>
-<td>2024-11-25</td>
-<td>2</td>
-<td>3.5</td>
-<td>recent</td>
-<td>low</td>
-<td>low</td>
+<td align="center">3</td>
+<td align="center">2024-11-25</td>
+<td align="right">2</td>
+<td align="right">3.5</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">low</td>
 </tr>
 <tr>
-<td>4</td>
-<td>2024-12-02</td>
-<td>1</td>
-<td>210.0</td>
-<td>recent</td>
-<td>low</td>
-<td>high</td>
+<td align="center">4</td>
+<td align="center">2024-12-02</td>
+<td align="right">1</td>
+<td align="right">210.0</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">high</td>
 </tr>
 <tr>
-<td>5</td>
-<td>2024-09-11</td>
-<td>7</td>
-<td>315.3</td>
-<td>past</td>
-<td>high</td>
-<td>high</td>
+<td align="center">5</td>
+<td align="center">2024-09-11</td>
+<td align="right">7</td>
+<td align="right">315.3</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">high</td>
 </tr>
 <tr>
-<td>6</td>
-<td>2024-10-31</td>
-<td>10</td>
-<td>85.9</td>
-<td>past</td>
-<td>high</td>
-<td>low</td>
+<td align="center">6</td>
+<td align="center">2024-10-31</td>
+<td align="right">10</td>
+<td align="right">85.9</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">low</td>
 </tr>
 <tr>
-<td>7</td>
-<td>2024-11-05</td>
-<td>3</td>
-<td>151.2</td>
-<td>past</td>
-<td>low</td>
-<td>high</td>
+<td align="center">7</td>
+<td align="center">2024-11-05</td>
+<td align="right">3</td>
+<td align="right">151.2</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">high</td>
 </tr>
 <tr>
-<td>8</td>
-<td>2024-10-12</td>
-<td>1</td>
-<td>12.5</td>
-<td>past</td>
-<td>low</td>
-<td>low</td>
+<td align="center">8</td>
+<td align="center">2024-10-12</td>
+<td align="right">1</td>
+<td align="right">12.5</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">low</td>
 </tr>
 </tbody></table>
 <ul>
@@ -312,140 +312,141 @@
 <table>
 <thead>
 <tr>
-<th><strong>번호</strong></th>
-<th><strong>R</strong></th>
-<th><strong>F</strong></th>
-<th><strong>M</strong></th>
-<th><strong>특징</strong></th>
+<th align="center"><center><strong>번호</strong></center></th>
+<th align="center"><center><strong>Recency</strong></center></th>
+<th align="center"><center><strong>Frequency</strong></center></th>
+<th align="center"><center><strong>Monetary</strong></center></th>
+<th align="left"><center><strong>특징</strong></center></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td>
-<td>recent</td>
-<td>high</td>
-<td>high</td>
-<td>가장 브랜드 충성도가 높은 고객군</td>
+<td align="center">1</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">high</td>
+<td align="left">가장 브랜드 충성도가 높은 고객군</td>
 </tr>
 <tr>
-<td>2</td>
-<td>recent</td>
-<td>high</td>
-<td>low</td>
-<td>브랜드 관심도에 비해 매출 기여도는 낮은 고객군</td>
+<td align="center">2</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">low</td>
+<td align="left">브랜드 관심도에 비해 매출 기여도는 낮은 고객군</td>
 </tr>
 <tr>
-<td>3</td>
-<td>recent</td>
-<td>low</td>
-<td>low</td>
-<td>최근에 구매는 했으나 브랜드 충성도는 낮은 고객군</td>
+<td align="center">3</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">low</td>
+<td align="left">최근에 구매는 했으나 브랜드 충성도는 낮은 고객군</td>
 </tr>
 <tr>
-<td>4</td>
-<td>recent</td>
-<td>low</td>
-<td>high</td>
-<td>최근까지 고가의 제품에 관심이 많은 고객군</td>
+<td align="center">4</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">high</td>
+<td align="left">최근까지 고가의 제품에 관심이 많은 고객군</td>
 </tr>
 <tr>
-<td>5</td>
-<td>past</td>
-<td>high</td>
-<td>high</td>
-<td>브랜드 충성도가 높았으나 최근 구매가 없는 고객군</td>
+<td align="center">5</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">high</td>
+<td align="left">브랜드 충성도가 높았으나 최근 구매가 없는 고객군</td>
 </tr>
 <tr>
-<td>6</td>
-<td>past</td>
-<td>high</td>
-<td>low</td>
-<td>최근 구매가 없고 매출 기여도도 낮은 고객군</td>
+<td align="center">6</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">low</td>
+<td align="left">최근 구매가 없고 매출 기여도도 낮은 고객군</td>
 </tr>
 <tr>
-<td>7</td>
-<td>past</td>
-<td>low</td>
-<td>high</td>
-<td>고가의 제품에 관심 있으나 최근 구매가 없는 고객군</td>
+<td align="center">7</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">high</td>
+<td align="left">고가의 제품에 관심 있으나 최근 구매가 없는 고객군</td>
 </tr>
 <tr>
-<td>8</td>
-<td>past</td>
-<td>low</td>
-<td>low</td>
-<td>이탈 가능성이 가장 높은 고객군</td>
+<td align="center">8</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">low</td>
+<td align="left">이탈 가능성이 가장 높은 고객군</td>
 </tr>
 </tbody></table>
 <ul>
-<li>그렇다면 각 그룹에 대하여 어떠한 마케팅이 효과적일지도 다음과 같이 적용해볼 수 있다.</li>
+<li>각 그룹에 대하여 어떠한 마케팅이 효과적일지도 다음과 같이 적용해볼 수 있다.</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><strong>번호</strong></th>
-<th><strong>R</strong></th>
-<th><strong>F</strong></th>
-<th><strong>M</strong></th>
-<th><strong>마케팅 전략</strong></th>
+<th align="center"><center><strong>번호</strong></center></th>
+<th align="center"><center><strong>Recency</strong></center></th>
+<th align="center"><center><strong>Frequency</strong></center></th>
+<th align="center"><center><strong>Monetary</strong></center></th>
+<th align="left"><center><strong>마케팅 전략</strong></center></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>1</td>
-<td>recent</td>
-<td>high</td>
-<td>high</td>
-<td>개인 맞춤형 추천, 초대 이벤트, 멤버십 혜택 등</td>
+<td align="center">1</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">high</td>
+<td align="left">개인 맞춤형 추천, 초대 이벤트, 멤버십 혜택 등</td>
 </tr>
 <tr>
-<td>2</td>
-<td>recent</td>
-<td>high</td>
-<td>low</td>
-<td>기간 한정 세일, 묶음 판매, 할인 쿠폰 등</td>
+<td align="center">2</td>
+<td align="center">recent</td>
+<td align="center">high</td>
+<td align="center">low</td>
+<td align="left">기간 한정 세일, 묶음 판매, 할인 쿠폰 등</td>
 </tr>
 <tr>
-<td>3</td>
-<td>recent</td>
-<td>low</td>
-<td>low</td>
-<td>재구매 유도 이벤트, 사용자 리뷰 공유 등</td>
+<td align="center">3</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">low</td>
+<td align="left">재구매 유도 이벤트, 사용자 리뷰 공유 등</td>
 </tr>
 <tr>
-<td>4</td>
-<td>recent</td>
-<td>low</td>
-<td>high</td>
-<td>VIP 전용 제품 소개, 고급 제품 대상 특별 할인  등</td>
+<td align="center">4</td>
+<td align="center">recent</td>
+<td align="center">low</td>
+<td align="center">high</td>
+<td align="left">VIP 전용 제품 소개, 고급 제품 대상 특별 할인  등</td>
 </tr>
 <tr>
-<td>5</td>
-<td>past</td>
-<td>high</td>
-<td>high</td>
-<td>개인 맞춤형 리마인드, 과거 구매 기반 제품 추천 등</td>
+<td align="center">5</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">high</td>
+<td align="left">개인 맞춤형 리마인드, 과거 구매 기반 제품 추천 등</td>
 </tr>
 <tr>
-<td>6</td>
-<td>past</td>
-<td>high</td>
-<td>low</td>
-<td>가격 비교 정보 제공, 재구매 할인 쿠폰 등</td>
+<td align="center">6</td>
+<td align="center">past</td>
+<td align="center">high</td>
+<td align="center">low</td>
+<td align="left">가격 비교 정보 제공, 재구매 할인 쿠폰 등</td>
 </tr>
 <tr>
-<td>7</td>
-<td>past</td>
-<td>low</td>
-<td>high</td>
-<td>고급 제품 위주의 카탈로그 홍보 등</td>
+<td align="center">7</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">high</td>
+<td align="left">고급 제품 위주의 카탈로그 홍보 등</td>
 </tr>
 <tr>
-<td>8</td>
-<td>past</td>
-<td>low</td>
-<td>low</td>
-<td>고객 리뷰 요청, 브랜드 이미지 홍보 등</td>
+<td align="center">8</td>
+<td align="center">past</td>
+<td align="center">low</td>
+<td align="center">low</td>
+<td align="left">고객 리뷰 요청, 브랜드 이미지 홍보 등</td>
 </tr>
 </tbody></table>
+<hr>
 <h3 id="SQL-쿼리-예시"><a href="#SQL-쿼리-예시" class="headerlink" title="SQL 쿼리 예시"></a>SQL 쿼리 예시</h3><ul>
 <li><code>With</code>문에서 recency, frequency, monetary 컬럼을 각각 생성</li>
 <li>window 함수 <code>NTILE()</code>을 사용하여 각각 5단계로 구분</li>
@@ -453,7 +454,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- RFM 점수 계산을 위한 기본 쿼리</span></span><br><span class="line"><span class="keyword">WITH</span> rfm_calc <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> </span><br><span class="line">    customer_id,</span><br><span class="line">    DATEDIFF(<span class="keyword">day</span>, <span class="built_in">MAX</span>(purchase_date), <span class="built_in">CURRENT_DATE</span>) <span class="keyword">as</span> recency,</span><br><span class="line">    <span class="built_in">COUNT</span>(order_id) <span class="keyword">as</span> frequency,</span><br><span class="line">    <span class="built_in">SUM</span>(amount) <span class="keyword">as</span> monetary</span><br><span class="line">  <span class="keyword">FROM</span> orders</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> customer_id</span><br><span class="line">),</span><br><span class="line">rfm_scores <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> recency <span class="keyword">DESC</span>) <span class="keyword">as</span> R,   # Recency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> frequency <span class="keyword">ASC</span>) <span class="keyword">as</span> F,   # Frequency <span class="number">5</span>단계 구분</span><br><span class="line">    <span class="built_in">NTILE</span>(<span class="number">5</span>) <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> monetary <span class="keyword">ASC</span>) <span class="keyword">as</span> M   # Monetary <span class="number">5</span>단계 구분</span><br><span class="line">  <span class="keyword">FROM</span> rfm_calc</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> rfm_scores;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="RFM-적용-시-고려사항"><a href="#RFM-적용-시-고려사항" class="headerlink" title="RFM 적용 시 고려사항"></a>RFM 적용 시 고려사항</h2><p>비즈니스의 성격에 따라 고객 세분화 기준 등을 다르게 적용할 필요가 있다.</p>
+<h2 id="RFM-적용-시-고려사항"><a href="#RFM-적용-시-고려사항" class="headerlink" title="RFM 적용 시 고려사항"></a>RFM 적용 시 고려사항</h2><p>비즈니스의 특성에 따라 고객 세분화 기준 등을 다르게 적용할 필요가 있다.</p>
 <ul>
 <li>Recency, Frequency, Monetary 지표의 분류 기준 및 단계 설정<ul>
 <li>쿠팡, 배달의민족 등 자주 이용하는 플랫폼의 경우 한 달 이내 구매하지 않은 고객의 Recency 단계가 낮아질 수 있으나, 여행상품을 판매하는 항공사, 숙박업체 등은 최소 3개월에서 6개월 정도 구매이력이 없더라도 Recency가 떨어진다고 보기 어렵다.</li>
@@ -474,7 +475,7 @@
 
 
 
-    <a data-url="http://gonekng.github.io/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/" data-id="cm4h1uyih0000a0lfb5z9b742" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gonekng.github.io/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" data-id="cm4h2xsz70000cslf3udve5c4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -545,24 +546,24 @@
             "name": "Jiwon Kang"
         },
         "headline": "RFM 고객 세분화 분석",
-        "image": "http://gonekng.github.io",
+        "image": "http://gonekng.github.io/images/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/rfm.png",
         "keywords": "sql 데이터 분석 비즈니스 분석",
         "genre": "데이터 분석",
         "datePublished": "2024-12-09",
         "dateCreated": "2024-12-09",
         "dateModified": "2024-12-09",
-        "url": "http://gonekng.github.io/2024/12/09/데이터 분석/RFM 고객 세분화 분석/",
+        "url": "http://gonekng.github.io/2024/12/09/데이터분석/RFM/",
         "description": "RFM 분석이란?고객 관계 관리(CRM)를 위해 고객의 구매 행동 데이터를 기반으로 고객을 세분화하는 분석 기법으로, 다음의 3가지 지표를 기반으로 한다.
 
-Recency : 얼마나 최근에 구매하였는가
+Recency : 얼마나 최근에 구매하였는가  
 
-마지막으로 구매한 시점이 가까울수록 브랜드에 대한 관심도가 높다
+마지막으로 구매한 시점이 가까울수록 브랜드에 대한 관심도가 높다  
 
 
-Frequency : 얼마나 자주 구매하였는가
+Frequency : 얼마나 자주 구매하였는가  
 
-방문한 빈도가 높을수록 브랜드에 대한 ",
-        "wordCount": 584
+방문한 빈도가 높을수록 브랜",
+        "wordCount": 742
     }
 </script>
 
@@ -634,7 +635,7 @@ Frequency : 얼마나 자주 구매하였는가
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/">데이터 분석</a></p>
-                            <p class="item-title"><a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/" class="title">RFM 고객 세분화 분석</a></p>
+                            <p class="item-title"><a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" class="title">RFM 고객 세분화 분석</a></p>
                             <p class="item-date"><time datetime="2024-12-09T13:07:15.000Z" itemprop="datePublished">2024-12-09</time></p>
                         </div>
                     </li>
@@ -777,7 +778,7 @@ Frequency : 얼마나 자주 구매하였는가
     var disqus_shortname = 'gonekng';
     
     
-    var disqus_url = 'http://gonekng.github.io/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EB%B6%84%EC%84%9D/RFM%20%EA%B3%A0%EA%B0%9D%20%EC%84%B8%EB%B6%84%ED%99%94%20%EB%B6%84%EC%84%9D/';
+    var disqus_url = 'http://gonekng.github.io/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/';
     
     (function() {
     var dsq = document.createElement('script');
