@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title># [Git] .gitignore 다루기 | Jiwon&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="git" />
+    
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/etc/">etc</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/hexo/">hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/">python</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/ML/">ML</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/coding-test/">coding test</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/crawling/">crawling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/django/">django</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/pandas/">pandas</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/setting/">setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/streamlit/">streamlit</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/python/tutorial/">tutorial</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/r/">r</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sql/">sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/">데이터 분석</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" target="_blank" rel="noopener" href="https://about.me/gonekng">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/etc/">etc</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-etc/[Git] .gitignore 다루기" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        # [Git] .gitignore 다루기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2024/12/16/etc/%5BGit%5D%20.gitignore%20%EB%8B%A4%EB%A3%A8%EA%B8%B0/" class="article-date">
+       <time datetime="2024-12-16T12:31:11.000Z" itemprop="datePublished">2024-12-16</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2024/12/16/etc/%5BGit%5D%20.gitignore%20%EB%8B%A4%EB%A3%A8%EA%B8%B0/" class="article-date">
+     <time datetime="2024-12-16T12:31:53.230Z" itemprop="dateModified">2024-12-16</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/git/" rel="tag">git</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="gitignore란"><a href="#gitignore란" class="headerlink" title=".gitignore란?"></a>.gitignore란?</h2><p>Git으로 프로젝트를 관리할 때, 특정 파일이나 디렉토리를 Git이 추적하지 않도록 설정하는 파일로,  일반적으로 다음과 같은 파일들을 Git 추적 대상에서 제외한다:</p>
+<ul>
+<li>빌드 결과물 (build&#x2F;, dist&#x2F; 등)</li>
+<li>의존성 파일 (node_modules&#x2F;, vendor&#x2F; 등)</li>
+<li>IDE 설정 파일 (.idea&#x2F;, .vscode&#x2F; 등)</li>
+<li>환경 설정 파일 (.env, config.json 등)</li>
+<li>로그 파일 (*.log)</li>
+</ul>
+<h3 id="gitignore-파일-생성"><a href="#gitignore-파일-생성" class="headerlink" title=".gitignore 파일 생성"></a>.gitignore 파일 생성</h3><p>다음의 명령어를 실행하여 .gitignore 파일을 생성하며, 편집기에서 파일의 내용을 작성한 다음 add, commit, push의 순서로 실행하여 적용할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> .gitignore</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>touch</code> 명령어는 파일의 생성 및 날짜&#x2F;시간을 수정하는 명령어</li>
+<li>해당 파일이 없을 경우 크기가 0인 파일을 생성하며, 이미 존재할 경우 수정 시간이 업데이트된다. (파일 내용 수정 X)</li>
+</ul>
+<h3 id="TIP-gitignore-파일을-생성해주는-사이트"><a href="#TIP-gitignore-파일을-생성해주는-사이트" class="headerlink" title="(TIP) .gitignore 파일을 생성해주는 사이트"></a>(TIP) .gitignore 파일을 생성해주는 사이트</h3><p><a target="_blank" rel="noopener" href="https://www.toptal.com/developers/gitignore">gitignore.io</a></p>
+<hr>
+<h2 id="gitignore-작성-방법"><a href="#gitignore-작성-방법" class="headerlink" title=".gitignore 작성 방법"></a>.gitignore 작성 방법</h2><p>프로젝트의 루트 디렉토리에 <code>.gitignore</code> 파일을 생성하고 다음과 같은 패턴을 활용하여 작성한다.</p>
+<ul>
+<li><code>#</code> : 주석 표기</li>
+<li><code>*</code> : 모든 문자와 매칭</li>
+<li><code>?</code> : 한 개의 문자와 매칭</li>
+<li><code>**</code> : 모든 디렉토리 검색</li>
+<li><code>/</code> : 디렉토리 구분<ul>
+<li><code>/</code>로 시작하면 하위 디렉토리에 적용되지 않음</li>
+<li><code>/</code>로 끝나면 해당 디렉토리 전체로 간주</li>
+</ul>
+</li>
+<li><code>!</code> : 무시하지 않음 (예외 처리)</li>
+</ul>
+<h3 id="예시"><a href="#예시" class="headerlink" title="예시"></a>예시</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ignore all .a files</span></span><br><span class="line">*.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># exclude lib.class from &quot;*.a&quot;, meaning all lib.a are still tracked</span></span><br><span class="line">!lib.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># only ignore the TODO file in the current directory, not subdir/TODO</span></span><br><span class="line">/TODO</span><br><span class="line"></span><br><span class="line"><span class="comment"># ignore all json files whose name begin with &#x27;temp-&#x27;</span></span><br><span class="line">temp-*.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># only ignore the build.log file in current directory, not those in its subdirectories</span></span><br><span class="line">/build.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># specify a folder with slash in the end</span></span><br><span class="line"><span class="comment"># ignore all files in the build/ directory</span></span><br><span class="line">build/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ignore doc/notes.txt, but not doc/server/arch.txt</span></span><br><span class="line">doc/*.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># ignore all .pdf files in the doc/ directory</span></span><br><span class="line"><span class="comment"># /** matches 0 or more directories</span></span><br><span class="line">doc/**/*.pdf</span><br></pre></td></tr></table></figure>
+
+<h3 id="적용-시-주의사항"><a href="#적용-시-주의사항" class="headerlink" title="적용 시 주의사항"></a>적용 시 주의사항</h3><ul>
+<li><p>.gitignore 파일은 Git이 추적을 시작하기 전에 설정하는 것이 좋다.</p>
+</li>
+<li><p>이미 Git이 추적 중인 파일은 .gitignore에 추가해도 즉시 적용되지 않으며, 추가로 적용하려면 다음의 명령어를 실행해야 한다.</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git의 캐시를 삭제</span></span><br><span class="line">git <span class="built_in">rm</span> -r --cached .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모든 파일을 다시 추가</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 변경사항을 커밋</span></span><br><span class="line">git commit -m <span class="string">&quot;Apply .gitignore&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://yuevelyne.tistory.com/entry/Git-gitignore-%EC%9D%B4%ED%95%B4-%EB%B0%8F-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">[Git] .gitignore 이해 및 적용하기</a></p>
+<p><a target="_blank" rel="noopener" href="https://gun-oo.tistory.com/m/14">[Git] Xcode 프로젝트에 .gitignore 파일 생성하기</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gonekng.github.io/2024/12/16/etc/[Git]%20.gitignore%20%EB%8B%A4%EB%A3%A8%EA%B8%B0/" data-id="cm4r0man90000cslf5qrs3vea" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Jiwon Kang"
+        },
+        "headline": "# [Git] .gitignore 다루기",
+        "image": "http://gonekng.github.io",
+        "keywords": "git",
+        "genre": "etc",
+        "datePublished": "2024-12-16",
+        "dateCreated": "2024-12-16",
+        "dateModified": "2024-12-16",
+        "url": "http://gonekng.github.io/2024/12/16/etc/[Git] .gitignore 다루기/",
+        "description": ".gitignore란?Git으로 프로젝트를 관리할 때, 특정 파일이나 디렉토리를 Git이 추적하지 않도록 설정하는 파일로,  일반적으로 다음과 같은 파일들을 Git 추적 대상에서 제외한다:
+
+빌드 결과물 (build&#x2F;, dist&#x2F; 등)
+의존성 파일 (node_modules&#x2F;, vendor&#x2F; 등)
+IDE 설정 파일 (.id",
+        "wordCount": 410
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://instagram.com/gone_kng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gonekng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">RFM 고객 세분화 분석</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/etc/">etc</a></p>
+                            <p class="item-title"><a href="/2024/12/16/etc/%5BGit%5D%20.gitignore%20%EB%8B%A4%EB%A3%A8%EA%B8%B0/" class="title"># [Git] .gitignore 다루기</a></p>
+                            <p class="item-date"><time datetime="2024-12-16T12:31:11.000Z" itemprop="datePublished">2024-12-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/">데이터 분석</a></p>
+                            <p class="item-title"><a href="/2024/12/09/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/RFM/" class="title">RFM 고객 세분화 분석</a></p>
+                            <p class="item-date"><time datetime="2024-12-09T13:07:15.000Z" itemprop="datePublished">2024-12-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/pandas/">pandas</a></p>
+                            <p class="item-title"><a href="/2024/12/07/Python/Pandas/pandas_exercise2/" class="title">Pandas EX2 : 데이터프레임 구조화</a></p>
+                            <p class="item-date"><time datetime="2024-12-07T07:17:30.000Z" itemprop="datePublished">2024-12-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/09/03/Python/Django/Django%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20API%20%EC%84%9C%EB%B2%84%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="title">Django를 활용한 API 서버 만들기</a></p>
+                            <p class="item-date"><time datetime="2024-09-03T10:06:20.000Z" itemprop="datePublished">2024-09-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/python/">python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/django/">django</a></p>
+                            <p class="item-title"><a href="/2024/03/05/Python/Django/Django%20%EC%9B%B9%EA%B0%9C%EB%B0%9C%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(5)/" class="title">Django 웹개발 튜토리얼 (5)</a></p>
+                            <p class="item-date"><time datetime="2024-03-05T13:18:50.000Z" itemprop="datePublished">2024-03-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/etc/">etc</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python/ML/">ML</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/coding-test/">coding test</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/crawling/">crawling</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/django/">django</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/pandas/">pandas</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/setting/">setting</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/streamlit/">streamlit</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/tutorial/">tutorial</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/r/">r</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/">데이터 분석</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/BeautifulSoup/" style="font-size: 13.33px;">BeautifulSoup</a> <a href="/tags/crawling/" style="font-size: 13.33px;">crawling</a> <a href="/tags/development/" style="font-size: 18.33px;">development</a> <a href="/tags/disqus/" style="font-size: 10px;">disqus</a> <a href="/tags/django/" style="font-size: 18.33px;">django</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/google-colab/" style="font-size: 15px;">google colab</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/hueman/" style="font-size: 11.67px;">hueman</a> <a href="/tags/machine-learning/" style="font-size: 11.67px;">machine learning</a> <a href="/tags/oracle/" style="font-size: 15px;">oracle</a> <a href="/tags/pandas/" style="font-size: 13.33px;">pandas</a> <a href="/tags/programmers/" style="font-size: 11.67px;">programmers</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/r/" style="font-size: 11.67px;">r</a> <a href="/tags/scikit-learn/" style="font-size: 11.67px;">scikit-learn</a> <a href="/tags/sql/" style="font-size: 16.67px;">sql</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/statistic/" style="font-size: 10px;">statistic</a> <a href="/tags/streamlit/" style="font-size: 11.67px;">streamlit</a> <a href="/tags/windows11/" style="font-size: 10px;">windows11</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/" style="font-size: 10px;">데이터 분석</a> <a href="/tags/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4-%EB%B6%84%EC%84%9D/" style="font-size: 10px;">비즈니스 분석</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BeautifulSoup/" rel="tag">BeautifulSoup</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/" rel="tag">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/development/" rel="tag">development</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disqus/" rel="tag">disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/" rel="tag">django</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-colab/" rel="tag">google colab</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hueman/" rel="tag">hueman</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/" rel="tag">oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pandas/" rel="tag">pandas</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programmers/" rel="tag">programmers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/r/" rel="tag">r</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scikit-learn/" rel="tag">scikit-learn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/statistic/" rel="tag">statistic</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/streamlit/" rel="tag">streamlit</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows11/" rel="tag">windows11</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/" rel="tag">데이터 분석</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4-%EB%B6%84%EC%84%9D/" rel="tag">비즈니스 분석</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.naver.com/donumm">Naver blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2024 Jiwon Kang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'gonekng';
+    
+    
+    var disqus_url = 'http://gonekng.github.io/2024/12/16/etc/[Git]%20.gitignore%20%EB%8B%A4%EB%A3%A8%EA%B8%B0/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
